@@ -13,7 +13,6 @@ class BoundaryModelMaker < Poscar
 
   def initialize(file_name, nx, ny, nz, rot_num, opts={})
     p @options = {output: :normal,rotate: :non_zero}.merge(opts)
-                 
     theta = (rot_num == 0 ) ? 0.0 :  atan(1.0/rot_num.to_f)
     @options[:rotate]=:zero if rot_num == 0
     p super(file_name)
@@ -24,10 +23,9 @@ class BoundaryModelMaker < Poscar
     p "# 初期の参照構造の表示"
     print display() 
     expanding(n_ex)
-
     rotating(theta)    # 回転
-#    translating() # x<0の原子を反対側に付ける
-#    mirroring()   # 鏡映操作
+    translating() # x<0の原子を反対側に付ける
+    mirroring()   # 鏡映操作
   end
 
   def display
@@ -168,8 +166,8 @@ if __FILE__ == $0 then
   file=File.open(file_name,'w')
   file.print boundary.display
   file.close
-  system "cp #{file_name} ../viewer/POSCARs/#{file_name}"
-  system "cp #{file_name} ../adjuster/"
+#  system "cp #{file_name} ../viewer/POSCARs/#{file_name}"
+#  system "cp #{file_name} ../adjuster/"
 end
 
 
