@@ -9,7 +9,7 @@ RSpec::Core::RakeTask.new(:spec)
 task :default => :spec
 
 desc "make documents by yard"
-task :yard do
+task :yard => [:hiki2md] do
   YARD::Rake::YardocTask.new
 end
 
