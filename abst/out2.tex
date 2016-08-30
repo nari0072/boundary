@@ -1,0 +1,126 @@
+\documentclass[a4j,twocolumn]{jsarticle}
+\usepackage{subfigure}
+
+\def\Vec#1{\mbox{\boldmath $#1$}}
+\usepackage[dvipdfmx]{graphics}
+
+\setlength{\textheight}{275mm}
+\headheight 5mm
+\topmargin -30mm
+\textwidth 185mm
+\oddsidemargin -15mm
+\evensidemargin -15mm
+\pagestyle{empty}
+
+\begin{document}
+¥documentclass[a4j,twocolumn]{jsarticle}
+¥usepackage{subfigure}
+
+¥def¥Vec#1{¥mbox{¥boldmath $#1$}}
+¥usepackage[dvipdfmx]{graphicx}
+
+¥setlength{¥textheight}{275mm}
+¥headheight 5mm
+¥topmargin -30mm
+¥textwidth 185mm
+¥oddsidemargin -15mm
+¥evensidemargin -15mm
+¥pagestyle{empty}
+!ようこそ．
+!!更新履歴
+{{bbs}}
+!参考文献テンプレ改 - Donkey (2016-08-30 (火) 14:41:35)
+<<<tcsh
+\bibliographystyle{jplain}
+%\renewcommand{\bibname}{参考文献}
+\begin{thebibliography}{1}
+\bibitem{kasaharu}「今からでも始められる Chef 入門」，kasaharu，http://qiita.com/kasaharu/items55a3000db31c52ce0bd7,
+2015/9/3アクセス．
+
+\bibitem{yoshiba}「Chef実践入門」，吉羽 龍太郎, 安藤 祐介, 伊藤 直也, 菅井 祐太朗, 並河 祐貴,(技術評論社 2014)．
+
+\bibitem{schoolwith}「今更聞けない人の為の Chef 再入門」,School With ,http://blog.schoolwith.me/chef-re-introduction/，2015/9/10アクセス．
+
+\end{thebibliography}
+
+\end{document}
+>>>
+{{comment}}
+
+!Donkey - 参考文献テンプレ (2016-08-30 (火) 14:40:26)
+\bibliographystyle{jplain}
+%\renewcommand{\bibname}{参考文献}
+\begin{thebibliography}{1}
+\bibitem{kasaharu}「今からでも始められる Chef 入門」，kasaharu，http://qiita.com/kasaharu/items55a3000db31c52ce0bd7,
+2015/9/3アクセス．
+
+\bibitem{yoshiba}「Chef実践入門」，吉羽 龍太郎, 安藤 祐介, 伊藤 直也, 菅井 祐太朗, 並河 祐貴,(技術評論社 2014)．
+
+\bibitem{schoolwith}「今更聞けない人の為の Chef 再入門」,School With ,http://blog.schoolwith.me/chef-re-introduction/，2015/9/10アクセス．
+\end{thebibliography}
+
+\end{document}
+{{comment}}
+
+!無題 - Donkey (2016-08-29 (月) 16:41:14)
+hiki2latexのインストール
+sudo gem install hiki2latex
+
+実行方法
+data/text/の後ろは自分が作成したページ名
+hiki2latex Sites/hiki-1.0/data/text/GraduationThesis > out.tex
+
+作成して出来上がったファイルの上の方を以下に書き換える（\begin{document}の上）
+
+<<<tcsh
+\documentclass[a4j,twocolumn]{jsarticle}
+\usepackage{subfigure}
+
+\def\Vec#1{\mbox{\boldmath $#1$}}
+\usepackage[dvipdfmx]{graphicx}
+
+\setlength{\textheight}{275mm}
+\headheight 5mm
+\topmargin -30mm
+\textwidth 185mm
+\oddsidemargin -15mm
+\evensidemargin -15mm
+\pagestyle{empty}
+>>>
+
+{{comment}}
+
+!yamane_Memo - Donkey (2016-08-22 (月) 12:44:08)
+string.each_char.select{|char| !(/[ -~｡-ﾟ]/.match(char))}.count
+{{comment}}
+
+!HikiStart - Donkey (2016-02-12 (金) 19:19:02)
+HikiStartにHiki導入用のシステムを追加.
+TestSettingのダウンロードにより, テスト機能の実装もおこなえる.
+{{comment}}
+
+!ShunkunTypeについて - Donkey  (2015-11-17 (火) 16:43:45)
+[[ShunkunType]]にRakeコマンドのまとめを作成．
+
+{{comment}}
+
+!latexプラグイン実装（仮） - Donkey (2015-10-14 (水) 07:52:05)
+とりあえず，localhostにlatex.rb実装．
+
+pdf変換の実装とnishitani0用の調整しないと．
+{{comment}}
+
+
+!!近々にやらなければならないこと一覧
+!!!レシピ関係
+*rbenv．
+*ruby(windowsも含めた)．
+*Ohaiってなんなのか．
+
+!!!卒業研究関連
+*現在の機能をRails版へ移行
+*依存性も考慮したレシピの作成（とりあえず，手動）．
+*新機能の考案と実装(text読み込んでレシピ作成)．
+
+!!要リンクページ
+{{orphan}}
