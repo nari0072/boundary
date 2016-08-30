@@ -1,42 +1,52 @@
 require "bundler/gem_tasks"
-require "rspec/core/rake_task"
 require 'yard'
+require "rake/testtask"
+require 'fileutils'
 p base_path = File.expand_path('..', __FILE__)
 p basename = File.basename(base_path)
 
-RSpec::Core::RakeTask.new(:spec)
-
-task :default => :spec
+task :default do
+  system 'rake -T'
+end
 
 desc "make documents by yard"
 task :yard => [:hiki2md] do
   YARD::Rake::YardocTask.new
 end
 
-desc "make md documents from hiki"
+desc "transfer hikis/*.hiki to wiki"
 task :hiki2md do
-  files = Dir.entries('docs')
+  files = Dir.entries('hikis')
   files.each{|file|
     name=file.split('.')
-    if name[1]=='hiki' then
-      p command="hiki2md docs/#{name[0]}.hiki > #{basename}.wiki/#{name[0]}.md"
+    case name[1]
+    when 'hiki'
+      p command="hiki2md hikis/#{name[0]}.hiki > #{basename}.wiki/#{name[0]}.md"
       system command
+    when 'gif','png','pdf'
+      p command="cp hikis/#{file} #{basename}.wiki/#{file}"
+#      system command
+      FileUtils.cp("hikis/#{file}","#{basename}.wiki/#{file}",:verbose=>true)
+      FileUtils.cp("hikis/#{file}","doc/#{file}",:verbose=>true)
     end
   }
-  system "cp #{basename}.wiki/README_ja.md README.md"
-  system "cp #{basename}.wiki/README_ja.md #{basename}.wiki/Home.md"
-  system "cp docs/*.gif #{basename}.wiki"
-  system "cp docs/*.gif doc"
-  system "cp docs/*.png #{basename}.wiki"
-  system "cp docs/*.png doc"
+  readme_en="#{basename}.wiki/README_en.md"
+  readme_ja="#{basename}.wiki/README_ja.md"
+  if File.exists?(readme_en)
+    FileUtils.cp(readme_en,"./README.md",:verbose=>true)  
+  elsif File.exists?(readme_ja)
+    FileUtils.cp(readme_ja,"./README.md",:verbose=>true)
+    FileUtils.cp(readme_ja,"#{basename}.wiki/Home.md",:verbose=>true)
+  end
 end
 
-desc "arrange yard target by mathjax-yard"
-task :pre_math do
-  system('mathjax-yard')
+desc "transfer hikis/*.hiki to latex"
+task :latex do
+  target = 'handout_sample'
+  command = "hiki2latex --pre latexes/handout_pre.tex hikis/#{target}.hiki > latexes/#{target}.tex"
+  system command
+  command = "open latexes/#{target}.tex"
+  system command
 end
 
-desc "make yard documents with yardmath"
-task :myard => [:hiki2md, :pre_math,:yard] do
-  system('mathjax-yard --post')
-end
+
