@@ -47,7 +47,7 @@ p    radius = 3
     a,b=$lattice[0][0]*s1*scale,b=$lattice[1][1]*s1*scale;
     p cx,cy
     p a,b
-    context.set_source_rgb(0.5, 1, 0.5)
+    context.set_source_rgb(0.5, 0.5, 0.5)
     context.rectangle(cx-a/2.0,cy,cx-a/2.0, cy-b)
     context.fill
 

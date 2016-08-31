@@ -98,4 +98,49 @@ LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 
 Underfull \hbox (badness 3930) in paragraph at lines 16--18
-[]\JY1/mc
+[]\JY1/mco:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 15.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 15.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 15.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 15.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 16.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 16.
+
+./out2.tex:26: LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26 ...上の方を以下に書き換える（\begin{document}
+                                                  の上）
+? 
+./out2.tex:26: Emergency stop.
+ ...                                              
+                                                  
+l.26 ...上の方を以下に書き換える（\begin{document}
+                                                  の上）
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+ 
+Here is how much of TeX's memory you used:
+ 875 strings out of 493807
+ 10608 string characters out of 6151950
+ 67228 words of memory out of 5000000
+ 4396 multiletter control sequences out of 15000+600000
+ 10301 words of font info for 46 fonts, out of 8000000 for 9000
+ 934 hyphenation exceptions out of 8191
+ 25i,1n,24p,180b,127s stack positions out of 5000i,500n,10000p,200000b,80000s
+No pages of output.
