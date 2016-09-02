@@ -1,6 +1,3 @@
-\documentclass[12pt,a4paper]{jsarticle}
-\usepackage[dvipdfmx]{graphicx}
-\begin{document}
 ¥documentclass[a4j,twocolumn]{jsarticle}
 ¥usepackage{amssymb} % 高度な数式を表記するために使用
 ¥usepackage[dvipdfmx]{graphicx}		% 図を入れるときに使用
@@ -35,6 +32,7 @@
 ・大槻のシミュレーション結果では，
 0度，及び90度の傾きが左右対称になった．
 
+
 この矛盾を解明するために，
 本研究では，
 原子の配置や粒界エネルギーの高低差を視覚的に検証し易くするためのソフトを開発する．
@@ -42,18 +40,15 @@
 ¥begin{figure}[h]
 ¥begin{center}
 ¥begin{tabular}{cc}
-\begin{quote}\begin{verbatim}
-  ¥includegraphics[width=40mm]{./Hasson.png} &
-  ¥includegraphics[width=40mm]{./Otsuki.png} ¥¥
-  (a) & (b)
-\end{verbatim}\end{quote}
+   ¥includegraphics[width=40mm]{./Hasson.png} &
+   ¥includegraphics[width=40mm]{./Otsuki.png} ¥¥
+   (a) & (b)
 ¥end{tabular}
-\begin{quote}\begin{verbatim}
- ¥caption{(a) Hassonと(b)大槻の求めたAl(100)対称傾角粒界エネルギーの方位依存性．}
- ¥label{fig:one}
-\end{verbatim}\end{quote}
+  ¥caption{(a) Hassonと(b)大槻の求めたAl(100)対称傾角粒界エネルギーの方位依存性．}
+  ¥label{fig:one}
 ¥end{center}
 ¥end{figure}
+
 
 ¥vskip 1.5em%
 
@@ -78,13 +73,13 @@ Read-Shockleyの理論予測と同様の結果となった¥cite{yahata}．
 この原因を起点に，原子配置の視覚化を容易に表示することを主目的に研究をおこなう．
 ¥begin{figure}[h]
 ¥begin{center}
-\begin{quote}\begin{verbatim}
-  ¥includegraphics[width=80mm]{./Iwasa.png}
-    ¥caption{岩佐の研究結果．}
- ¥label{fig:two}
-\end{verbatim}\end{quote}
+   ¥includegraphics[width=80mm]{./Iwasa.png} 
+     ¥caption{岩佐の研究結果．}
+  ¥label{fig:two}
 ¥end{center}
 ¥end{figure}
+
+
 
 ¥section{手法}
 本研究のソフト開発は，MVCモデルで作成していく．
@@ -99,14 +94,18 @@ VASPの入出力で採用されているPOSCAR形式のファイルを入力と�
 SVGで出力する．
 SVGには，以下の特徴がある．
 
+
 ・ベクトルベースによるため，曲線や文字の拡大縮小しても画質が劣化することなく表示できる，
 
 ・汎用性が高く，画像表示や変換の処理が容易にできる．
+
 
 また，SVGの生成には，
 Ruby言語で視覚化を容易に実現できる２次元画像描画ライブラリ"Cairo"を用いる¥cite{sudoh}．
 
 図¥ref{fig:three}は，実際にSVGで描画したものである．
+
+
 
 ¥begin{thebibliography}{9}
 ¥bibitem{yahata} 小傾角粒界粒子シミュレーションの原子ポテンシャル依存性, 八幡裕也 (関西学院大学 理工学部研究科情報科学専攻 修士論文 2015)．
@@ -115,4 +114,3 @@ Ruby言語で視覚化を容易に実現できる２次元画像描画ライブ�
 ¥end{thebibliography}
 
 ¥end{document}
-\end{document}
