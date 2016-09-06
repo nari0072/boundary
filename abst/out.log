@@ -1,4 +1,4 @@
-This is pTeXk, Version 3.141592-p3.1.11 (utf8.euc) (Web2C 7.5.4) (format=platex 2011.7.24)  2 SEP 2016 17:14
+This is pTeXk, Version 3.141592-p3.1.11 (utf8.euc) (Web2C 7.5.4) (format=platex 2011.7.24)  2 SEP 2016 18:00
  file:line:error style messages enabled.
 **out
 (./out.tex
@@ -169,34 +169,17 @@ LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 8.64899pt on input line 47.
 File: ./Iwasa.png Graphic file (type bmp)
- <./Iwasa.png>
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 107.
-LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 107.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 107.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 107.
+ <./Iwasa.png> [1
 
 
-LaTeX Warning: Reference `fig:three' on page 1 undefined on input line 107.
-
-[1
-
-
-] (./out.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+] (./out.aux) ) 
 Here is how much of TeX's memory you used:
- 1277 strings out of 94681
- 15759 string characters out of 1174371
+ 1272 strings out of 94681
+ 15699 string characters out of 1174371
  65842 words of memory out of 1500000
- 4567 multiletter control sequences out of 10000+50000
- 17320 words of font info for 78 fonts, out of 1200000 for 2000
+ 4563 multiletter control sequences out of 10000+50000
+ 16731 words of font info for 75 fonts, out of 1200000 for 2000
  571 hyphenation exceptions out of 8191
  25i,8n,24p,238b,499s stack positions out of 5000i,500n,6000p,200000b,5000s
 
-Output written on out.dvi (1 page, 6624 bytes).
+Output written on out.dvi (1 page, 6520 bytes).
