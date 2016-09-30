@@ -6,6 +6,7 @@ http://jp.rubyist.net/magazine/?0019-cairo
 =end
 require 'cairo'
 
+p "hello"
 #format = Cairo::FORMAT_ARGB32
 width = 300
 height = 200
@@ -17,7 +18,7 @@ surface = Cairo::SVGSurface.new("hoge.svg", width, height)
 context = Cairo::Context.new(surface)
 
 #背景の白
-context.set_source_rgb(1, 1, 1)
+context.set_source_rgb(0.9, 0.9, 1)
 context.rectangle(0, 0, width, height)
 context.fill
 
