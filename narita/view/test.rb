@@ -1,29 +1,66 @@
 # -*- coding: utf-8 -*-
 require 'cairo'
-#p filename = ARGV[0]
-print File.read(ARGV[0])
-exit
-#file.close
+require 'scanf'
 
-width,height = 300,200
-r = 3
+lines = File.readlines(ARGV[0])
+
+
+lattice = []
+lines[2..4].each{|line|
+  lattice << line.scanf("%f %f %f\n")
+}
+
+atom = []
+a_max=lines.length+1
+lines[7..a_max].each{|line|
+  atom << line.scanf("%f %f %f\n")
+}
+
+real_pos=[]
+atom.each{|pos|
+  r_pos=[0.0,0.0,0.0]
+  pos.each_with_index{|xx,i|
+    lx,ly,lz=lattice[i]
+    r_pos[0] += xx*lx
+    r_pos[1] += xx*ly
+    r_pos[2] += xx*lz
+  }
+  real_pos <<  r_pos
+}
+
+width,height = 400,300
+cx,cy = width/2.0,height/2.0
+r = 2
+scale = 0.05
 
 surface = Cairo::SVGSurface.new('hg2.svg', width, height)
 context = Cairo::Context.new(surface)
 
 #backcolor
-context.set_source_rgb(0.8, 0.8, 0.8)
+context.set_source_rgb(0.9, 0.9, 0.9)
 context.rectangle(0, 0, width, height)
 context.fill
 
-#atomics
+#atomic
 context.set_source_rgb(1, 0, 0)
- for i in 2..5 do
-  for j in 1..3 do
-   context.circle( width*1/7*i , height*1/4*j, r)
-   context.fill
-  end
- end  
+real_pos.each{|pos|
+#  p pos
+#  p width*scale*pos[0] , height*scale*pos[1]
+  context.circle(width*scale*pos[0] , height*scale*pos[1], r)
+  context.fill
+}
+
+#coordinate
+context.set_source_rgb(0, 0, 0)
+  [[0,-3],[3,0]].each{|line|
+      x,y=line[0],line[1]
+      context.move_to(cx,cy)
+      context.line_to(cx+x*100,cy+y*100)
+      context.stroke
+  }
+  
+context.show_page
+surface.finish
 
 #配列latticeで原子配置
 =begin
@@ -44,6 +81,3 @@ context.arc(cx+x*s1*scale, cy+y*s1*scale, radius, 0, 2 * Math::PI)
 context.fill
 }
 =end
-
-context.show_page
-surface.finish

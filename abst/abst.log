@@ -95,4 +95,20 @@ c/m/n/10 ￥\OT1/cmr/m/n/10 usep-a-ck-ageamssymb \JY1/mc/m/n/10 ￥\OT1/cmr/m/n/
 
 ./abst.tex:11: You can't use `macro parameter character #' in horizontal mode.
 l.11 ￥def￥Vec#
-        
+                1{￥mbox{￥boldmath $#1$}}
+? 
+./abst.tex:11: Emergency stop.
+l.11 ￥def￥Vec#
+                1{￥mbox{￥boldmath $#1$}}
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 704 strings out of 493807
+ 8126 string characters out of 6151950
+ 64465 words of memory out of 5000000
+ 4237 multiletter control sequences out of 15000+600000
+ 8380 words of font info for 36 fonts, out of 8000000 for 9000
+ 934 hyphenation exceptions out of 8191
+ 25i,0n,21p,196b,85s stack positions out of 5000i,500n,10000p,200000b,80000s
+No pages of output.

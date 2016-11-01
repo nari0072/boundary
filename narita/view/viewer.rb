@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 require 'cairo'
-require 'pseudoVASP'
+require 'pseudoVASP'/Users/nari/boundary/narita/view/viewer.rb
 class BoundaryView < Poscar
   attr_reader :atom_list, :scale
 
