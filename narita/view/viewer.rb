@@ -51,18 +51,17 @@ p    radius = 3
     context.rectangle(cx-a/2.0,cy,cx-a/2.0, cy-b)
     context.fill
 
-    context.set_source_rgb(0, 0, 0) #原子の円周
+    context.set_source_rgb(0, 0, 0)
     [[0,3],[3,0]].each{|line|
       x,y=line[0],line[1]
       context.move_to(cx,cy)
-      context.line_to(cx+x*scale,cy+y*scale) #座標（cx,cy）から描画
+      context.line_to(cx+x*scale,cy+y*scale)
       context.stroke
     }
     context.set_source_rgb(1, 0, 0)
     @atom_list.each{|pos|
       x,y,z = pos[0],pos[1],pos[2]
       context.arc(cx+x*s1*scale, cy+y*s1*scale, radius, 0, 2 * Math::PI)
-      #原子の大きさ
       context.fill
     }
 

@@ -4,7 +4,6 @@ require 'scanf'
 
 lines = File.readlines(ARGV[0])
 
-
 lattice = []
 lines[2..4].each{|line|
   lattice << line.scanf("%f %f %f\n")
@@ -27,11 +26,13 @@ atom.each{|pos|
   }
   real_pos <<  r_pos
 }
+# p real_pos  
 
-width,height = 400,300
-cx,cy = width/2.0,height/2.0
+width,height = 300,200
+cx,cy = width*3.0/2.0,height*3.0/2.0
 r = 2
-scale = 0.05
+adjust = 0.0005
+scale = 100
 
 surface = Cairo::SVGSurface.new('hg2.svg', width, height)
 context = Cairo::Context.new(surface)
@@ -46,19 +47,18 @@ context.set_source_rgb(1, 0, 0)
 real_pos.each{|pos|
 #  p pos
 #  p width*scale*pos[0] , height*scale*pos[1]
-  context.circle(width*scale*pos[0] , height*scale*pos[1], r)
-  context.fill
-}
+  context.circle(cx*adjust*scale*pos[0] ,cy*adjust*scale*pos[1], r)
+  context.fill}
 
 #coordinate
 context.set_source_rgb(0, 0, 0)
-  [[0,-3],[3,0]].each{|line|
+  [[0,2],[2,0]].each{|line|
       x,y=line[0],line[1]
-      context.move_to(cx,cy)
-      context.line_to(cx+x*100,cy+y*100)
+      context.move_to(x,y)
+      context.line_to(x*scale*3.0/2.0,y*scale)
       context.stroke
-  }
-  
+}
+
 context.show_page
 surface.finish
 
