@@ -61,7 +61,12 @@
   :title: vaspの緩和(relax)計算
   :cont:
   - "  vs -i でdirectoryの初期化．pwdのVASP filesをfullrelax配下にcp"
-  - "  作業中断，緩和の計算．．．"
+  - "  fullrelaxをうごしてみて．．．"
+  - "  innerrelaxを手動で作成"
+  - "  INCARのISIFを3から2に変更"
+  - "  /home/bob/2223/innerelax/auto_expand.rbを参考に順次latticeを変更しながらinnerrelax計算"
+  - "  プロットの自動化は今後対応しな．"
+
 :view:
   :opts:
     :short: -v
