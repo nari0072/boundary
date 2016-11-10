@@ -6,11 +6,11 @@
 *rake install:localで localにinstall
 *boundaryを同様にgit cloneしてlocal install
 
-!!boundaryで粒界モデルの作成
+!![[boundary|file.maker.html]]で粒界モデルの作成
 *boundary -d 'spec' -m '2 2 2 3'
 *POSCAR_2223がspec dirに作成される
 
-!!adjusterで粒界モデルの修正
+!![[adjuster|file.adjuster.html]]で粒界モデルの修正
 *Selective dynamicsをPOSCARに入れる
 *ruby adjusterで修正開始
 *energyと座標を見て重なっているatomsをdelしていく
@@ -27,7 +27,7 @@
 **vs --fix　でinitialあるいはfullrelaxからfixを作成
 **vs でvasp計算をsubmit
 
-!!vaspの緩和(relax)計算
+!![[vaspの緩和(relax)計算|file.relax_Al.html]]
 *  vs -i でdirectoryの初期化．pwdのVASP filesをfullrelax配下にcp
 *  作業中断，緩和の計算．．．
 
