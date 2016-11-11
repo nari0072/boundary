@@ -1,0 +1,19 @@
+
+-viewerの構造説明-
+
+5行目，lines = File.readlines(ARGV[0])
+linesに読み込んだファイルを格納する
+
+7行目，lattice = [ ]
+ファイルを読み込んだlines内の番号2から4までの3つの格子座標を
+読み込んで配列latticeに格納する．
+
+12行目，atom = [ ]
+ファイルを読み込んだlines内の番号７から最後までの3つの原子座標を
+読み込んで配列atomに格納する．
+
+関数pos.each_with_index
+xxに原子の座標を入力，格子の各座標をlx,ly,lzに代入，
+順番に原子座標と格子座標を加算して配列real_posに格納．
+
+

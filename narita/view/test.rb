@@ -3,6 +3,7 @@ require 'cairo'
 require 'scanf'
 
 lines = File.readlines(ARGV[0])
+m = 3.0
 
 lattice = []
 lines[2..4].each{|line|
@@ -17,21 +18,21 @@ lines[7..a_max].each{|line|
 
 real_pos=[]
 atom.each{|pos|
-  r_pos=[0.0,0.0,0.0]
+  r_pos=[m,m,m]
   pos.each_with_index{|xx,i|
     lx,ly,lz=lattice[i]
-    r_pos[0] += xx*lx
-    r_pos[1] += xx*ly
-    r_pos[2] += xx*lz
+    r_pos[0] += xx*lx 
+    r_pos[1] += xx*ly 
+    r_pos[2] += xx*lz 
   }
   real_pos <<  r_pos
 }
 # p real_pos  
 
 width,height = 300,200
-cx,cy = width*3.0/2.0,height*3.0/2.0
+cx,cy = width*2.0/3.0,height/2.0
 r = 2
-adjust = 0.0005
+adjust = 0.001
 scale = 100
 
 surface = Cairo::SVGSurface.new('hg2.svg', width, height)
@@ -47,15 +48,15 @@ context.set_source_rgb(1, 0, 0)
 real_pos.each{|pos|
 #  p pos
 #  p width*scale*pos[0] , height*scale*pos[1]
-  context.circle(cx*adjust*scale*pos[0] ,cy*adjust*scale*pos[1], r)
+  context.circle(cx*adjust*scale*pos[0], cy*adjust*scale*pos[1], r)
   context.fill}
 
 #coordinate
 context.set_source_rgb(0, 0, 0)
-  [[0,2],[2,0]].each{|line|
-      x,y=line[0],line[1]
-      context.move_to(x,y)
-      context.line_to(x*scale*3.0/2.0,y*scale)
+[[0,1.0],[1.0,0]].each{|line|
+      x,y,z=line[0],line[1]
+      context.move_to(x+m*10,y+m*10)
+      context.line_to(cx*x*scale,cy*y*scale)
       context.stroke
 }
 
