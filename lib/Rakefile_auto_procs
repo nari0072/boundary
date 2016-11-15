@@ -7,36 +7,42 @@ task :collect_res do
   p pwd=Dir.pwd
   p target_dir = File.join(pwd,ARGV[1])
   dirs=Dir.entries(target_dir)
-  cont=""
-  dirs.each{|dir|
-    next if ['.','..'].include?(dir)
-    p dir
-    Dir.chdir(File.join(target_dir,dir))
-    cont << Dir.pwd+"\n"
-    status, stdout, stderr = systemu("head POSCAR")
-    lines = stdout.split("\n")
-    p xx=lines[2].split(' ')[0].to_f
-    p yy=lines[3].split(' ')[1].to_f
-    p zz=lines[4].split(' ')[2].to_f
-    status, stdout, stderr = systemu("tail inner_*.o* |grep 'F='")
-    p dF= stdout.scan(/F=(.+) E0/)[0][0].to_f
-    p dE=dF-31*(-3.739501247)
-    p e_s=dE/(yy*zz)*1.60218*10/2
-    cont << dF.to_s+":"+e_s.to_s+"\n"
-    Dir.chdir(pwd)
+  cont="#i  j  dE  \n"
+
+  [-2,-1,0].each{|x_val|
+    [-2,-1,0,1,2].each{|y_val|
+      p dir="inner_relax_#{x_val}_#{y_val}"
+#      next unless Dir.exists?(File.join(pwd,target_dir))
+      i,j=dir.split('_')[2,3]
+      cont << sprintf("%4d %4d ",i,j)
+      Dir.chdir(File.join(target_dir,dir))
+      p Dir.pwd
+      status, stdout, stderr = systemu("head POSCAR")
+      lines = stdout.split("\n")
+      p xx=lines[2].split(' ')[0].to_f
+      p yy=lines[3].split(' ')[1].to_f
+      p zz=lines[4].split(' ')[2].to_f
+      cont << sprintf("%10.5f %10.5f %10.5f ",xx,yy,zz)
+      status, stdout, stderr = systemu("tail inner_*.o* |grep 'F='")
+      p dF= stdout.scan(/F=(.+) E0/)[0][0].to_f
+      p dE=dF-31*(-3.739501247)
+      p e_s=dE/(yy*zz)*1.60218*10/2
+      cont << dF.to_s+" "+e_s.to_s+"\n"
+      Dir.chdir(pwd)
+    }
   }
   print cont
 end
 
-desc "change values and expand dirs"
+desc "Quation!! Need manual modif. in Rakefile, change values and expand dirs."
 task :expand do
   p file = ARGV[1]
+  p opts = {:realrun=>false, :vs=>false} #first step
 #  p opts = {:realrun=>true, :vs=>false} #second step
-#  p opts = {:realrun=>false, :vs=>false} #first step
-  p opts = {:realrun=>true, :vs=>true}  #last
+#  p opts = {:realrun=>true, :vs=>true}  #last
 
   [-2,-1,0,1,2].each{|x_val|
-    [-2,-1,0,1,2].each{|y_val|
+    [-2].each{|y_val|
 #    [0].each{|y_val|
       lines = File.readlines(file)
       head0 = lines[0].chomp
@@ -48,21 +54,26 @@ task :expand do
       p lines[2].sub!(x0.to_s,xx.to_s)
       p yy=y0*(1.0+y_val/100.0)
       p lines[3].sub!(y0.to_s,yy.to_s)
-      # mkdir
+
       dir = "inner_relax_#{x_val}_#{y_val}"
       head = "  Make VASP dir #{dir} for #{file} calc. xx=#{x_val} and yy=#{y_val}\n"
       p  lines[0] = head0+head
 
       if opts[:realrun] == true
+        # mkdir
         unless File.exists?(dir)
           Dir.mkdir(dir) 
         else
           print "#{dir} exists.  Check it.\n"
         end
-        # print modified POSCAR
+        # write modified POSCAR
         t_file = File.open(File.join(dir,'POSCAR'),'w')
         lines.each{|line| t_file.print(line)}
         t_file.close
+
+#        File.open(File.join(dir,'POSCAR'),'w'){|t_file|
+#          lines.each{|line| t_file.print(line)}
+#        }
         
         # copy other CARs
         FileUtils.cp('POTCAR',dir,:verbose=>true)
