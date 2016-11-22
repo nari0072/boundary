@@ -1,6 +1,7 @@
 
 -viewerの構造説明-
 
+ARGV
 lines = File.readlines(ARGV[0])
 linesに読み込んだファイルを格納する
 
@@ -19,5 +20,20 @@ posで原子座標xxをiでまわす
 関数pos.each_with_index
 xxに原子の座標を入力，格子の各座標をlx,ly,lzに代入，
 順番に原子座標と格子座標を加算して配列real_posに格納．
+
+=begin                                                       
+ real_pos=[]                                                 
+ atom.each{|i|                                               
+ rpos=[0.0,0.0,0.0]                                          
+ i.each_with_index{|a,j|                                     
+ 3.times{|k|                                                 
+ rpos[k] += a*lattice[j]                                     
+  }                                                          
+ }                                                           
+ real_pos <<  rpos                                           
+}                                                            
+ p real_pos                                                  
+=end
+
 
 
