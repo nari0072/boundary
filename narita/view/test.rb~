@@ -29,7 +29,7 @@ def read_pos(lines, init_line)
   return pos_2223
 end
 
-def identical?(i_atom,j_atom)
+def identical_atom(i_atom,j_atom)
   dist=0.0
   3.times{|i|
     dd = i_atom[i]-j_atom[i]
@@ -53,14 +53,12 @@ pos_2223[0..i_max].each_with_index{|i_atom,i|
   jj=0
   pos_2223_4[0..j_max].each_with_index{|j_atom,j|
     #print "#{i}-#{j}\n"
-    break if identical?(i_atom,j_atom)
+    break if identical_atom(i_atom,j_atom)
      jj = j
   }
-  mark_atom << i if jj==(j_max-1)
-  p mark_atom[i]
+  mark_atom << pos_2223[i] if jj==(j_max-1)
 }
-#p mark_atom
-exit
+# p mark_atom
 
 width,height = 300,200
 cx,cy = width/2.0,height/2.0
@@ -86,54 +84,18 @@ context.set_source_rgb(0, 0, 0)
 }
 
 #atomic
-#距離で削除された原子を判定
-dist=[],dis_x=[0.0],dis_y=[0.0],dis_z=[0.0]
-a_max=atom2.length-1
-(0..a_max).each{|i|
-     dis_x[i] = pos_2223[i][0] - pos_2223_4[i][0]
-     dis_y[i] = pos_2223[i][1] - pos_2223_4[i][1]
-     dis_z[i] = pos_2223[i][2] - pos_2223_4[i][2]
-     dist[i] =  Math.sqrt((dis_x[i] *dis_x[i]) + (dis_y[i]*dis_y[i]) + (dis_z[i]*dis_z[i]))
-}
-p dist
-(0..a_max).each{|i|
-    if dist[i] > 10 then
-    context.circle(cx+adjust*scale*pos_2223[i][0],cy+adjust*scale*pos_2223[i][1], r)
-    context.set_source_rgb(1, 0, 0)
-    context.fill
-    
-=begin
-    else
-    context.circle(cx+adjust*scale*pos_2223[i][0],cy+adjust*scale*pos_2223[i][1], r)
-    context.set_source_rgb(1, 0, 0)
-    context.fill
-=end
-    end
-}
-
-=begin
-#各座標の値一致を判定
-deli_atom=[]
-a_max1=atom1.length-1
-a_max2=atom2.length-1
-(0..a_max1).each{|i|
-    (0..a_max2).each{|j|
-        if pos_2223[i][0] != pos_2223_4[j][0] then 
-            if pos_2223[i][1] != pos_2223_4[j][1] then
-                if pos_2223[i][2] != pos_2223_4[j][2] then
-                    deli_atom << pos_2223
-                end
-            end
-        end
+pos_2223.each{|pos|
+context.circle(cx+adjust*scale*pos[0],cy+adjust*scale*pos[2], r)
+context.set_source_rgb(1, 0, 0)
+context.fill
+    mark_atom.each{|d|
+        # if mark_atom == pos then
+        context.circle(cx+adjust*scale*d[0],cy+adjust*scale*d[2], r*1.5)
+        context.set_source_rgb(0, 0, 1)
+        context.fill
+        #end
     }
 }
-# p deli_atom
-deli_atom.each{|pos|
-    context.circle(cx+adjust*scale*pos[0],cy+adjust*scale*pos[1], r)
-    context.set_source_rgb(1, 0, 0)
-    context.fill
-}
-=end
 
 context.show_page
 surface.finish

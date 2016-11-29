@@ -85,12 +85,12 @@ context.set_source_rgb(0, 0, 0)
 
 #atomic
 pos_2223.each{|pos|
-context.circle(cx+adjust*scale*pos[0],cy+adjust*scale*pos[1], r)
+context.circle(cx+adjust*scale*pos[0],cy+adjust*scale*pos[2], r)
 context.set_source_rgb(1, 0, 0)
 context.fill
     mark_atom.each{|d|
         # if mark_atom == pos then
-        context.circle(cx+adjust*scale*d[0],cy+adjust*scale*d[1], r*1.5)
+        context.circle(cx+adjust*scale*d[0],cy+adjust*scale*d[2], r*1.5)
         context.set_source_rgb(0, 0, 1)
         context.fill
         #end
