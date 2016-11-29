@@ -2,37 +2,69 @@
 require 'cairo'
 require 'scanf'
 
-lines = File.readlines(ARGV[0])
-
-lattice = []
-lines[2..4].each{|line|
-  lattice << line.scanf("%f %f %f\n")
-}
-
-atom = []
-a_max=lines.length+1
-lines[7..a_max].each{|line|
-  atom << line.scanf("%f %f %f\n")
-}
-
-real_pos=[]
-atom.each{|pos|
-  r_pos=[0.0,0.0,0.0]
-  pos.each_with_index{|xx,i|
-    lx,ly,lz=lattice[i]
-    r_pos[0] += xx*lx
-    r_pos[1] += xx*ly
-    r_pos[2] += xx*lz
+def read_pos(lines, init_line)
+  lattice1 = []
+  lines[2..4].each{|line|
+    lattice1 << line.scanf("%f %f %f\n")
   }
-  real_pos <<  r_pos
+
+  atom1 = []
+  a_max=lines.length+1
+  lines[init_line..a_max].each{|line|
+    atom1 << line.scanf("%f %f %f\n")
+  }
+
+  pos_2223=[]
+  atom1.each{|i|
+    pos1=[0.0,0.0,0.0]
+    i.each_with_index{|a,j|
+      lx,ly,lz=lattice1[j]
+      pos1[0] += a*lx  #原子座標 x 格子座標
+      pos1[1] += a*ly
+      pos1[2] += a*lz
+    }
+    pos_2223 << pos1
+  }
+  #p pos_2223
+  return pos_2223
+end
+
+def identical_atom(i_atom,j_atom)
+  dist=0.0
+  3.times{|i|
+    dd = i_atom[i]-j_atom[i]
+    dist += dd*dd
+  }
+  return true if Math.sqrt(dist)<0.0001
+  return false
+end
+
+lines1 = File.readlines(ARGV[0])
+lines2 = File.readlines(ARGV[1])
+
+pos_2223 = read_pos(lines1,7)
+pos_2223_4 = read_pos(lines2,8)
+
+ i_max = pos_2223.length
+ j_max = pos_2223_4.length
+
+mark_atom=[]
+pos_2223[0..i_max].each_with_index{|i_atom,i|
+  jj=0
+  pos_2223_4[0..j_max].each_with_index{|j_atom,j|
+    #print "#{i}-#{j}\n"
+    break if identical_atom(i_atom,j_atom)
+     jj = j
+  }
+  mark_atom << pos_2223[i] if jj==(j_max-1)
 }
-# p real_pos  
+# p mark_atom
 
 width,height = 300,200
-cx,cy = width*3.0/2.0,height*3.0/2.0
+cx,cy = width/2.0,height/2.0
 r = 2
-adjust = 0.0005
-scale = 100
+adjust = 0.001
+scale = 10000
 
 surface = Cairo::SVGSurface.new('hg2.svg', width, height)
 context = Cairo::Context.new(surface)
@@ -42,42 +74,28 @@ context.set_source_rgb(0.9, 0.9, 0.9)
 context.rectangle(0, 0, width, height)
 context.fill
 
-#atomic
-context.set_source_rgb(1, 0, 0)
-real_pos.each{|pos|
-#  p pos
-#  p width*scale*pos[0] , height*scale*pos[1]
-  context.circle(cx*adjust*scale*pos[0] ,cy*adjust*scale*pos[1], r)
-  context.fill}
-
 #coordinate
 context.set_source_rgb(0, 0, 0)
-  [[0,2],[2,0]].each{|line|
-      x,y=line[0],line[1]
-      context.move_to(x,y)
-      context.line_to(x*scale*3.0/2.0,y*scale)
-      context.stroke
+[[0,1.0],[1.0,0]].each{|line|
+    x,y=line[0],line[1]
+    context.move_to(cx,cy)
+    context.line_to(cx+x*scale,cy+y*scale)
+    context.stroke
+}
+
+#atomic
+pos_2223.each{|pos|
+context.circle(cx+adjust*scale*pos[0],cy+adjust*scale*pos[1], r)
+context.set_source_rgb(1, 0, 0)
+context.fill
+    mark_atom.each{|d|
+        # if mark_atom == pos then
+        context.circle(cx+adjust*scale*d[0],cy+adjust*scale*d[1], r*1.5)
+        context.set_source_rgb(0, 0, 1)
+        context.fill
+        #end
+    }
 }
 
 context.show_page
 surface.finish
-
-#配列latticeで原子配置
-=begin
-p  screen_x = 700, screen_y = 500, radius = 3
-cx,cy = screen_x/2.0,screen_y*2.0/3.0
-@scale = 100
-s1=0.1;
-a,b=$lattice[0][0]*s1*scale,b=$lattice[1][1]*s1*scale;
-p  a, b, cx, cy
-context.set_source_rgb(0.5, 0.5, 0.5)
-context.rectangle(cx-a/2.0,cy,cx-a/2.0, cy-b)
-context.fill
-
-context.set_source_rgb(1, 0, 0)
-@atom_list.each{|pos|
-x,y,z = pos[0],pos[1],pos[2]
-context.arc(cx+x*s1*scale, cy+y*s1*scale, radius, 0, 2 * Math::PI)
-context.fill
-}
-=end
