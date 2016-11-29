@@ -7,6 +7,9 @@
 /pkg/
 /spec/reports/
 /tmp/
+<<<<<<< HEAD
 /Al_0deg/
+=======
 .DS_Store
 
+>>>>>>> c4e8ba04e9b780b7b799936c3261f72bb187b08f
