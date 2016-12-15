@@ -62,14 +62,13 @@ end
 def main_draw(lines1,lines2,opts)
   width,height = 300,200
   cx,cy = width/2.0,height/2.0
-  mv = 10
   scale = 10000
   surface = Cairo::SVGSurface.new('hg2.svg', width, height)
   context = Cairo::Context.new(surface)
 
   draw_backcolor(context,width,height)
-  draw_axes(context,cx,cy,mv,scale)
-  draw_atoms(context,width,height,cx,cy,mv,scale,lines1,lines2,opts)
+  draw_axes(context,cx,cy,scale)
+  draw_atoms(context,width,height,cx,cy,scale,lines1,lines2,opts)
   surface.finish
 end
 
@@ -79,25 +78,25 @@ def draw_backcolor(context,width,height)
   context.fill
 end
 
-def draw_axes(context,cx,cy,mv,scale)
+def draw_axes(context,cx,cy,scale)
   context.set_source_rgb(0, 0, 0)
   [[0,1.0],[1.0,0]].each{|line|
     x,y=line[0],line[1]
-    context.move_to(mv,mv)
-    context.line_to(mv+x*scale,mv+y*scale)
+    context.move_to(0,0)
+    context.line_to(x*scale,y*scale)
     context.stroke
     
-    context.move_to(mv+cx,mv)
-    context.line_to(mv+cx+x*scale,mv+y*scale)
+    context.move_to(cx,0)
+    context.line_to(cx+x*scale,y*scale)
     context.stroke
     
-    context.move_to(mv,mv+cy)
-    context.line_to(mv+x*scale,mv+cy+y*scale)
+    context.move_to(0,cy)
+    context.line_to(x*scale,cy+y*scale)
     context.stroke
   }
 end
 
-def draw_atoms(context,width,height,cx,cy,mv,scale,lines1,lines2,opts={})
+def draw_atoms(context,width,height,cx,cy,scale,lines1,lines2,opts={})
   r = 2
   adjust = scale/1000
   pos_before = read_pos(lines1,8)
@@ -108,63 +107,63 @@ def draw_atoms(context,width,height,cx,cy,mv,scale,lines1,lines2,opts={})
   
   #xy_atom
   pos_after.each{|pos|
-    context.circle(mv+adjust*pos[0],mv+adjust*pos[1], r)
+    context.circle(adjust*pos[0],adjust*pos[1], r)
     context.set_source_rgb(0, 0, 1)
     context.fill
     erasure_atom(lines1,lines2).each{|d|
-      context.circle(mv+adjust*d[0],mv+adjust*d[1], r)
+      context.circle(adjust*d[0],adjust*d[1], r)
       context.set_source_rgb(1, 0, 0)
       context.fill
     }
   }
   if opts[:same_size]
     (0..vector_max).each{|vector|
-      context.set_source_rgb(1, 0.8, 0)
-      context.move_to(mv+adjust*pos_before[vector][0],mv+adjust*pos_before[vector][1])
-      context.line_to(mv+adjust*pos_after[vector][0],mv+adjust*pos_after[vector][1])
-      context.set_line_width(2)
+      context.set_source_rgb(0, 0.8, 1)
+      context.move_to(adjust*pos_before[vector][0],adjust*pos_before[vector][1])
+      context.line_to(adjust*pos_after[vector][0],adjust*pos_after[vector][1])
+      context.set_line_width(1)
       context.stroke
     }
   end
   
   #xz_atom
   pos_after.each{|pos|
-    context.circle(mv+adjust*pos[0],mv+cy+adjust*pos[2], r)
+    context.circle(cx+adjust*pos[0],adjust*pos[2], r)
     context.set_source_rgb(0, 0, 1)
     context.fill
     erasure_atom(lines1,lines2).each{|d|
-      context.circle(mv+adjust*d[0],mv+cy+adjust*d[2], r)
+      context.circle(cx+adjust*d[0],adjust*d[2], r)
       context.set_source_rgb(1, 0, 0)
       context.fill
     }
   }
   if opts[:same_size]
     (0..vector_max).each{|vector|
-      context.set_source_rgb(1, 0.8, 0)
-      context.move_to(mv+adjust*pos_before[vector][0],mv+cy+adjust*pos_before[vector][2])
-      context.line_to(mv+adjust*pos_after[vector][0],mv+cy+adjust*pos_after[vector][2])
-      context.set_line_width(2)
+      context.set_source_rgb(0, 0.8, 1)
+      context.move_to(cx+adjust*pos_before[vector][0],adjust*pos_before[vector][2])
+      context.line_to(cx+adjust*pos_after[vector][0],adjust*pos_after[vector][2])
+      context.set_line_width(1)
       context.stroke
     }
   end
   
   #yz_atom
   pos_after.each{|pos|
-    context.circle(mv+cx+adjust*pos[1],mv+cy+adjust*pos[2], r)
+    context.circle(adjust*pos[1],cy+adjust*pos[2], r)
     context.set_source_rgb(0, 0, 1)
     context.fill
     erasure_atom(lines1,lines2).each{|d|
-      context.circle(mv+cx+adjust*d[1],mv+cy+adjust*d[2], r)
+      context.circle(adjust*d[1],cy+adjust*d[2], r)
       context.set_source_rgb(1, 0, 0)
       context.fill
     }
   }
   if opts[:same_size]
     (0..vector_max).each{|vector|
-      context.set_source_rgb(1, 0.8, 0)
-      context.move_to(mv+cx+adjust*pos_before[vector][1],mv+cy+adjust*pos_before[vector][2])
-      context.line_to(mv+cx+adjust*pos_after[vector][1],mv+cy+adjust*pos_after[vector][2])
-      context.set_line_width(2)
+      context.set_source_rgb(0, 0.8, 1)
+      context.move_to(adjust*pos_before[vector][1],cy+adjust*pos_before[vector][2])
+      context.line_to(adjust*pos_after[vector][1],cy+adjust*pos_after[vector][2])
+      context.set_line_width(1)
       context.stroke
     }
   end
