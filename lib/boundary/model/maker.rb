@@ -147,6 +147,7 @@ class BoundaryModelMaker < Poscar
       text << sprintf("%15.10f %15.10f %15.10f\n",a0*2.0*vec[0],a0*vec[1],a0*vec[2])
     }
     text << sprintf("%d\n",@pos_size)
+    text << sprintf("Selective dynamics\n")
     text << sprintf("Direct\n")
     @pos.each{|pos| text << sprintf("%15.10f %15.10f %15.10f T T T \n",(1.0+pos[0])/2.0,pos[1],pos[2])}
     return text
