@@ -34,4 +34,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "cairo"
   spec.add_development_dependency "mathjax-yard"
   spec.add_development_dependency "pseudovasp"
+  spec.add_development_dependency "thor"
 end
