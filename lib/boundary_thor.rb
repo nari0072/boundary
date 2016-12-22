@@ -7,51 +7,26 @@ require 'thor'
 
 module Boundary
   # Your code goes here...
-  class Command
-
-    def self.run(argv=[])
-      print "boundary says 'Hello world'.\n"
-      new(argv).execute
+  class CLI < Thor
+    desc 'version', 'version'
+    def version
+      puts Boundary::VERSION
     end
 
-    def initialize(argv=[])
-      @argv = argv
+    desc 'directory DIR', 'set target directory to DIR'
+    def directory(dir)
+      p  @target_dir = dir
     end
 
-    def execute
-      @argv << '--help' if @argv.size==0
-      command_parser = OptionParser.new do |opt|
-        opt.on('--version','show program Version.') { |v|
-          opt.version = Boundary::VERSION
-          puts opt.ver
-        }
-        opt.on('-d STRING', "--directory \'spec\'", String, 'select the target directory.') { |str|
-          @target_dir = str
-        }
-        opt.on('-m STRING', "--make \'2 2 2 3\'", String, 'make a boundary model.') { |str|
-          @run='make'
-          @opts=str
-        }
-        opt.on('-v STRING', "--view \'2 2 2 3\'", String, 'view a boundary model.') { |str|
-          @run='view'
-          @opts=str
-        }
-      end
-      command_parser.parse!(@argv)
-      p @target_dir ||= './'
-
-      FileUtils.cd(@target_dir){
-        case @run
-        when 'make'
-          make(@opts)
-        when 'view'
-          view(@opts)
-        end
-      }
-      exit
+    desc 'make STRING', "make model with \'2 2 2 3\'"
+    def make(string)
+      make_model(string)
     end
 
-    def make(str)
+    private 
+    def make_model(str)
+      Dir.chdir(@target_dir||'.')
+      p Dir.pwd
       p str
       if str==nil then
         print "Usage: boundary -m \'2 2 2 3\'\n"
@@ -68,18 +43,8 @@ module Boundary
       file.close
     end
 
-    def view(str)
-      p str
-      if str==nil then
-        print "Usage: boundary -v \'2 2 2 3\'\n"
-        exit
-      end
-
-      make(str)
-      p ext=str.gsub(' ','')
-      p file_name="POSCAR_#{ext}"
-      viewer = BoundaryView.new(file_name)
-      viewer.display(file_name)
-    end
   end
+
+
+
 end

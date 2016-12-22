@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+#require "boundary"
+require "boundary_thor"
+
+#Boundary::Command.run(ARGV)
+Boundary::CLI.start(ARGV)
