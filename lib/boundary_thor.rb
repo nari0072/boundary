@@ -21,8 +21,7 @@ module Boundary
     private
     def make_model(str)
       l,m,n,d=str.split(' ').map!{|ele| ele.to_i}
-      ext=str.gsub(' ','')
-      p file_name="POSCAR_#{ext}"
+      p file_name="POSCAR_"+str.gsub(' ','')
 
       boundary=BoundaryModelMaker.new('POSCAR',l,m,n,d)
       File.open(file_name,'w'){|file| file.print boundary.display}
