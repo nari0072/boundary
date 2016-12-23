@@ -1,6 +1,8 @@
 require "boundary/version"
 require "boundary/command/options"
 require "boundary/model/maker"
+require "boundary/adjuster/adjuster"
+#require "boundary/adjuster/mover/boundary_model_mover"
 require "boundary/view/viewer"
 require 'optparse'
 require 'thor'
@@ -16,6 +18,11 @@ module Boundary
     desc 'make STRING', "make model with \'2 2 2 3\'"
     def make(string)
       make_model(string)
+    end
+
+    desc 'adjust [FILE]', "adjust FILE model"
+    def adjust(file=nil)
+      boundary_model=BoundaryModelAdjuster.new(file)
     end
 
     private

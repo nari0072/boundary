@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 require 'fileutils'
 require 'pseudovasp'
-require './mover/boundary_model_move'
+require_relative './mover/boundary_model_move'
 
 def vasp_calc(file_name, opts={output: :show_energy, potential: :eam})
   target=PseudoVASP.new(file_name, opts)
@@ -14,16 +14,21 @@ class BoundaryModelAdjuster
   COMMAND_QUERY="Input [l]og, [q]uit or indexes of deleting atoms(87,12,...)] : "
   attr_reader :ini_file, :log
 
-  def initialize()
+  def initialize(file=nil)
     @log=[]
-    gets_file_name
+    unless file.nil?
+      @ini_file = file 
+      @log << @ini_file
+    else
+      gets_file_name(file)
+    end
     adjust
   end
 
-  def gets_file_name()
-    default='POSCAR_2223'
+  def gets_file_name(file=nil)
+    default='POSCAR_2223'||file
     print "input initial file_name[default #{default}]: "
-    f_name=gets.chomp
+    p f_name=STDIN.gets.chomp
     ini_file = (f_name =='') ?  default : f_name
     @ini_file=ini_file
     @log << @ini_file
@@ -62,7 +67,7 @@ class BoundaryModelAdjuster
     pseudo_calc(file_name)
     I_MAX.times{|i_times|
       print COMMAND_QUERY
-      p command=gets.chomp
+      p command= STDIN.gets.chomp
       p numbers = command.match(/[\d(,|)]*/)
       @log << command
       if numbers[0]!="" then
@@ -71,7 +76,7 @@ class BoundaryModelAdjuster
         boundary.delete(atoms)
         p file_name="#{@ini_file}_#{i_times}"
         boundary.new_poscar(file_name)
-      elsif command[0] == 'l' then 
+      elsif command[0] == 'l' then
         print_log
         next
       elsif command[0] == 'q' then

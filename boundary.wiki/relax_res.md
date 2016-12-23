@@ -123,3 +123,44 @@ count = 0
   }
 }
 ```
+
+# 緩和計算結果
+## 2223
+```
+sprintf("%10.5f eV, %10.5f J/m^2 (area:%10.5f A^2)\n",
+                   d_energy, d_energy/(yy*zz)*1.60218*10/2, yy*zz)
+> -.11236558E+03-31*(-3.739501247);
+                                                       3.5589587
+
+> %/(6.2863189 * 8.0828);
+                                                     0.07004299480
+
+> %*1.60218*10/2;
+                                                     0.5611074270
+```
+561.1mJ/m^2ですな．
+
+```
+/home/bob/2223/innerelax/succeeded/inner_relax_1_1
+-112.30096:0.5600386596598604
+/home/bob/2223/innerelax/succeeded/inner_relax_0_0
+-112.36558:0.5611074113950909
+/home/bob/2223/innerelax/succeeded/inner_relax_1_0
+-112.32077:0.562546713905762
+/home/bob/2223/innerelax/succeeded/inner_relax_1_2
+-112.22028:0.5668396814337117
+/home/bob/2223/innerelax/succeeded/inner_relax_1_3
+-112.02133:0.591370062890737
+/home/bob/2223/innerelax/succeeded/inner_relax_0_3
+-112.36584:0.5610664196497437
+/home/bob/2223/innerelax/succeeded/inner_relax_0_4
+-112.25893:0.5779219100146739
+/home/bob/2223/innerelax/succeeded/inner_relax_1_4
+-111.59533:0.6494185825492714
+/home/bob/2223/innerelax/succeeded/inner_relax_0_2
+-112.37954:0.5589064699911566
+/home/bob/2223/innerelax/succeeded/inner_relax_0_1
+-112.37954:0.5589064699911566
+```
+
+さてgnuplot．いつも忘れてしまうな．．．
