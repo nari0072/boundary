@@ -47,7 +47,7 @@ context.set_source_rgb(0, 0, 0)
 [[0,1.0],[1.0,0]].each{|line|
   x,y=line[0],line[1]
   context.move_to(cx,cy)
-  context.line_to(cx+x*scale,cy+y*scale)
+  context.line_to(cx+x*scale,cy-y*scale)
   context.stroke
 }
 
@@ -64,7 +64,8 @@ end
 x_min,y_min=cx-pos_min[0],cy-pos_min[1]
 
 poscar.each{|pos|
-    context.circle(x_min+cx-adjust*pos[0],y_min+cy-adjust*pos[1], r)
+    #p cy-adjust*pos[1]
+    context.circle(cx+adjust*pos[0],cy-adjust*pos[1], r)
     context.set_source_rgb(1, 0, 0)
     context.fill
 }

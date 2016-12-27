@@ -60,7 +60,6 @@ pos_num.times do |i|
 end
 
 poscar.each{|pos|
-    p pos_max-pos[1]
     context.circle(cx+adjust*pos[0],(pos_max-pos[1])*adjust+cy, r)
     context.set_source_rgb(1, 0, 0)
     context.fill
