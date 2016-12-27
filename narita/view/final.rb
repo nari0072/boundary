@@ -2,7 +2,6 @@
 require 'cairo'
 require 'scanf'
 
-#p lines1.length
 def read_pos(lines, init_line)
   lattice = []
   lines[2..4].each{|line|
@@ -101,8 +100,6 @@ def draw_atoms(context,width,height,cx,cy,mv,scale,lines1,lines2,opts={})
   adjust = scale/100
   pos_before = read_pos(lines1,8)
   pos_after = read_pos(lines2,8)
-  #p pos_before.length
-  #p pos_after.length
   vector_max = pos_before.length-1
   
   #xy_atom
