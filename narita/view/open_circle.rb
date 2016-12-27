@@ -12,7 +12,7 @@ def read_pos(lines, init_line)
   lines[init_line..a_max].each{|line|
     atom << line.scanf("%f %f %f\n")
   }
-  
+
   #x=[1,2,3,4]
   poscar=[]
   atom.each{|i|
@@ -61,21 +61,17 @@ def main_draw(lines)
     context.line_to(cx+x*scale,cy+y*scale)
     context.stroke
   }
-  
+
   atoms.each{|pos|
     context.set_source_rgb(1, 0, 0)
     context.circle(cx+adjust*pos[0],cy+adjust*pos[2], r)
-    context.fill
+    if pos[1]>0.4 then
+      context.fill
+    else
+      context.stroke
+    end
   }
-  
-=begin
-  cavity_atoms.each{|pos|
-    context.circle(cx+adjust*pos[0],cy+adjust*pos[2], r)
-    context.set_source_rgb(0, 0, 1)
-    context.set_line_width(1)
-    context.stroke
-    }
-=end
+
 surface.finish
 end
 

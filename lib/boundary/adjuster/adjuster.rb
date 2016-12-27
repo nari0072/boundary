@@ -16,21 +16,15 @@ class BoundaryModelAdjuster
 
   def initialize(file=nil)
     @log=[]
-    unless file.nil?
-      @ini_file = file 
-      @log << @ini_file
-    else
-      gets_file_name(file)
-    end
-    adjust
+    gets_file_name(file)
+    adjust()
   end
 
   def gets_file_name(file=nil)
-    default='POSCAR_2223'||file
+    default=file || 'POSCAR_2223'
     print "input initial file_name[default #{default}]: "
-    p f_name=STDIN.gets.chomp
-    ini_file = (f_name =='') ?  default : f_name
-    @ini_file=ini_file
+    input=STDIN.gets.chomp
+    @ini_file=( input  =='') ?  default : input
     @log << @ini_file
   end
 

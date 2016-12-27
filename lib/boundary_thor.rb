@@ -2,7 +2,6 @@ require "boundary/version"
 require "boundary/command/options"
 require "boundary/model/maker"
 require "boundary/adjuster/adjuster"
-#require "boundary/adjuster/mover/boundary_model_mover"
 require "boundary/view/viewer"
 require 'optparse'
 require 'thor'
@@ -17,7 +16,11 @@ module Boundary
 
     desc 'make STRING', "make model with \'2 2 2 3\'"
     def make(string)
-      make_model(string)
+      l,m,n,d=string.split(' ').map!{|ele| ele.to_i}
+      p file_name="POSCAR_"+string.gsub(' ','')
+
+      boundary=BoundaryModelMaker.new('POSCAR',l,m,n,d)
+      File.open(file_name,'w'){|file| file.print boundary.display}
     end
 
     desc 'adjust [FILE]', "adjust FILE model"
@@ -25,16 +28,5 @@ module Boundary
       boundary_model=BoundaryModelAdjuster.new(file)
     end
 
-    private
-    def make_model(str)
-      l,m,n,d=str.split(' ').map!{|ele| ele.to_i}
-      p file_name="POSCAR_"+str.gsub(' ','')
-
-      boundary=BoundaryModelMaker.new('POSCAR',l,m,n,d)
-      File.open(file_name,'w'){|file| file.print boundary.display}
-    end
   end
-
-
-
 end
