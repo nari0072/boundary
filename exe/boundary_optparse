@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require "boundary"
+
+Boundary::Command.run(ARGV)

@@ -1,0 +1,104 @@
+# -*- coding: utf-8 -*-
+---
+:head:
+- boundary計算の作業手順
+:install:
+  :opts:
+    :short: "-i"
+    :long: "--install"
+    :desc: boundary(CUI)のinstall
+  :title: boundary(CUI)のinstall
+  :cont:
+  - pseudovaspをgit@github.com:daddygongon/boundary.gitからFork
+  - git cloneする
+  - rake install:localで localにinstall
+  - boundaryを同様にgit cloneしてlocal install
+:mk_model:
+  :opts:
+    :short: "-m"
+    :long: "--make"
+    :desc: boundaryで粒界モデルの作成
+  :title: boundaryで粒界モデルの作成
+  :cont:
+  - boundary make '2 2 2 3'
+  - POSCAR_2223が作成される
+:adjust:
+  :opts:
+    :short: "-a"
+    :long: "--adjust"
+    :desc: adjusterで粒界モデルの修正
+  :title: adjusterで粒界モデルの修正
+  :cont:
+  - boundary adjust [POSCAR_NAME]で修正開始
+  - energyと座標を見て重なっているatomsをdelしていく
+  - rev_POSCARsに保存される
+  - 途中でlogなんかをみると，番号がずれる
+:calc:
+  :opts:
+    :short: "-c"
+    :long: "--calc"
+    :desc: vasp計算
+  :title: vasp計算
+  :cont:
+  - モデルを移動(scp)
+  - "*scp POSCAR_2223 asura0:~/"
+  - POTCARの作成
+  - "*cd vasp_potentials/potcar_paw_pbe/"
+  - "*cat Al/POTCAR >> ~/POTCAR"
+  - 計算初期環境の作成
+  - "*POSCAR, POTCAR, KPOINTS, INCARを一つのdirに準備"
+  - "*vs -i でinitialとfullrelaxを作成"
+  - "*vs --fix　でinitialあるいはfullrelaxからfixを作成"
+  - "*vs でvasp計算をsubmit"
+:relax:
+  :opts:
+    :short: "-r"
+    :long: "--relax"
+    :desc: vaspの緩和(relax)計算
+  :title: vaspの緩和(relax)計算
+  :cont:
+  - "  vs -i でdirectoryの初期化．pwdのVASP filesをfullrelax配下にcp"
+  - "  fullrelaxをうごしてみて．．．"
+  - "  innerrelaxを手動で作成"
+  - "  INCARのISIFを3から2に変更"
+  - "  /home/bob/2223/innerelax/auto_expand.rbを参考に順次latticeを変更しながらinnerrelax計算"
+  - "  プロットの自動化は今後対応しな．"
+:man_relax:
+  :opts:
+    :short: "-m"
+    :long: "--man_relax"
+    :desc: vaspの手動緩和(manual relax)計算
+  :title: vaspの手動緩和(manual relax)計算
+  :cont:
+  - "  innerrelaxを手動で作成"
+  - "  INCARのISIFを3から2に変更"
+  - "  /home/bob/2223/innerelax/Rakefileを参考に順次latticeを変更しながらinnerrelax計算"
+  - "  :expandのfirst, second, lastと変更しながらfullrelaxの結果を囲い込んでいるか？"
+  - "    x_val, y_valの範囲を調整"
+  - "  :collect_resでdataの自動収集，gnuplot_helpでplot"
+:graph:
+  :opts:
+    :short: "-g"
+    :long: "--graph"
+    :desc: 計算結果のgraph化
+  :title: 計算結果のgraph化
+  :cont:
+  - 結果の数値を取り出す　tail res...  18 F= -.11236558E+03[eV], 31atoms
+  - 界面エネルギーの計算  (dE-n*E0(=-3.739501247))/(yy*zz)*1.60218*10/2 [J/m^2]
+  - gnuplotによるgraph化
+  - gnuplot> plot 'tmp.txt' using 2:7 w lp
+  - |
+    gnuplot> set dgrid3d 30,30
+    gnuplot> set hidden3d
+    gnuplot> splot 'tmp.txt' u 4:3:7 w lp
+    gnuplot> splot 'tmp.txt' u 4:3:7 w pm3d
+:view:
+  :opts:
+    :short: "-v"
+    :long: "--view"
+    :desc: 
+  :title: viewerによるチェック
+  :cont:
+  - モデルを移動(scp)
+  - viewerで緩和後の構造をチェック
+  - 大槻プロットに加える
