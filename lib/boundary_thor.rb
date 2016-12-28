@@ -14,7 +14,7 @@ module Boundary
       puts Boundary::VERSION
     end
 
-    desc 'make STRING', "make model with \'2 2 2 3\'"
+    desc 'make STRING', "make model with STRING \'2 2 2 3\'"
     def make(string)
       l,m,n,d=string.split(' ').map!{|ele| ele.to_i}
       p file_name="POSCAR_"+string.gsub(' ','')
