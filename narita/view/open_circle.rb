@@ -28,18 +28,6 @@ def read_pos(lines, init_line)
   return poscar
 end
 
-def cavity_atoms(lines,atoms)
-  x=1,mark=[]
-  max_number=atoms.length
-  max_number.times{|i|
-    if atoms[i][2] < atoms[i-1][2] then
-      x += 1
-      atoms[i][3]=x
-    end
-  }
-  return mark
-end
-
 def main_draw(lines)
   width,height = 600,400
   cx,cy = width/2.0,height/2.0
@@ -65,7 +53,7 @@ def main_draw(lines)
   atoms.each{|pos|
     context.set_source_rgb(1, 0, 0)
     context.circle(cx+adjust*pos[0],cy+adjust*pos[2], r)
-    if pos[1]>0.4 then
+    if pos[1]>0.8 then
       context.fill
     else
       context.stroke

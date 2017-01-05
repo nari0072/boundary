@@ -104,11 +104,15 @@ def draw_atoms(context,width,height,cx,cy,mv,scale,lines1,lines2,opts={})
   
   #xy_atom
   pos_after.each{|pos|
-    context.circle(mv+adjust*pos[0],mv+adjust*pos[1], r)
+    context.circle(mv+adjust*pos[0],mv+cy-adjust*pos[1], r)
     context.set_source_rgb(0, 0, 1)
-    context.fill
+    if pos[2]>0.5 then
+      context.fill
+      else
+      context.stroke
+    end
     erasure_atom(lines1,lines2).each{|d|
-      context.circle(mv+adjust*d[0],mv+adjust*d[1], r)
+      context.circle(mv+adjust*d[0],mv+cy-adjust*d[1], r)
       context.set_source_rgb(1, 0, 0)
       context.fill
     }
@@ -127,7 +131,11 @@ def draw_atoms(context,width,height,cx,cy,mv,scale,lines1,lines2,opts={})
   pos_after.each{|pos|
     context.circle(mv+adjust*pos[0],mv+cy+adjust*pos[2], r)
     context.set_source_rgb(0, 0, 1)
-    context.fill
+    if pos[1]>0.5 then
+      context.fill
+      else
+      context.stroke
+    end
     erasure_atom(lines1,lines2).each{|d|
       context.circle(mv+adjust*d[0],mv+cy+adjust*d[2], r)
       context.set_source_rgb(1, 0, 0)
@@ -148,7 +156,11 @@ def draw_atoms(context,width,height,cx,cy,mv,scale,lines1,lines2,opts={})
   pos_after.each{|pos|
     context.circle(mv+cx+adjust*pos[1],mv+cy+adjust*pos[2], r)
     context.set_source_rgb(0, 0, 1)
-    context.fill
+    if pos[0]>0.5 then
+      context.fill
+      else
+      context.stroke
+      end
     erasure_atom(lines1,lines2).each{|d|
       context.circle(mv+cx+adjust*d[1],mv+cy+adjust*d[2], r)
       context.set_source_rgb(1, 0, 0)

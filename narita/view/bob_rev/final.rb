@@ -61,25 +61,35 @@ def draw_axes
 end
 
 def draw_atoms
-  draw_each_plane(0,1,0,  0  )   #xy_plane pos[0],pos[1], 0,   0
-  draw_each_plane(0,2,0,  $cy)   #xz_plane pos[0],pos[2], 0,   $cy
-  draw_each_plane(1,2,$cx,$cy)   #yz_plane pos[1],pos[2], $cx, $cy
+  draw_each_plane(0,1,0,0)     #xy_plane pos[0],pos[1], 0, 0
+  draw_each_plane(0,2,0,$cy)   #xz_plane pos[0],pos[2], 0, $cy
+  draw_each_plane(1,2,$cx,$cy) #yz_plane pos[1],pos[2], $cx, $cy
 end
 
 def pos_y(pos, c_y, index, select)
   dy = select == 0 ? pos[index] : $pos_max[index]-pos[index]
+  #p $pos_max[index]-pos[index]
   return $mv+c_y+$adjust*dy
 end
 
 def draw_each_plane(ind_1,ind_2,c_x,c_y)
   rr = 2
   sel = (ind_1==0 and ind_2==1)? 1 : 0
-
-  [[$deleted_atoms,[1,0,0]],[$pos_after,[0,0,1]]].each{|atoms_color|
+    [[$deleted_atoms,[1,0,0]],[$pos_after,[0,0,1]]].each{|atoms_color|
     $context.set_source_rgb(atoms_color[1])
     atoms_color[0].each{|pos|
       $context.circle($mv+c_x+$adjust*pos[ind_1],pos_y(pos,c_y,ind_2,sel), rr)
-      $context.fill
+      air = []
+      if sel == 0 then
+        if ind_1 == 0 then
+          air = pos[1]
+        else
+          air = pos[0]
+        end
+      else
+        air = pos[2]
+      end
+      air >0.5 ? $context.fill : $context.stroke
     }
   }
 
@@ -108,8 +118,8 @@ def main_draw(file1,file2,   model_scale = 10)
   $pos_after = read_pos(lines2,8)
   $deleted_atoms = mk_deleted_atom
 
-  p $pos_max=find_max($pos_before)
-  p $pos_max[0].ceil*10
+   $pos_max=find_max($pos_before)
+   $pos_max[0].ceil*10
   $width,$height = 300,200
   $cx,$cy = $width/2.0,$height/2.0
   $mv = 10
