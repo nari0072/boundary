@@ -20,73 +20,43 @@ def read_pos(lines, init_line=8)
   return poscar
 end
 
-def identical_atom(i_atom,j_atom)
-  dist=0.0
-  3.times{|i| dist += (i_atom[i]-j_atom[i])**2  }
-#  return true if Math.sqrt(dist)<0.1
-  return true if Math.sqrt(dist)<0.5
-  return false
-end
-
-def mk_deleted_atom
-  mark=[]
-  j_max = $pos_after.length
-  $pos_before.each_with_index{|i_atom,i|
-    update_num=0
-    $pos_after.each_with_index{|j_atom,j|
-      break if identical_atom(i_atom,j_atom)
-      update_num = j
-    }
-    mark << $pos_before[i] if update_num==(j_max-1)
-  }
-  p mark
-  return mark
-end
-
 def draw_backcolor
   $context.set_source_rgb(0.8, 0.8, 0.8)
   $context.rectangle(0, 0, $width, $height)
   $context.fill
 end
 
-def draw_axes
+def draw_box(x0,y0,x1,y1)
   $context.set_source_rgb(0, 0, 0)
-  [[0,1],[1,0]].each{|line|
-    x,y=line[0],line[1]
-    [[0,0],[$cx,0],[0,$cy]].each{|c_x,c_y|
-      $context.move_to($mv+c_x,$mv+c_y)
-      $context.line_to($mv+c_x+x*$scale,$mv+c_y+y*$scale)
-      $context.stroke
-    }
-  }
+  $context.set_line_width(0.2)
+  $context.move_to($mv+$adjust*x0,$mv+$adjust*y0)
+  $context.line_to($mv+$adjust*x0,$mv+$adjust*y1)
+  $context.line_to($mv+$adjust*x1,$mv+$adjust*y1)
+  $context.line_to($mv+$adjust*x1,$mv+$adjust*y0)
+  $context.line_to($mv+$adjust*x0,$mv+$adjust*y0)
+  $context.stroke
 end
 
 def draw_atoms
-  draw_each_plane(0,1,0,  0  )   #xy_plane pos[0],pos[1], 0,   0
-#  draw_each_plane(0,2,0,  $cy)   #xz_plane pos[0],pos[2], 0,   $cy
-#  draw_each_plane(1,2,$cx,$cy)   #yz_plane pos[1],pos[2], $cx, $cy
+  draw_plane   #xy_plane pos[0],pos[1], 0,   0
 end
 
-# xy面の描画で上下を逆さま向けるための計算．
-# pos_maxから書かせてる．
-# 全部やってみようか．やってみた．こっちが正しい．
-def pos_y(pos, c_y, index, select=0)
-#  dy = select == 0 ? pos[index] : $pos_max[index]-pos[index]
-  dy = $pos_max[index]-pos[index]+select
-  return $mv+c_y+$adjust*dy
-end
-
-def draw_each_plane(ind_1,ind_2,c_x,c_y)
+def draw_plane
   rr = 2
-  sel =0
   [0,1,2].each{|xx|
     [0,1,2].each{|yy|
       [[$pos_after,[0,0,1],rr]].each{|atoms_color|
+        x0=(xx)*$lattice[0][0]
+        x1=(xx+1)*$lattice[0][0]
+        y0=(yy)*$lattice[1][1]
+        y1=(yy+1)*$lattice[1][1]
+        draw_box(x0,y0,x1,y1)
         $context.set_source_rgb(atoms_color[1])
         radius = atoms_color[2]
         atoms_color[0].each{|pos|
-          $context.circle($mv+c_x+$adjust*(pos[ind_1]+xx*$lattice[0][0]),
-                          pos_y(pos,c_y,ind_2,yy*$lattice[1][1]), radius)
+          dy = $pos_max[1]-pos[1]+yy*$lattice[1][1]
+          $context.circle($mv+$adjust*(pos[0]+xx*$lattice[0][0]),
+                          $mv+$adjust*dy, radius)
           $context.fill
         }
       }
@@ -94,15 +64,11 @@ def draw_each_plane(ind_1,ind_2,c_x,c_y)
   }
 end
 
-def main_draw(file1,file2,   model_scale = 10)
-#  lines1 = File.readlines(file1)
-  lines2 = File.readlines(file1)
-#  $pos_before = read_pos(lines1,8)
-  $pos_after = read_pos(lines2,8)
-#  $deleted_atoms = mk_deleted_atom
+def main_draw(file1, model_scale = 10)
+  lines1 = File.readlines(file1)
+  $pos_after = read_pos(lines1,8)
 
   p $pos_max=[$lattice[0][0],$lattice[1][1],$lattice[2][2]]
-  p $pos_max[0].ceil*10
   $width,$height = 300,200
   $cx,$cy = $width/2.0,$height/2.0
   $mv = 10
@@ -113,12 +79,11 @@ def main_draw(file1,file2,   model_scale = 10)
   $context.set_line_width($line_width)
 
   draw_backcolor
-  draw_axes
   draw_atoms
   surface.finish
 end
 
 model_scale = 1.0/0.12
 $line_width = 1
-main_draw(ARGV[0],ARGV[1], model_scale)
+main_draw(ARGV[0], model_scale)
 
