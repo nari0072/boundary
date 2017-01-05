@@ -3,15 +3,14 @@ require 'cairo'
 require 'scanf'
 
 def read_pos(lines, init_line=8)
-  lattice, atom, poscar = [],[],[]
-  lines[2..4].each{|line| lattice << line.scanf("%f %f %f\n")  }
-  $pos_max=[lattice[0][0],lattice[1][1],lattice[2][2]]
+  $lattice, atom, poscar = [],[],[]
+  lines[2..4].each{|line| $lattice << line.scanf("%f %f %f\n")  }
   lines[init_line..lines.length+1].each{|line| atom << line.scanf("%f %f %f\n") }
 
   atom.each{|i_atom|
     pos=[0.0,0.0,0.0,0.0]
     i_atom.each_with_index{|atom_j,j|
-      lx,ly,lz=lattice[j]
+      lx,ly,lz=$lattice[j]
       pos[0] += atom_j*lx
       pos[1] += atom_j*ly
       pos[2] += atom_j*lz
@@ -68,8 +67,12 @@ def draw_atoms
   draw_each_plane(1,2,$cx,$cy)   #yz_plane pos[1],pos[2], $cx, $cy
 end
 
+# xy面の描画で上下を逆さま向けるための計算．
+# pos_maxから書かせてる．
+# 全部やってみようか．
 def pos_y(pos, c_y, index, select)
-  dy = select == 0 ? pos[index] : $pos_max[index]-pos[index]
+#  dy = select == 0 ? pos[index] : $pos_max[index]-pos[index]
+  dy = $pos_max[index]-pos[index]
   return $mv+c_y+$adjust*dy
 end
 
@@ -96,15 +99,6 @@ def draw_each_plane(ind_1,ind_2,c_x,c_y)
   end
 end
 
-def find_max(pos)
-  
-  max = [0,0,0]
-  [0,1,2].each{|ind|
-    pos.length.times {|i| max[ind] = pos[i][ind] if max[ind] < pos[i][ind] }
-  }
-  return max
-end
-
 def main_draw(file1,file2,   model_scale = 10)
   lines1 = File.readlines(file1)
   lines2 = File.readlines(file2)
@@ -112,7 +106,7 @@ def main_draw(file1,file2,   model_scale = 10)
   $pos_after = read_pos(lines2,8)
   $deleted_atoms = mk_deleted_atom
 
-#  p $pos_max=find_max($pos_before)
+  p $pos_max=[$lattice[0][0],$lattice[1][1],$lattice[2][2]]
   p $pos_max[0].ceil*10
   $width,$height = 300,200
   $cx,$cy = $width/2.0,$height/2.0
