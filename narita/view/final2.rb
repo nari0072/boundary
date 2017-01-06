@@ -79,7 +79,17 @@ def draw_each_plane(ind_1,ind_2,c_x,c_y)
     $context.set_source_rgb(atoms_color[1])
     atoms_color[0].each{|pos|
       $context.circle($mv+c_x+$adjust*pos[ind_1],pos_y(pos,c_y,ind_2,sel), rr)
-      $context.fill
+      air = []
+      if sel == 0 then
+        if ind_1 == 0 then
+          air = pos[1]
+        else
+          air = pos[0]
+        end
+      else
+        air = pos[2]
+      end
+      air >0.5 ? $context.fill : $context.stroke
     }
   }
 
