@@ -3,18 +3,16 @@ require 'cairo'
 require 'scanf'
 
 def read_pos(lines, init_line)
-  lattice = []
+  lattice,atom,poscar = [],[],[]
   lines[2..4].each{|line|
     lattice << line.scanf("%f %f %f\n")
   }
 
-  atom = []
   a_max=lines.length+1
   lines[init_line..a_max].each{|line|
       atom << line.scanf("%f %f %f\n")
   }
   
-  poscar=[]
   atom.each{|i|
     pos=[0.0,0.0,0.0]
     i.each_with_index{|a,j|
@@ -48,8 +46,7 @@ def erasure_atom(lines1,lines2)
   pos_2223[0..i_max].each_with_index{|i_atom,i|
     update_num=0
     pos_2223_4[0..j_max].each_with_index{|j_atom,j|
-      #print "#{i}-#{j}\n"
-      break if identical_atom(i_atom,j_atom)
+    break if identical_atom(i_atom,j_atom)
       update_num = j 
     }
     mark << pos_2223[i] if update_num==(j_max-1) 
@@ -81,6 +78,7 @@ def draw_axes(context,cx,cy,mv,scale)
   context.set_source_rgb(0, 0, 0)
   [[0,1.0],[1.0,0]].each{|line|
     x,y=line[0],line[1]
+    context.set_line_width(1)
     context.move_to(mv,mv)
     context.line_to(mv+x*scale,mv+y*scale)
     context.stroke
@@ -103,12 +101,20 @@ def draw_atoms(context,width,height,cx,cy,mv,scale,lines1,lines2,opts={})
   vector_max = pos_before.length-1
   
   #xy_atom
+  pos_max = []
+  pos_num = pos_after.length
+  pos_num.times do |i|
+    pos_after[i][1]
+    if pos_after[i-1][1] < pos_after[i][1] then
+      pos_max = pos_after[i][1]
+    end
+  end
   pos_after.each{|pos|
-    context.circle(mv+adjust*pos[0],mv+adjust*pos[1], r)
+    context.circle(mv+adjust*pos[0],mv+adjust*(pos_max-pos[1]), r)
     context.set_source_rgb(0, 0, 1)
-    context.fill
+    pos[2]> 1.9 && pos[2]<3.0 ? context.stroke : context.fill
     erasure_atom(lines1,lines2).each{|d|
-      context.circle(mv+adjust*d[0],mv+adjust*d[1], r)
+      context.circle(mv+adjust*d[0],mv+adjust*(pos_max-d[1]), r)
       context.set_source_rgb(1, 0, 0)
       context.fill
     }
@@ -116,8 +122,8 @@ def draw_atoms(context,width,height,cx,cy,mv,scale,lines1,lines2,opts={})
   if opts[:same_size]
     (0..vector_max).each{|vector|
       context.set_source_rgb(1, 0.8, 0)
-      context.move_to(mv+adjust*pos_before[vector][0],mv+adjust*pos_before[vector][1])
-      context.line_to(mv+adjust*pos_after[vector][0],mv+adjust*pos_after[vector][1])
+      context.move_to(mv+adjust*pos_before[vector][0],mv+adjust*(pos_max-pos_before[vector][1]))
+      context.line_to(mv+adjust*pos_after[vector][0],mv+adjust*(pos_max-pos_after[vector][1]))
       context.set_line_width(2)
       context.stroke
     }
@@ -127,7 +133,7 @@ def draw_atoms(context,width,height,cx,cy,mv,scale,lines1,lines2,opts={})
   pos_after.each{|pos|
     context.circle(mv+adjust*pos[0],mv+cy+adjust*pos[2], r)
     context.set_source_rgb(0, 0, 1)
-    context.fill
+    pos[2]> 1.9 && pos[2]<3.0  ? context.stroke : context.fill
     erasure_atom(lines1,lines2).each{|d|
       context.circle(mv+adjust*d[0],mv+cy+adjust*d[2], r)
       context.set_source_rgb(1, 0, 0)
@@ -148,7 +154,7 @@ def draw_atoms(context,width,height,cx,cy,mv,scale,lines1,lines2,opts={})
   pos_after.each{|pos|
     context.circle(mv+cx+adjust*pos[1],mv+cy+adjust*pos[2], r)
     context.set_source_rgb(0, 0, 1)
-    context.fill
+    pos[2]> 1.9 && pos[2]<3.0  ? context.stroke : context.fill
     erasure_atom(lines1,lines2).each{|d|
       context.circle(mv+cx+adjust*d[1],mv+cy+adjust*d[2], r)
       context.set_source_rgb(1, 0, 0)

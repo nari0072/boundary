@@ -24,7 +24,7 @@ def identical_atom(i_atom,j_atom)
   dist=0.0
   3.times{|i| dist += (i_atom[i]-j_atom[i])**2  }
 #  return true if Math.sqrt(dist)<0.1
-  return true if Math.sqrt(dist)<0.5
+  return true if Math.sqrt(dist)<0.4
   return false
 end
 

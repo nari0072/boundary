@@ -2,20 +2,19 @@
 require 'cairo'
 require 'scanf'
 
-#p lines1.length
 def read_pos(lines, init_line)
-  lattice = []
+  lattice,atom,poscar = [],[],[]
   lines[2..4].each{|line|
     lattice << line.scanf("%f %f %f\n")
   }
 
-  atom = []
+#  atom = []
   a_max=lines.length+1
   lines[init_line..a_max].each{|line|
       atom << line.scanf("%f %f %f\n")
   }
   
-  poscar=[]
+#  poscar=[]
   atom.each{|i|
     pos=[0.0,0.0,0.0]
     i.each_with_index{|a,j|
@@ -62,8 +61,8 @@ def main_draw(lines1,lines2,opts)
   width,height = 300,200
   cx,cy = width/2.0,height/2.0
   mv = 10
-  scale = 10000
-  surface = Cairo::SVGSurface.new('hg2.svg', width, height)
+  scale = 1000
+  surface = Cairo::SVGSurface.new('view.svg', width, height)
   context = Cairo::Context.new(surface)
 
   draw_backcolor(context,width,height)
@@ -73,7 +72,7 @@ def main_draw(lines1,lines2,opts)
 end
 
 def draw_backcolor(context,width,height)
-  context.set_source_rgb(0.9, 0.9, 0.9)
+  context.set_source_rgb(0.8, 0.8, 0.8)
   context.rectangle(0, 0, width, height)
   context.fill
 end
@@ -82,6 +81,7 @@ def draw_axes(context,cx,cy,mv,scale)
   context.set_source_rgb(0, 0, 0)
   [[0,1.0],[1.0,0]].each{|line|
     x,y=line[0],line[1]
+    context.set_line_width(1)
     context.move_to(mv,mv)
     context.line_to(mv+x*scale,mv+y*scale)
     context.stroke
@@ -96,42 +96,47 @@ def draw_axes(context,cx,cy,mv,scale)
   }
 end
 
-class draw_atoms[context,width,height,cx,cy,mv,scale,lines1,lines2,opts={}]
+def draw_atoms(context,width,height,cx,cy,mv,scale,lines1,lines2,opts={})
   r = 2
-  adjust = scale/1000
+  adjust = scale/100
   pos_before = read_pos(lines1,8)
   pos_after = read_pos(lines2,8)
-  #p pos_before.length
-  #p pos_after.length
   vector_max = pos_before.length-1
   
-  def xy_atom(context,cx,cy,mv,lines1,lines2,pos_after,adjust,r)
+  #xy_atom
+  pos_max = []
+  pos_num = pos_after.length
+  pos_num.times do |i|
+    pos_after[i][1]
+    if pos_after[i-1][1] < pos_after[i][1] then
+      pos_max = pos_after[i][1]
+    end
+  end
   pos_after.each{|pos|
-    context.circle(mv+adjust*pos[0],mv+adjust*pos[1], r)
+    context.circle(mv+adjust*pos[0],mv+adjust*(pos_max-pos[1]), r)
     context.set_source_rgb(0, 0, 1)
-    context.fill
+    pos[2]< 1.9  ? context.stroke : context.fill
     erasure_atom(lines1,lines2).each{|d|
-      context.circle(mv+adjust*d[0],mv+adjust*d[1], r)
+      context.circle(mv+adjust*d[0],mv+adjust*(pos_max-d[1]), r)
       context.set_source_rgb(1, 0, 0)
       context.fill
     }
   }
-    if opts[:same_size]
-        (0..vector_max).each{|vector|
-          context.set_source_rgb(1, 0.8, 0)
-          context.move_to(mv+adjust*pos_before[vector][0],mv+adjust*pos_before[vector][1])
-          context.line_to(mv+adjust*pos_after[vector][0],mv+adjust*pos_after[vector][1])
-          context.set_line_width(2)
-          context.stroke
+  if opts[:same_size]
+    (0..vector_max).each{|vector|
+      context.set_source_rgb(1, 0.8, 0)
+      context.move_to(mv+adjust*pos_before[vector][0],mv+adjust*(pos_max-pos_before[vector][1]))
+      context.line_to(mv+adjust*pos_after[vector][0],mv+adjust*(pos_max-pos_after[vector][1]))
+      context.set_line_width(2)
+      context.stroke
     }
   end
-  end
   
-  def xz_atom(context,cx,cy,mv,lines1,lines2,pos_after,adjust,r)
+  #xz_atom
   pos_after.each{|pos|
     context.circle(mv+adjust*pos[0],mv+cy+adjust*pos[2], r)
     context.set_source_rgb(0, 0, 1)
-    context.fill
+    pos[2]< 1.9  ? context.stroke : context.fill
     erasure_atom(lines1,lines2).each{|d|
       context.circle(mv+adjust*d[0],mv+cy+adjust*d[2], r)
       context.set_source_rgb(1, 0, 0)
@@ -147,13 +152,12 @@ class draw_atoms[context,width,height,cx,cy,mv,scale,lines1,lines2,opts={}]
       context.stroke
     }
   end
-  end
   
-  def yz_atom(context,cx,cy,mv,lines1,lines2,pos_after,adjust,r)
+  #yz_atom
   pos_after.each{|pos|
     context.circle(mv+cx+adjust*pos[1],mv+cy+adjust*pos[2], r)
     context.set_source_rgb(0, 0, 1)
-    context.fill
+    pos[2]< 1.9  ? context.stroke : context.fill
     erasure_atom(lines1,lines2).each{|d|
       context.circle(mv+cx+adjust*d[1],mv+cy+adjust*d[2], r)
       context.set_source_rgb(1, 0, 0)
@@ -169,8 +173,6 @@ class draw_atoms[context,width,height,cx,cy,mv,scale,lines1,lines2,opts={}]
       context.stroke
     }
   end
-  end
-  
 end
 
 lines1 = File.readlines(ARGV[0])
