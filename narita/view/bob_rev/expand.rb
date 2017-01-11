@@ -45,6 +45,8 @@ def draw_plane
   rr = 2
   [0,1,2].each{|xx|
     [0,1,2].each{|yy|
+#  [0].each{|xx|
+#    [0].each{|yy|
       [[$pos_after,[0,0,1],rr]].each{|atoms_color|
         x0=(xx)*$lattice[0][0]
         x1=(xx+1)*$lattice[0][0]
@@ -55,9 +57,15 @@ def draw_plane
         radius = atoms_color[2]
         atoms_color[0].each{|pos|
           dy = $pos_max[1]-pos[1]+yy*$lattice[1][1]
-          $context.circle($mv+$adjust*(pos[0]+xx*$lattice[0][0]),
+          if (pos[2]<0.5) then
+            $context.circle($mv+$adjust*(pos[0]+xx*$lattice[0][0]),
+                          $mv+$adjust*dy, radius*1.5)
+            $context.stroke
+          else
+            $context.circle($mv+$adjust*(pos[0]+xx*$lattice[0][0]),
                           $mv+$adjust*dy, radius)
-          $context.fill
+            $context.fill
+          end
         }
       }
     }
@@ -84,6 +92,6 @@ def main_draw(file1, model_scale = 10)
 end
 
 model_scale = 1.0/0.12
-$line_width = 1
+$line_width = 0.1
 main_draw(ARGV[0], model_scale)
 

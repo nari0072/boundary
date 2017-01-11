@@ -67,11 +67,7 @@ def draw_atoms
   draw_each_plane(1,2,$cx,$cy)   #yz_plane pos[1],pos[2], $cx, $cy
 end
 
-# xy面の描画で上下を逆さま向けるための計算．
-# pos_maxから書かせてる．
-# 全部やってみようか．やってみた．こっちが正しい．
 def pos_y(pos, c_y, index, select)
-#  dy = select == 0 ? pos[index] : $pos_max[index]-pos[index]
   dy = $pos_max[index]-pos[index]
   return $mv+c_y+$adjust*dy
 end
@@ -84,8 +80,13 @@ def draw_each_plane(ind_1,ind_2,c_x,c_y)
     $context.set_source_rgb(atoms_color[1])
     radius = atoms_color[2]
     atoms_color[0].each{|pos|
-      $context.circle($mv+c_x+$adjust*pos[ind_1],pos_y(pos,c_y,ind_2,sel), radius)
-      $context.fill
+      if (pos[2]<0.5) then
+        $context.circle($mv+c_x+$adjust*pos[ind_1],pos_y(pos,c_y,ind_2,sel), radius*1.5)
+        $context.stroke
+      else
+        $context.circle($mv+c_x+$adjust*pos[ind_1],pos_y(pos,c_y,ind_2,sel), radius)
+        $context.fill
+      end
     }
   }
 
