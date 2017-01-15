@@ -16,17 +16,20 @@ class ViewCompare
     p @pos_max[0].ceil*10
     @width,@height = 300,200
     @cx,@cy = @width/2.0,@height/2.0
-    @mv = 10
+    @align = 10
     @scale = 1000 # draw axes
     @adjust = @scale/(@pos_max[0].ceil*model_scale)
-    surface = Cairo::SVGSurface.new('view.svg', @width, @height)
-    @context = Cairo::Context.new(surface)
+    @surface = Cairo::SVGSurface.new('view.svg', @width, @height)
+    @context = Cairo::Context.new(@surface)
     @context.set_line_width(@line_width)
 
+  end
+
+  def three_view
     draw_backcolor
     draw_axes
     draw_atoms
-    surface.finish
+    @surface.finish
   end
 
   def read_pos(lines, init_line=8)
@@ -76,16 +79,41 @@ class ViewCompare
     @context.fill
   end
 
+  def top_view
+    draw_backcolor
+    draw_top_view_axes
+    draw_top_view
+    @surface.finish
+  end
+
+  def draw_top_view_axes
+    @context.set_source_rgb(0, 0, 0)
+    [[0.5,0]].each{|line|
+      x,y=line[0],line[1]
+      p x,y
+      [[0,0]].each{|c_x,c_y|
+        @context.move_to(@align+c_x,pos_y([0,0,0],c_y,1,1))
+        @context.line_to(@align+c_x+x*@scale,pos_y([0,0,0],c_y,1,1))
+#        @context.line_to(@align+c_x+x*@scale,@align+c_y+y*@scale)
+        @context.stroke
+      }
+    }
+  end
+
   def draw_axes
     @context.set_source_rgb(0, 0, 0)
     [[0,1],[1,0]].each{|line|
       x,y=line[0],line[1]
       [[0,0],[@cx,0],[0,@cy]].each{|c_x,c_y|
-        @context.move_to(@mv+c_x,@mv+c_y)
-        @context.line_to(@mv+c_x+x*@scale,@mv+c_y+y*@scale)
+        @context.move_to(@align+c_x,@align+c_y)
+        @context.line_to(@align+c_x+x*@scale,@align+c_y+y*@scale)
         @context.stroke
       }
     }
+  end
+
+  def draw_top_view
+    draw_each_plane(0,1,0,  0  )   #xy_plane pos[0],pos[1], 0,   0
   end
 
   def draw_atoms
@@ -96,7 +124,7 @@ class ViewCompare
 
   def pos_y(pos, c_y, index, select)
     dy = @pos_max[index]-pos[index]
-    return @mv+c_y+@adjust*dy
+    return @align+c_y+@adjust*dy
   end
 
   def draw_each_plane(ind_1,ind_2,c_x,c_y)
@@ -108,10 +136,10 @@ class ViewCompare
       radius = atoms_color[2]
       atoms_color[0].each{|pos|
         if (pos[2]<0.5) then
-          @context.circle(@mv+c_x+@adjust*pos[ind_1],pos_y(pos,c_y,ind_2,sel), radius*1.5)
+          @context.circle(@align+c_x+@adjust*pos[ind_1],pos_y(pos,c_y,ind_2,sel), radius*1.5)
           @context.stroke
         else
-          @context.circle(@mv+c_x+@adjust*pos[ind_1],pos_y(pos,c_y,ind_2,sel), radius)
+          @context.circle(@align+c_x+@adjust*pos[ind_1],pos_y(pos,c_y,ind_2,sel), radius)
           @context.fill
         end
       }
@@ -120,8 +148,8 @@ class ViewCompare
     if @pos_before.size==@pos_after.size
       @context.set_source_rgb(1, 0.8, 0)
       (0..@pos_before.length-1).each{|i|
-        @context.move_to(@mv+c_x+@adjust*@pos_before[i][ind_1],pos_y(@pos_before[i],c_y,ind_2,sel))
-        @context.line_to(@mv+c_x+@adjust*@pos_after[i][ind_1],pos_y(@pos_after[i],c_y,ind_2,sel))
+        @context.move_to(@align+c_x+@adjust*@pos_before[i][ind_1],pos_y(@pos_before[i],c_y,ind_2,sel))
+        @context.line_to(@align+c_x+@adjust*@pos_after[i][ind_1],pos_y(@pos_after[i],c_y,ind_2,sel))
         @context.stroke
       }
     end

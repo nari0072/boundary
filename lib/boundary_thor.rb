@@ -33,7 +33,14 @@ module Boundary
     def compare(file1, file2=nil)
       file2=file1 unless file2
       model_scale = 1.0/0.12
-      ViewCompare.new(file1,file2, model_scale)
+      ViewCompare.new(file1,file2, model_scale).three_view
+    end
+
+    desc 'top_view FILE', "top_view FILE1"
+    def top_view(file)
+      file1 = file2 = file
+      model_scale = 1.0/0.12
+      ViewCompare.new(file1,file2, model_scale).top_view
     end
 
   end
