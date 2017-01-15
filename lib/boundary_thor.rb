@@ -29,7 +29,7 @@ module Boundary
       boundary_model=BoundaryModelAdjuster.new(file)
     end
 
-    desc 'compare FILE1 FILE2', "compare FILE1 and FILE2 model"
+    desc 'compare FILE1', "compare FILE1 and FILE2 model, FILE2 is optional"
     def compare(file1, file2=nil)
       p file1, file2
       file1=file2 if file2==nil
