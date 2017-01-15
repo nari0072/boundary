@@ -31,8 +31,7 @@ module Boundary
 
     desc 'compare FILE1', "compare FILE1 and FILE2 model, FILE2 is optional"
     def compare(file1, file2=nil)
-      p file1, file2
-      file1=file2 if file2==nil
+      file2=file1 unless file2
       model_scale = 1.0/0.12
       ViewCompare.new(file1,file2, model_scale)
     end
