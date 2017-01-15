@@ -129,7 +129,8 @@ class ViewCompare
 
 end
 
-ARGV[1]=ARGV[0] if ARGV[1]==nil
-model_scale = 1.0/0.12
-ViewCompare.new(ARGV[0],ARGV[1], model_scale)
-
+if __FILE__ == $0 then
+  ARGV[1]=ARGV[0] if ARGV[1]==nil
+  model_scale = 1.0/0.12
+  ViewCompare.new(ARGV[0],ARGV[1], model_scale)
+end

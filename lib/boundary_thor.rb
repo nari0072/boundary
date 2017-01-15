@@ -29,12 +29,12 @@ module Boundary
       boundary_model=BoundaryModelAdjuster.new(file)
     end
 
-    desc 'compare [FILE1] [FILE2]', "compare FILE1 and FILE2 model"
+    desc 'compare FILE1 FILE2', "compare FILE1 and FILE2 model"
     def compare(file1, file2=nil)
       p file1, file2
       file1=file2 if file2==nil
       model_scale = 1.0/0.12
-      ViewCompare.new(ARGV[0],ARGV[1], model_scale)
+      ViewCompare.new(file1,file2, model_scale)
     end
 
   end
