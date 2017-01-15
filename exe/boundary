@@ -4,4 +4,5 @@
 require "boundary_thor"
 
 #Boundary::Command.run(ARGV)
+p ARGV
 Boundary::CLI.start(ARGV)
