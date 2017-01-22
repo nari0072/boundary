@@ -87,6 +87,7 @@ class BoundaryModelMaker < Poscar
         }
       }
       pos[0] += 1.0 if r_pos[0] < -0.00001
+#      pos[1] -= 1.0 if r_pos[1] > 0.9999
     }
     @pos_size = @pos.size
   end

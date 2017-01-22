@@ -68,7 +68,8 @@ class BoundaryModelAdjuster
         p atoms=numbers[0].split(/,/)
         boundary = BoundaryMove.new(file_name)
         boundary.delete(atoms)
-        p file_name="#{@ini_file}_#{i_times}"
+        p pos_size=boundary.pos_size
+        p file_name="#{@ini_file}_#{pos_size}"
         boundary.new_poscar(file_name)
       elsif command[0] == 'l' then
         print_log

@@ -4,6 +4,7 @@ require "boundary/model/maker"
 require "boundary/adjuster/adjuster"
 require "boundary/view/viewer"
 require "boundary/view/compare"
+require "boundary/view/expand"
 require 'optparse'
 require 'thor'
 
@@ -29,11 +30,20 @@ module Boundary
       boundary_model=BoundaryModelAdjuster.new(file)
     end
 
-    desc 'compare FILE1', "compare FILE1 and FILE2 model, FILE2 is optional"
-    def compare(file1, file2=nil)
+    desc 'diff FILE1 [FILE2]', "show diff FILE1 and FILE2 model, FILE2 is optional"
+    def diff(file1, file2=nil)
       file2=file1 unless file2
       model_scale = 1.0/0.12
       ViewCompare.new(file1,file2, model_scale).three_view
+      system("open -a safari view.svg")
+    end
+
+    desc 'expand FILE1', "show periodically expanded FILE1"
+    def expand(file1)
+      file2=file1 unless file2
+      model_scale = 1.0/0.12
+      ViewExpand.new(file1, model_scale)
+      system("open -a safari view.svg")
     end
 
     desc 'top_view FILE', "top_view FILE1"

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 class BoundaryMove < Poscar
-  attr_accessor :adjust_list
+  attr_accessor :adjust_list, :pos_size
   def initialize(poscar_name, format=:show_force)
     super(poscar_name)
     mk_adjust_list
@@ -77,8 +77,8 @@ class BoundaryMove < Poscar
     file=File.open(title,'w')
     text=""
     text << sprintf("%s\n",@head)
-    text << sprintf("%f\n",@whole_scale)
-    @lat_vec.each {|vec| text << sprintf("%f %f %f\n",vec[0],vec[1],vec[2])}
+    text << sprintf("%15.10f\n",@whole_scale)
+    @lat_vec.each {|vec| text << sprintf("%15.10f %15.10f %15.10f\n",vec[0],vec[1],vec[2])}
     text << sprintf("%d\n",@pos_size)
     text << sprintf("Selective dynamics\n")
     text << sprintf("Direct\n")
