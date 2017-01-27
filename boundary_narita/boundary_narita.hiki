@@ -1,0 +1,51 @@
+{{toc}}
+
+!粒界原子配列の視覚化とVASP計算
+[[boundary_narita_2223_calc_memo]]
+!小傾角粒界エネルギー
+!!Read-Shockleyによる小傾角粒界エネルギーの理論予想
+!!大槻による実験結果の詳細
+!!シミュレーションなど報告例の分析
+!!西谷研のこれまでの計算結果
+!!!八幡の計算
+!!!村上の計算
+!!!岩佐の計算
+!計算ソフトの開発
+!!boundaryの使用法
+!!vasprunの使用法
+!モデル計算結果
+!!2223
+!!3325
+
+http://nishitani0.kwansei.ac.jp:8080/gitbucket/
+
+Absolute interfacial energies of [001] tilt and twist grain boundaries in copper.
+Acta Metallurgica, Vol. 7, May 1959, 319.
+N.A.Gjostein and F.N.Rhines, 
+Fig.4. Dependencies of grain boundary energy on misorientation for [001] tilt boundaries at 1065C.  Solid line represents the curve calculated from equation (1), using the large angle parameters.
+<<<
+#Murakami-0
+13.000  0.227  -1.483  646.970  2851,435
+10.811  0.189  -1.668  560.606  2971.081
+ 9.324  0.613  -1.816  540.909  3323.874
+
+#Murakami_90
+ 7.838  0.137  -1.989  356.061  2602.806
+ 9.189  0.160  -1.830  400.000  2494.103
+10.811  0.189  -1.668  431.818  2288.535
+12.703  0.222  -1.506  490.909  2214.202
+22.703  0.396  -0.926  671.212  1693.944
+
+#Otsuki-0
+10.000  0.174  -1.740  280.000  1609.195
+ 7.300  0.127  -2.064  230.000  1811.024
+ 5.000  0.087  -2.439  190.000  2183.908
+
+#Otsuki-90
+10.000  0.174  -1.740  280.000  1609.195
+ 7.460  0.130  -2.040  230.000  1769.231
+ 6.000  0.105  -2.256  207.000  1971.429
+>>>
+
+"Asymmetric tilt grain boundary structure and energy in copper and aluminium",
+M. A. TSCHOPPy and D. L. MCDOWELL, Philosophical Magazine, Vol. 87, No. 25, 1 September 2007, 3871–3892
