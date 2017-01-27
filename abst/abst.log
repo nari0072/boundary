@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.5-130605-2.6 (utf8.euc) (TeX Live 2014) (preloaded format=platex 2014.11.26)  21 OCT 2016 12:02
+This is e-pTeX, Version 3.14159265-p3.5-130605-2.6 (utf8.euc) (TeX Live 2014) (preloaded format=platex 2014.11.26)  25 JAN 2017 20:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -67,7 +67,7 @@ eX Live/ChoF)
 \Gin@req@height=\dimen122
 \Gin@req@width=\dimen123
 )
-No file abst.aux.
+(./abst.aux)
 \openout1 = `abst.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
@@ -95,20 +95,4 @@ c/m/n/10 ￥\OT1/cmr/m/n/10 usep-a-ck-ageamssymb \JY1/mc/m/n/10 ￥\OT1/cmr/m/n/
 
 ./abst.tex:11: You can't use `macro parameter character #' in horizontal mode.
 l.11 ￥def￥Vec#
-                1{￥mbox{￥boldmath $#1$}}
-? 
-./abst.tex:11: Emergency stop.
-l.11 ￥def￥Vec#
-                1{￥mbox{￥boldmath $#1$}}
-End of file on the terminal!
-
- 
-Here is how much of TeX's memory you used:
- 704 strings out of 493807
- 8126 string characters out of 6151950
- 64465 words of memory out of 5000000
- 4237 multiletter control sequences out of 15000+600000
- 8380 words of font info for 36 fonts, out of 8000000 for 9000
- 934 hyphenation exceptions out of 8191
- 25i,0n,21p,196b,85s stack positions out of 5000i,500n,10000p,200000b,80000s
-No pages of output.
+             
