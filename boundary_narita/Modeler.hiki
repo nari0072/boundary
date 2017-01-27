@@ -1,0 +1,34 @@
+{{toc}}
+
+!Modelerの解説
+Boundaryの構造を作るモデラーの解説を行う．作ってみてわかったことであるが，
+汎用的なコマンド群のくみあわせにしようとしてもあまり整理された構造とはなら\\
+ない．
+
+コマンド一発で出来上がったモデルをVASPに投げて，エネルギー値がおかしいとあ\\
+らを探すよりも，
+viewerで表示される原子配置に気をつけながら，試行錯誤的に一つ一つのステップ\\
+をすすめていったほうが
+手順として筋が良さそう．
+
+必要なステップをまとめると，
+# 拡張(expand)
+# 回転(rotating)
+# 整形1(shaping)
+# 鏡映(mirroring)
+# 整形2(shaping)
+# きりだし(cutting)
+# uniq化
+# 出力
+である．これらの操作を実行するコードは以下のとおり．
+<<< ruby
+file = ARGV[0] || 'POSCAR'
+model = BoundaryModel.new(file)
+
+#初期値                                                                    \
+
+#e_num,a_num,x_num,y_num,z_num = 2,3,3,2,1
+#e_num,a_num,x_num,y_num,z_num = 3,5,5,4,1
+#e_num,a_num,x_num,y_num,z_num = 4,7,7,6,1
+#e_num,a_num,x_num,y_num,z_num = 5,9,9,8,1
+e_num,a_num,x_num,y_num,z_num = 4,3,7,4,1

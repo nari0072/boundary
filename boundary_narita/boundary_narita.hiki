@@ -1,23 +1,57 @@
 {{toc}}
 
-!粒界原子配列の視覚化とVASP計算
+!三面図を利用した粒界原子配列の視覚化
+!!はじめに
+[[boundary_narita_introduction]]
+!!粒界原子配列の描画方法
+[[boundary_narita_drawing_atoms]]
+!!POSCAR_2223の計算方法
 [[boundary_narita_2223_calc_memo]]
+!!研究結果と考察
+[[conclusion]]
 !小傾角粒界エネルギー
 !!Read-Shockleyによる小傾角粒界エネルギーの理論予想
+[[boundary_narita_Read-Shockley_inference]]
 !!大槻による実験結果の詳細
+[[Otuki_experiment]]
 !!シミュレーションなど報告例の分析
 !!西谷研のこれまでの計算結果
 !!!八幡の計算
+[[calculation_Yahata]]
 !!!村上の計算
+[[calculation_Murakami]]
 !!!岩佐の計算
+[[boundary_narita_calculation_Iwasa]]
 !計算ソフトの開発
 !!boundaryの使用法
 !!vasprunの使用法
 !モデル計算結果
 !!2223
-!!3325
+<<<
 
-http://nishitani0.kwansei.ac.jp:8080/gitbucket/
+(Al)4  (Fm-3m)
+   1.00000000000000
+    11.3867605961746481    0.0100935929319685   -0.0017461789180479
+     0.0041105062482931    6.3305944602789737   -0.0005256693932857
+    -0.0010552304551614   -0.0005576642430577    7.7999169997776718
+
+
+-0.112458518905E+03
+
+dF-31*(-3.739501247) %=> 3.4660198
+
+3.4660198/(6.3305944602789737*7.7999169997776718)*1.60218*10/2
+>>>
+Full relaxの最安定energyは，0.5623126780
+     xx=0.9899786872, yy=1.007043146
+であるが，fixの-3_1において，
+  -3    1   11.15697    6.34918    8.08280 -112.35392 0.5573720133794792
+とそれより小さな値が出ている．
+
+もう少しその方向で上がるまで計算を追加する必要がある．
+
+
+!!3325
 
 Absolute interfacial energies of [001] tilt and twist grain boundaries in copper.
 Acta Metallurgica, Vol. 7, May 1959, 319.
