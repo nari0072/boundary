@@ -1,33 +1,27 @@
 {{toc}}
 
 !三面図を利用した粒界原子配列の視覚化
-!!はじめに
-[[boundary_narita_introduction]]
-!!粒界原子配列の描画方法
-[[boundary_narita_drawing_atoms]]
-!!POSCAR_2223の計算方法
-[[boundary_narita_2223_calc_memo]]
-!!研究結果と考察
-[[conclusion]]
+!![[はじめに|boundary_narita_introduction]]
+!![[粒界原子配列の描画方法|boundary_narita_drawing_atoms]]
+!![[POSCAR_2223の計算方法|boundary_narita_2223_calc_memo]]
+!![[研究結果と考察|boundary_narita_conclusion]]
 !小傾角粒界エネルギー
-!!Read-Shockleyによる小傾角粒界エネルギーの理論予想
-[[boundary_narita_Read-Shockley_inference]]
-!!大槻による実験結果の詳細
-[[Otuki_experiment]]
+!![[Read-Shockleyによる小傾角粒界エネルギーの理論予想|boundary_narita_Read-Shockley_inference]]
+!![[大槻による実験結果の詳細|boundary_narita_Otuki_experiment]]
 !!シミュレーションなど報告例の分析
 !!西谷研のこれまでの計算結果
-!!!八幡の計算
-[[calculation_Yahata]]
-!!!村上の計算
-[[calculation_Murakami]]
-!!!岩佐の計算
-[[boundary_narita_calculation_Iwasa]]
+!!![[八幡の計算|boundary_narita_calculation_Yahata]]
+!!![[村上の計算|boundary_narita_calculation_Murakami]]
+!!![[岩佐の計算|boundary_narita_calculation_Iwasa]]
 !計算ソフトの開発
 !!boundaryの使用法
 !!vasprunの使用法
 !モデル計算結果
 !!2223
-<<<
+
+2223モデルの計算結果を記す．
+
+<<< bash
 
 (Al)4  (Fm-3m)
    1.00000000000000
@@ -82,4 +76,4 @@ Fig.4. Dependencies of grain boundary energy on misorientation for [001] tilt bo
 >>>
 
 "Asymmetric tilt grain boundary structure and energy in copper and aluminium",
-M. A. TSCHOPPy and D. L. MCDOWELL, Philosophical Magazine, Vol. 87, No. 25, 1 September 2007, 3871–3892
+M. A. TSCHOPPy and D. L. MCDOWELL, Philosophical Magazine, Vol. 87, No. 25, 1 September 2007, 3871-3892
