@@ -130,14 +130,6 @@ def draw_atoms(context,width,height,cx,cy,mv,scale,lines1,lines2,opts={})
     end
   end
   
-  z_max = []
-  pos_num = pos_after.length
-  pos_num.times do |i|
-    if pos_after[i][2] > pos_after[i-1][2] then
-      z_max = pos_after[i][2]
-    end
-  end
-  
     num=1
     z_layer,j=[],0.0
     z_layer[0] = 0.0
@@ -150,38 +142,21 @@ def draw_atoms(context,width,height,cx,cy,mv,scale,lines1,lines2,opts={})
   #xy_atom
   pos_after.each{|pos|
     context.set_source_rgb(0, 0, 1)
-    #open_circle(context,num,pos_after)
-    if num == 0 then
-      if pos[2] < z_layer[num] then
-        context.circle(mv+adjust*pos[0],mv+adjust*(y_max-pos[1]), r*1.5)
-        context.set_line_width(0.5)
-        context.stroke
-      else
-      context.circle(mv+adjust*pos[0],mv+adjust*(y_max-pos[1]), r)
-        context.fill
-      end
-    else
-      if pos[2] > z_layer[num-1] && pos[2] < z_layer[num] then
-        context.circle(mv+adjust*pos[0],mv+adjust*(y_max-pos[1]), r*1.5)
-        context.set_line_width(0.5)
-        context.stroke
-      else
-        context.circle(mv+adjust*pos[0],mv+adjust*(y_max-pos[1]), r)
-        context.fill
-      end
-    end
+    context.circle(mv+adjust*pos[0],mv+adjust*(y_max-pos[1]), r)
+    context.fill
+    
     erasure_atom(lines1,lines2).each{|d|
-      context.circle(mv+adjust*d[0],mv+adjust*(y_max-d[1]), r)
-      context.set_source_rgb(1, 0, 0)
-      context.fill
+    context.circle(mv+adjust*d[0],mv+adjust*(y_max-d[1]), r)
+    context.set_source_rgb(1, 0, 0)
+    context.fill
     }
   }
   if opts[:same_size]
     (0..vector_max).each{|vector|
-      context.set_source_rgb(1, 0.8, 0)
+      context.set_source_rgb(0, 0.8, 0)
       context.move_to(mv+adjust*pos_before[vector][0],mv+adjust*(y_max-pos_before[vector][1]))
       context.line_to(mv+adjust*pos_after[vector][0],mv+adjust*(y_max-pos_after[vector][1]))
-      context.set_line_width(2)
+      context.set_line_width(1)
       context.stroke
     }
   end
@@ -189,39 +164,21 @@ def draw_atoms(context,width,height,cx,cy,mv,scale,lines1,lines2,opts={})
   #xz_atom
   pos_after.each{|pos|
     context.set_source_rgb(0, 0, 1)
-    #open_circle(context,num,pos_after)
-    if num == 0 then
-      if pos[2] < z_layer[num] then
-        context.circle(mv+adjust*pos[0],mv+cy+adjust*(z_max-pos[2]), r*1.5)
-        context.set_line_width(0.5)
-        context.stroke
-      else
-        context.circle(mv+adjust*pos[0],mv+cy+adjust*(z_max-pos[2]), r)
-        context.fill
-      end
-    else
-      if pos[2] > z_layer[num-1] && pos[2] < z_layer[num] then
-        context.circle(mv+adjust*pos[0],mv+cy+adjust*(z_max-pos[2]), r*1.5)
-        context.set_line_width(0.5)
-        context.stroke
-      else
-        context.circle(mv+adjust*pos[0],mv+cy+adjust*(z_max-pos[2]), r)
-        context.fill
-      end
-    end
-
+    context.circle(mv+adjust*pos[0],mv+cy+adjust*pos[2], r)
+    context.fill
+  
     erasure_atom(lines1,lines2).each{|d|
-      context.circle(mv+adjust*d[0],mv+cy+adjust*(z_max-d[2]), r)
+      context.circle(mv+adjust*d[0],mv+cy+adjust*d[2], r)
       context.set_source_rgb(1, 0, 0)
       context.fill
     }
   }
   if opts[:same_size]
     (0..vector_max).each{|vector|
-      context.set_source_rgb(1, 0.8, 0)
-      context.move_to(mv+adjust*pos_before[vector][0],mv+cy+adjust*(z_max-pos_before[vector][2]))
-      context.line_to(mv+adjust*pos_after[vector][0],mv+cy+adjust*(z_max-pos_after[vector][2]))
-      context.set_line_width(2)
+      context.set_source_rgb(0, 0.8, 0)
+      context.move_to(mv+adjust*pos_before[vector][0],mv+cy+adjust*pos_before[vector][2])
+      context.line_to(mv+adjust*pos_after[vector][0],mv+cy+adjust*pos_after[vector][2])
+      context.set_line_width(1)
       context.stroke
     }
   end
@@ -229,40 +186,21 @@ def draw_atoms(context,width,height,cx,cy,mv,scale,lines1,lines2,opts={})
   #yz_atom
   pos_after.each{|pos|
     context.set_source_rgb(0, 0, 1)
-    #open_circle(context,num,pos_after)
-    if num == 0 then
-      if pos[2] < z_layer[num] then
-        context.circle(mv+cx+adjust*pos[1],mv+cy+adjust*(z_max-pos[2]), r*1.5)
-      context.set_line_width(0.5)
-      context.stroke
-       pos[2]
-      else
-        context.circle(mv+cx+adjust*pos[1],mv+cy+adjust*(z_max-pos[2]), r)
-        context.fill
-      end
-    else
-      if pos[2] > z_layer[num-1] && pos[2] < z_layer[num] then
-        context.circle(mv+cx+adjust*pos[1],mv+cy+adjust*(z_max-pos[2]), r*1.5)
-        context.set_line_width(0.5)
-        context.stroke
-      else
-        context.circle(mv+cx+adjust*pos[1],mv+cy+adjust*(z_max-pos[2]), r)
-        context.fill
-      end
-    end
-      
+    context.circle(mv+cx+adjust*pos[1],mv+cy+adjust*pos[2], r)
+    context.fill
+            
     erasure_atom(lines1,lines2).each{|d|
-      context.circle(mv+cx+adjust*d[1],mv+cy+adjust*(z_max-d[2]), r)
+      context.circle(mv+cx+adjust*d[1],mv+cy+adjust*d[2], r)
       context.set_source_rgb(1, 0, 0)
       context.fill
     }
   }
   if opts[:same_size]
     (0..vector_max).each{|vector|
-      context.set_source_rgb(1, 0.8, 0)
-      context.move_to(mv+cx+adjust*pos_before[vector][1],mv+cy+adjust*(z_max-pos_before[vector][2]))
-      context.line_to(mv+cx+adjust*pos_after[vector][1],mv+cy+adjust*(z_max-pos_after[vector][2]))
-      context.set_line_width(2)
+      context.set_source_rgb(0, 0.8, 0)
+      context.move_to(mv+cx+adjust*pos_before[vector][1],mv+cy+adjust*pos_before[vector][2])
+      context.line_to(mv+cx+adjust*pos_after[vector][1],mv+cy+adjust*pos_after[vector][2])
+      context.set_line_width(1)
       context.stroke
     }
   end
