@@ -1,6 +1,36 @@
 {{toc}}
 
 !三面図を利用した粒界原子配列の視覚化
+<<<<<<< HEAD
+!!概要
+本研究の概要を以下のページに記述する．{{br}}
+[[boundary_narita_summary]]
+!!序論
+[[boundary_narita_introduction]]
+!!粒界原子配列の描画
+[[boundary_narita_viewer_function]]
+!!本研究の結果と課題
+[[boundary_narita_result_discussion]]
+!!総括
+[[boundary_narita_conclusion]]
+!!参考文献
+[[boundary_narita_reference]]
+!POSCAR_2223の説明
+[[boundary_narita_2223_memo]]
+!小傾角粒界エネルギー
+!!Read-Shockleyによる小傾角粒界エネルギーの理論予想
+[[boundary_narita_Read-Shockley]]
+!!大槻による実験結果の詳細
+[[boundary_narita_Otuki_experiment]]
+!!シミュレーションなど報告例の分析
+!!西谷研のこれまでの計算結果
+!!!八幡の計算
+[[boundary_narita_calculation_Yahata]]
+!!!村上の計算
+[[boundary_narita_calculation_Murakami]]
+!!!岩佐の計算
+[[boundary_narita_calculation_Iwasa]]
+=======
 !![[はじめに|boundary_narita_introduction]]
 !![[粒界原子配列の描画方法|boundary_narita_drawing_atoms]]
 !![[POSCAR_2223の計算方法|boundary_narita_2223_calc_memo]]
@@ -13,6 +43,7 @@
 !!![[八幡の計算|boundary_narita_calculation_Yahata]]
 !!![[村上の計算|boundary_narita_calculation_Murakami]]
 !!![[岩佐の計算|boundary_narita_calculation_Iwasa]]
+>>>>>>> 7e4d5d1c67fe6022a3e89a8ae25230f0edd00187
 !計算ソフトの開発
 !!boundaryの使用法
 !!vasprunの使用法

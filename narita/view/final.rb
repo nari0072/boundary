@@ -16,7 +16,7 @@ def read_pos(lines, init_line=8)
       pos[1] += atom_j*ly
       pos[2] += atom_j*lz
     }
-    poscar << pos
+   poscar << pos
   }
   return poscar
 end
@@ -68,7 +68,6 @@ end
 
 def pos_y(pos, c_y, index, select)
   dy = select == 0 ? pos[index] : $pos_max[index]-pos[index]
-  #p $pos_max[index]-pos[index]
   return $mv+c_y+$adjust*dy
 end
 
@@ -103,7 +102,7 @@ def draw_each_plane(ind_1,ind_2,c_x,c_y)
   }
 
   if $pos_before.size==$pos_after.size
-    $context.set_source_rgb(1, 0.8, 0)
+    $context.set_source_rgb(0, 0.8, 0)
     (0..$pos_before.length-1).each{|i|
       $context.move_to($mv+c_x+$adjust*$pos_before[i][ind_1],pos_y($pos_before[i],c_y,ind_2,sel))
       $context.line_to($mv+c_x+$adjust*$pos_after[i][ind_1],pos_y($pos_after[i],c_y,ind_2,sel))
@@ -117,6 +116,7 @@ def find_max(pos)
   [0,1,2].each{|ind|
     pos.length.times {|i| max[ind] = pos[i][ind] if max[ind] < pos[i][ind] }
   }
+  p max
   return max
 end
 

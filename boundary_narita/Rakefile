@@ -1,21 +1,18 @@
-# -*- coding: utf-8 -*-
-require 'systemu'
-require 'tempfile'
-# -*- coding: utf-8 -*-
 begin
   target_dir = File.readlines('./.hikirc')[0].chomp
 rescue => e
   puts e
   exit
 end
-dirnames=Dir.pwd.split('/')
-basename = (dirnames[-1]=='hikis')? dirnames[-2] : dirnames[-1]
-$latex_dir= 'latex_dir'
+p target_dir
 
 task :default do
   system 'rake -T'
 end
 
+<<<<<<< HEAD
+desc "convert fig size"
+=======
 desc "latex conversion FILE1"
 task :latex => [:latex_base] do
   exit
@@ -173,29 +170,21 @@ task :number do
 end
 
 desc "convert fig size SCALE TARGET_DIR"
+>>>>>>> 7e4d5d1c67fe6022a3e89a8ae25230f0edd00187
 task :convert do
+  source = ARGV[2]
   scale = ARGV[1]
-  target_dir=ARGV[2]
-  Dir.entries(target_dir)[2..-1].each{|file|
-    p file
-    source = File.join(target_dir,file)
-    target = File.join('figs',file)
-    p command = "convert #{source} -resize #{scale}\% #{target}"
-    system command
-  }
+  target = File.join('figs',source)
+  p command = "convert #{source} -resize #{scale}\% #{target}"
+  system command
   exit
 end
 
-desc "normal sync hikis and figs to hiki directory"
-task :sync => [:check_previous,:sync0]
-
-
-desc "force_sync hikis and figs to hiki directory"
-task :force_sync => [:sync0]
-
-desc "sync0 hikis and figs to hiki directory"
-task :sync0 do
-  entries=Dir.entries('.')
+desc "sync hikis and figs to hiki directory"
+task :sync do
+  p dirnames=Dir.pwd.split('/')
+  p basename = (dirnames[-1]=='hikis')? dirnames[-2] : dirnames[-1]
+  p entries=Dir.entries('.')
   entries[2..-1].each{|source| #cp *.hiki
     next unless source.include?('.hiki')
     next if source.include?('.hikirc')
@@ -205,19 +194,15 @@ task :sync0 do
     FileUtils.cp(source,target,:verbose=>true)
   }
   p entries=Dir.entries('./figs') #cp files in figs
+<<<<<<< HEAD
+=======
   p target = File.join(target_dir,'cache','attach',basename)
   FileUtils.mkdir_p(target,:verbose=>true) unless File.exists?(target)
+>>>>>>> 7e4d5d1c67fe6022a3e89a8ae25230f0edd00187
   entries[2..-1].each{|file|
     p source = File.join('./figs',file)
+    p target = File.join(target_dir,'cache','attach',basename)
     FileUtils.cp(source,target,:verbose=>true)
-  }
-
-  File.open('./.hikirc','w'){|file|
-    status, stdout, stderr =systemu "hiki -l #{basename}*"
-    file.print(target_dir+"\n")
-    stdout.split("\n")[3..-1].each{|line|
-      file.print line+"\n"
-    }
   }
   exit
 end
@@ -226,46 +211,16 @@ desc "For hiki Errno::ENOENT, Errno::EACCES"
 task :chenv do
   p user = ENV['USER']
   system("sudo chmod -R a+w #{target_dir}")
-#  system("sudo chown -R #{user} #{target_dir}")
+  system("sudo chown -R #{user} #{target_dir}")
 end
 
 desc "self copy to hikiutils template directory"
 task :self_copy do
-  p cp_files=[[File.join(Dir.pwd,'Rakefile'),'Rakefile_hiki_sync'],
-            [File.join(ENV['HOME'],'.my_help','hiki_help.yml'),'hiki_help.yml']]
+  p cp_files=[['Rakefile','Rakefile_hiki_sync'],
+            [File.join(ENV['HOME'],'.my_help','hiki_help.yml'),'hik_help.yml']]
   cp_files.each{|files|
-    p source = files[0]
+    p source = File.join(Dir.pwd,'Rakefile')
     p target = File.join('/Users/bob/Github/hikiutils/lib/templates/',files[1])
     FileUtils.cp(source,target,:verbose=>true)
   }
-end
-
-desc "check previou and current sync"
-task :check_previous do
-  current={}
-  print "current hiki dir\n"
-  status, stdout, stderr = systemu("hiki -l #{basename}*")
-  stdout.split("\n")[3..-1].each{|line|
-    p line
-    file=   line.split(/\s+/)[-1]
-    current[file]=line
-  }
-  previous={}
-  print "previous sync\n"
-  File.readlines('.hikirc')[1..-1].each{|line|
-    p line.chomp
-    file=   line.split(/\s+/)[-1]
-    previous[file]=line.chomp
-  }
-  changed = []
-  current.each_pair{|key,val|
-    if !previous.include?(key) or previous[key]!=val
-      changed << val+"\n"
-    end
-  }
-  if changed.size != 0
-    print("hiki dirで変更が発生しています．\n")
-    changed.each{|line| print line+"\n"} 
-    exit
-  end
 end
