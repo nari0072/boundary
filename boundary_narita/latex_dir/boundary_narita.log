@@ -1,0 +1,563 @@
+This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.euc) (TeX Live 2016) (preloaded format=platex 2017.1.26)  30 JAN 2017 20:42
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**boundary_narita.tex
+(./boundary_narita.tex
+pLaTeX2e <2016/11/29> (based on LaTeX2e <2017/01/01>)
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(/usr/local/texlive/2016/texmf-dist/tex/platex/jsclasses/jsarticle.cls
+Document Class: jsarticle 2017/01/13 okumura, texjporg
+\jsc@mpt=\dimen118
+\jsc@mmm=\dimen119
+\jsc@smallskipamount=\skip41
+LaTeX Info: Redefining \rmfamily on input line 468.
+LaTeX Info: Redefining \sffamily on input line 471.
+LaTeX Info: Redefining \ttfamily on input line 474.
+LaTeX Info: Redefining \textmc on input line 477.
+LaTeX Info: Redefining \textgt on input line 479.
+\symmincho=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
+(Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 540.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 731.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 731.
+\fullwidth=\dimen120
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 7.68799pt on input line 883.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.68799pt on input line 883.
+\c@part=\count82
+\c@section=\count83
+\c@subsection=\count84
+\c@subsubsection=\count85
+\c@paragraph=\count86
+\c@subparagraph=\count87
+\@abstractbox=\box41
+\c@figure=\count88
+\c@table=\count89
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\jsc@tocl@width=\dimen121
+\@lnumwidth=\dimen122
+\bibindent=\dimen123
+(/usr/local/texlive/2016/texmf-dist/tex/platex/jsclasses/jslogo.sty
+Package: jslogo 2016/07/14 okumura, texjporg
+LaTeX Info: Redefining \TeX on input line 94.
+LaTeX Info: Redefining \LaTeX on input line 147.
+LaTeX Info: Redefining \LaTeXe on input line 200.
+)
+\heisei=\count90
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/10/09 v1.0u Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: dvipdfmx.def on input line 99.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-def/dvipdfmx.def
+File: dvipdfmx.def 2016/07/11 v4.12 LaTeX color/graphics driver for dvipdfmx (L
+3/ChoF)
+))
+\Gin@req@height=\dimen124
+\Gin@req@width=\dimen125
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: dvipdfmx.def on input line 147.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count91
+\lst@gtempboxa=\box42
+\lst@token=\toks16
+\lst@length=\count92
+\lst@currlwidth=\dimen126
+\lst@column=\count93
+\lst@pos=\count94
+\lst@lostspace=\dimen127
+\lst@width=\dimen128
+\lst@newlines=\count95
+\lst@lineno=\count96
+\lst@maxwidth=\dimen129
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count97
+\lst@skipnumbers=\count98
+\lst@framebox=\box43
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(./boundary_narita.aux (./introduction.aux) (./drawing_atoms.aux)
+(./2223_calc_memo.aux) (./conclusion.aux) (./Read-Shockley_inference.aux)
+(./Otuki_experiment.aux) (./calculation_Yahata.aux) (./calculation_Murakami.aux
+) (./calculation_Iwasa.aux))
+\openout1 = `boundary_narita.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+\c@lstlisting=\count99
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 16.60605pt on input line 45.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 16.60605pt on input line 45.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 45.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 45.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 45.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 45.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 45.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.76599pt on input line 45.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 46.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 46.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 46.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 46.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 46.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 46.
+ (./boundary_narita.toc [1
+
+]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 6.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 6.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 6.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.805pt on input line 6.
+)
+\tf@toc=\write3
+\openout3 = `boundary_narita.toc'.
+
+ (./boundary_narita.toc)
+\tf@toc=\write4
+\openout4 = `boundary_narita.toc'.
+
+ [2]
+\openout2 = `introduction.aux'.
+
+ (./introduction.tex) [3
+
+]
+\openout2 = `drawing_atoms.aux'.
+
+ (./drawing_atoms.tex
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 16.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 16.
+) [4
+
+
+] [5]
+\openout2 = `2223_calc_memo.aux'.
+
+
+(./2223_calc_memo.tex
+Overfull \hbox (9.61267pt too wide) in paragraph at lines 15--15
+ []    \OT1/cmtt/m/n/10 11.3867605961746481    0.0100935929319685   -0.00174617
+89180479[] 
+ []
+
+
+Overfull \hbox (9.61267pt too wide) in paragraph at lines 15--15
+ []     \OT1/cmtt/m/n/10 0.0041105062482931    6.3305944602789737   -0.00052566
+93932857[] 
+ []
+
+
+Overfull \hbox (9.61267pt too wide) in paragraph at lines 15--15
+ []    \OT1/cmtt/m/n/10 -0.0010552304551614   -0.0005576642430577    7.79991699
+97776718[] 
+ []
+
+
+Overfull \hbox (30.61249pt too wide) in paragraph at lines 23--23
+ [] \OT1/cmtt/m/n/10 -3    1   11.15697    6.34918    8.08280 -112.35392 0.5573
+720133794792[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -6    1   10.81190    6.34918    8.08280 -112.30642 0.564
+7867426403657[] 
+ []
+
+
+Overfull \hbox (30.61249pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -6    2   10.81190    6.41205    8.08280 -112.3123 0.5583
+407509605174[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -6    3   10.81190    6.47491    8.08280 -112.29352 0.555
+7945934739222[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -6    4   10.81190    6.53777    8.08280 -112.25456 0.556
+3566217861508[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -5    1   10.92692    6.34918    8.08280 -112.36269 0.556
+0030202085747[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -5    2   10.92692    6.41205    8.08280 -112.34929 0.552
+6232371583745[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -5    3   10.92692    6.47491    8.08280 -112.31201 0.552
+9643568367403[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -5    4   10.92692    6.53777    8.08280 -112.25093 0.556
+9069177758106[] 
+ []
+
+[6
+
+
+]
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -4    0   11.04194    6.28632    8.08280 -112.38303 0.558
+3562346401736[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -4    1   11.04194    6.34918    8.08280 -112.38191 0.553
+0027866002744[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -4    2   11.04194    6.41205    8.08280 -112.35048 0.552
+4392998395155[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -4    3   11.04194    6.47491    8.08280 -112.29313 0.555
+8542901904441[] 
+ []
+
+
+Overfull \hbox (30.61249pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -3   -1   11.15697    6.22346    8.08280 -112.3816 0.5642
+239285248216[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -3    0   11.15697    6.28632    8.08280 -112.37952 0.558
+9096232023381[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -3    1   11.15697    6.34918    8.08280 -112.35392 0.557
+3720133794792[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -3    2   11.15697    6.41205    8.08280 -112.30236 0.559
+8771685650941[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -2   -2   11.27199    6.16059    8.08280 -112.38376 0.569
+6338188082548[] 
+ []
+
+
+Overfull \hbox (30.61249pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -2   -1   11.27199    6.22346    8.08280 -112.38698 0.563
+367146901053[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -2    0   11.27199    6.28632    8.08280 -112.36558 0.561
+1074113950909[] 
+ []
+
+
+Overfull \hbox (30.61249pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -2    1   11.27199    6.34918    8.08280 -112.32077 0.562
+546713905762[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -2    2   11.27199    6.41205    8.08280 -112.25037 0.567
+9132199998959[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -1   -2   11.38701    6.16059    8.08280 -112.37613 0.570
+8613188749168[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -1   -1   11.38701    6.22346    8.08280 -112.36337 0.567
+1271123540664[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -1    0   11.38701    6.28632    8.08280 -112.32574 0.567
+3886080664855[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -1    1   11.38701    6.34918    8.08280 -112.26303 0.571
+5599026957316[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []  \OT1/cmtt/m/n/10 -1    2   11.38701    6.41205    8.08280 -112.17362 0.579
+7764042203458[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []   \OT1/cmtt/m/n/10 0   -2   11.50203    6.16059    8.08280 -112.33666 0.577
+2111783285478[] 
+ []
+
+
+Overfull \hbox (30.61249pt too wide) in paragraph at lines 86--86
+ []   \OT1/cmtt/m/n/10 0   -1   11.50203    6.22346    8.08280 -112.3085 0.5758
+653293979867[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []   \OT1/cmtt/m/n/10 0    0   11.50203    6.28632    8.08280 -112.25474 0.578
+5825077569731[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []   \OT1/cmtt/m/n/10 0    1   11.50203    6.34918    8.08280 -112.17344 0.585
+5448625795808[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []   \OT1/cmtt/m/n/10 0    2   11.50203    6.41205    8.08280 -112.07095 0.595
+6460214700341[] 
+ []
+
+[7]
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []   \OT1/cmtt/m/n/10 1   -2   11.61705    6.16059    8.08280 -112.26554 0.588
+6528303260675[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []   \OT1/cmtt/m/n/10 1   -1   11.61705    6.22346    8.08280 -112.22402 0.589
+3190304344416[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []   \OT1/cmtt/m/n/10 1    0   11.61705    6.28632    8.08280 -112.15653 0.594
+0663512584203[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []   \OT1/cmtt/m/n/10 1    1   11.61705    6.34918    8.08280 -112.06291 0.602
+7985473207549[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []   \OT1/cmtt/m/n/10 1    2   11.61705    6.41205    8.08280 -111.94264 0.615
+4787923798172[] 
+ []
+
+
+Overfull \hbox (30.61249pt too wide) in paragraph at lines 86--86
+ []   \OT1/cmtt/m/n/10 2   -2   11.73207    6.16059    8.08280 -112.16641 0.604
+600678505402[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []   \OT1/cmtt/m/n/10 2   -1   11.73207    6.22346    8.08280 -112.10922 0.607
+6012851572761[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []   \OT1/cmtt/m/n/10 2    0   11.73207    6.28632    8.08280 -112.02921 0.614
+1396936329679[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []   \OT1/cmtt/m/n/10 2    1   11.73207    6.34918    8.08280 -111.92426 0.624
+4417517843739[] 
+ []
+
+
+Overfull \hbox (35.86244pt too wide) in paragraph at lines 86--86
+ []   \OT1/cmtt/m/n/10 2    2   11.73207    6.41205    8.08280 -111.79417 0.638
+4276778678974[] 
+ []
+
+
+Overfull \hbox (30.61249pt too wide) in paragraph at lines 90--90
+ [] \OT1/cmtt/m/n/10 -4    2   11.04194    6.41205    8.08280 -112.35048 0.5524
+392998395155[] 
+ []
+
+) [8]
+\openout2 = `conclusion.aux'.
+
+ (./conclusion.tex) [9
+
+
+]
+\openout2 = `Read-Shockley_inference.aux'.
+
+ (./Read-Shockley_inference.tex) [10
+
+
+]
+\openout2 = `Otuki_experiment.aux'.
+
+
+(./Otuki_experiment.tex) [11
+
+
+]
+\openout2 = `calculation_Yahata.aux'.
+
+ (./calculation_Yahata.tex) [12
+
+
+]
+\openout2 = `calculation_Murakami.aux'.
+
+
+(./calculation_Murakami.tex) [13
+
+
+]
+\openout2 = `calculation_Iwasa.aux'.
+
+ (./calculation_Iwasa.tex) [14
+
+
+]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 61.
+
+ ...                                              
+                                                  
+l.71 \end{verbatim}
+                   \end{quote}
+? 
+./boundary_narita.tex:71: Emergency stop.
+ ...                                              
+                                                  
+l.71 \end{verbatim}
+                   \end{quote}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+ 
+Here is how much of TeX's memory you used:
+ 2230 strings out of 493683
+ 31181 string characters out of 6149653
+ 93922 words of memory out of 5000000
+ 5798 multiletter control sequences out of 15000+600000
+ 14455 words of font info for 65 fonts, out of 8000000 for 9000
+ 934 hyphenation exceptions out of 8191
+ 26i,6n,32p,224b,385s stack positions out of 5000i,500n,10000p,200000b,80000s
+Output written on boundary_narita.dvi (14 pages, 15196 bytes).
+n.aux) (./drawing_atoms.aux)
+(./2223_calc_memo.aux) (./conclusion.aux) (./Read-Shockley_inference.aux)
+(./Otuki_experiment.aux) (./calculation_Yahata.aux) (./calculation_Murakami.aux
+) (./calculation_Iwasa.aux)) ) 
+Here is how much of TeX's memory you used:
+ 2315 strings out of 493683
+ 32686 string characters out of 6149653
+ 108343 words of memory out of 5000000
+ 5836 multiletter control sequences out of 15000+600000
+ 14644 words of font info for 66 fonts, out of 8000000 for 9000
+ 934 hyphenation exceptions out of 8191
+ 26i,6n,33p,224b,1190s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on boundary_narita.dvi (16 pages, 23748 bytes).

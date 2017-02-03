@@ -10,7 +10,167 @@ task :default do
   system 'rake -T'
 end
 
+<<<<<<< HEAD
 desc "convert fig size"
+=======
+desc "latex conversion FILE1"
+task :latex => [:latex_base] do
+  exit
+end
+
+desc "latex conversion FILE1 with wrap format"
+task :latex_wrap => [:latex_base, :change_wrap] do
+  exit
+end
+
+desc "latex conversion whole hiki files in the current dir."
+task :latex_all do
+  p entries=Dir.entries('.')
+  main_file=""
+  entries.each{|file|
+    next unless file.include?('.hiki')
+    next if file.include?('.hikirc')
+    f_name =File.basename(file,'.hiki')
+    if f_name==basename
+      option="--listings --head latex_dir/head.tex -p "
+      main_file=f_name
+    else
+      option="-l 1 --listings -b "
+    end
+    convert_to_latex(file, option)
+  }
+  cont=""
+  p reg_exp = Regexp.new("#{basename}_(.+)")
+  File.readlines(File.join($latex_dir,"#{main_file}.tex")).each{|line|
+    if line.match(/section{(.+)}/)
+      if m=line.match(/\\verb\|(.+)\((.+)\)\|/)
+        p m
+        p m_t=m[2].match(reg_exp)[1]
+        line = "\\include{#{m_t}}\n"
+      elsif m=line.match(/section{\\verb\|(.+)\|}/)
+        p m
+        p m_t=m[1].match(reg_exp)[1]
+        line = "\\include{#{m_t}}\n"
+      else
+        line = ""
+      end
+    end
+    cont << line
+  }
+  File.open(File.join($latex_dir,"#{main_file}.tex"),'w'){|file| file.print cont}
+  system "open latex_dir/#{main_file}.tex"
+  exit
+end
+
+desc "latex conversion FILE1(hiki) to FILE2(latex)"
+task :latex_base do
+  Dir.mkdir($latex_dir) unless Dir.exist?($latex_dir)
+  convert_to_latex(ARGV[1])
+  system("open #{$save_name}")
+end
+
+def convert_to_latex(file_name, option=nil)
+  p file_name = file_name.include?('.hiki')? file_name : file_name+'.hiki'
+  p tex_name = File.basename(file_name,'.hiki')+'.tex'
+  p $save_name = ARGV[2] || File.join($latex_dir,tex_name)
+  pre_name = File.join($latex_dir,'pre.tex')
+  p pre_command = File.exist?(pre_name) ? '--pre '+pre_name : nil
+  lines = File.readlines(file_name)
+  cont = ""
+  lines.each{|line|
+    if m=line.match(/\{\{attach_view\((.*),(.*)\)\}\}/)
+      p line="\{\{attach_view\(#{m[1]}\)\}\}\n"
+    end
+    cont << line
+  }
+  tf1,tf2='tmp1.txt','tmp2.txt'
+  File.open(tf1,'w'){|file| file.print cont}
+  system "hiki2latex #{pre_command} #{option} #{tf1} > #{tf2}"
+  lines = File.readlines(tf2)
+  system "rm #{tf1} #{tf2}"
+
+  cont = ""
+  lines.each{|line|
+    if m=line.match(/\\includegraphics\[width=6cm\]\{(.+)\}/)
+      p line="\\includegraphics\[width=6cm,bb=0 0 442 500\]\{../figs/#{m[1]}\}\n"
+      cont << line
+    else
+      cont << line
+    end
+  }
+  File.open($save_name,'w'){|file| file.print cont }
+end
+
+desc "change latex figures to wrap format"
+task :change_wrap do
+  lines = File.readlines($save_name)
+
+  cont = ""
+  lines.each{|line|
+    if line.include?('\begin{figure}[htbp]\begin{center}')
+      p line
+      cont << '\begin{wrapfigure}{r}{8cm}'+"\n"
+      cont << '\vspace{-2\baselineskip}'+"\n"
+      cont << '\begin{center}'+"\n"
+    elsif line.include?('\label{default}\end{center}\end{figure}')
+      p line
+      cont << '\end{center}'+"\n"
+      cont << '\vspace{2\baselineskip}'+"\n"
+      cont << '\end{wrapfigure}'+"\n"
+    else
+      cont << line
+    end
+  }
+  File.open($save_name,'w'){|file| file.print cont }
+
+  system("open #{$save_name}")
+  exit
+end
+
+
+desc "increment fig NUBERS in FILE"
+task :increment do
+  number=ARGV[1]
+  file = ARGV[2]
+  dir = ARGV[3] || nil
+  lines = File.readlines(file)
+  cont = ""
+  lines.each{|line|
+    if m=line.match(/\{\{attach_view\((\w+|_).(\d+).jpeg\)\}\}/)
+      new_num=sprintf("%03d",m[2].to_i+number.to_i)
+      line="\{\{attach_view\(#{m[1]}.#{new_num}.jpeg,#{dir}\)\}\}\n"
+      cont << line
+    else
+      cont << line
+    end
+  }
+  print cont
+  exit
+end
+
+desc "numbering figs from the NUBER in FILE"
+task :number do
+  number=ARGV[1].to_i
+  file = ARGV[2]
+  dir = ARGV[3] || nil
+  lines = File.readlines(file)
+  cont = ""
+  lines.each{|line|
+    if m=line.match(/\{\{attach_view\((\w+|_).(\d+).jpeg,(\w+)\)\}\}/)
+      new_num=sprintf("%03d",number)
+      line="\{\{attach_view\(#{m[1]}.#{new_num}.jpeg,#{m[3]}\)\}\}\n"
+      cont << line
+      number += 1
+    else
+      cont << line
+    end
+  }
+  print cont
+  exit
+end
+
+desc "convert fig size SCALE TARGET_DIR"
+>>>>>>> 7e4d5d1c67fe6022a3e89a8ae25230f0edd00187
 task :convert do
   source = ARGV[2]
   scale = ARGV[1]
@@ -34,6 +194,11 @@ task :sync do
     FileUtils.cp(source,target,:verbose=>true)
   }
   p entries=Dir.entries('./figs') #cp files in figs
+<<<<<<< HEAD
+=======
+  p target = File.join(target_dir,'cache','attach',basename)
+  FileUtils.mkdir_p(target,:verbose=>true) unless File.exists?(target)
+>>>>>>> 7e4d5d1c67fe6022a3e89a8ae25230f0edd00187
   entries[2..-1].each{|file|
     p source = File.join('./figs',file)
     p target = File.join(target_dir,'cache','attach',basename)
