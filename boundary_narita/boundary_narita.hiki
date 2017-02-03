@@ -1,20 +1,6 @@
 {{toc}}
 
 !三面図を利用した粒界原子配列の視覚化
-<<<<<<< HEAD
-!![[はじめに|boundary_narita_introduction]]
-!![[粒界原子配列の描画方法|boundary_narita_drawing_atoms]]
-!![[POSCAR_2223の計算方法|boundary_narita_2223_calc_memo]]
-!![[研究結果と考察|boundary_narita_conclusion]]
-!小傾角粒界エネルギー
-!![[Read-Shockleyによる小傾角粒界エネルギーの理論予想|boundary_narita_Read-Shockley_inference]]
-!![[大槻による実験結果の詳細|boundary_narita_Otuki_experiment]]
-!!シミュレーションなど報告例の分析
-!!西谷研のこれまでの計算結果
-!!![[八幡の計算|boundary_narita_calculation_Yahata]]
-!!![[村上の計算|boundary_narita_calculation_Murakami]]
-!!![[岩佐の計算|boundary_narita_calculation_Iwasa]]
-=======
 !!概要
 本研究の概要を以下のページに記述する．{{br}}
 [[boundary_narita_summary]]
@@ -43,68 +29,3 @@
 [[boundary_narita_calculation_Murakami]]
 !!!岩佐の計算
 [[boundary_narita_calculation_Iwasa]]
->>>>>>> dbcd4e42026d1d5410fe9e2a8f0a73f2e76c64f4
-!計算ソフトの開発
-!!boundaryの使用法
-!!vasprunの使用法
-!モデル計算結果
-!!2223
-
-2223モデルの計算結果を記す．
-
-<<< bash
-
-(Al)4  (Fm-3m)
-   1.00000000000000
-    11.3867605961746481    0.0100935929319685   -0.0017461789180479
-     0.0041105062482931    6.3305944602789737   -0.0005256693932857
-    -0.0010552304551614   -0.0005576642430577    7.7999169997776718
-
-
--0.112458518905E+03
-
-dF-31*(-3.739501247) %=> 3.4660198
-
-3.4660198/(6.3305944602789737*7.7999169997776718)*1.60218*10/2
->>>
-Full relaxの最安定energyは，0.5623126780
-     xx=0.9899786872, yy=1.007043146
-であるが，fixの-3_1において，
-  -3    1   11.15697    6.34918    8.08280 -112.35392 0.5573720133794792
-とそれより小さな値が出ている．
-
-もう少しその方向で上がるまで計算を追加する必要がある．
-
-
-!!3325
-
-Absolute interfacial energies of [001] tilt and twist grain boundaries in copper.
-Acta Metallurgica, Vol. 7, May 1959, 319.
-N.A.Gjostein and F.N.Rhines, 
-Fig.4. Dependencies of grain boundary energy on misorientation for [001] tilt boundaries at 1065C.  Solid line represents the curve calculated from equation (1), using the large angle parameters.
-<<<
-#Murakami-0
-13.000  0.227  -1.483  646.970  2851,435
-10.811  0.189  -1.668  560.606  2971.081
- 9.324  0.613  -1.816  540.909  3323.874
-
-#Murakami_90
- 7.838  0.137  -1.989  356.061  2602.806
- 9.189  0.160  -1.830  400.000  2494.103
-10.811  0.189  -1.668  431.818  2288.535
-12.703  0.222  -1.506  490.909  2214.202
-22.703  0.396  -0.926  671.212  1693.944
-
-#Otsuki-0
-10.000  0.174  -1.740  280.000  1609.195
- 7.300  0.127  -2.064  230.000  1811.024
- 5.000  0.087  -2.439  190.000  2183.908
-
-#Otsuki-90
-10.000  0.174  -1.740  280.000  1609.195
- 7.460  0.130  -2.040  230.000  1769.231
- 6.000  0.105  -2.256  207.000  1971.429
->>>
-
-"Asymmetric tilt grain boundary structure and energy in copper and aluminium",
-M. A. TSCHOPPy and D. L. MCDOWELL, Philosophical Magazine, Vol. 87, No. 25, 1 September 2007, 3871-3892
