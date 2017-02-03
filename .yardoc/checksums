@@ -1,0 +1,14 @@
+lib/boundary.rb 4fce4b7940af8dc7381c3fd326793e8e1bd55072
+lib/boundary0.rb 4fce4b7940af8dc7381c3fd326793e8e1bd55072
+lib/subsubcommand.rb c4531d74254942ad58415e6c8747fab652286693
+lib/boundary_thor.rb 2068b435ddca6e75c76bbc8595fab2180f6f27cf
+lib/boundary/version.rb 5c7d6b3b389776c65061c973c434281dd03774f1
+lib/boundary/model/tmp.rb 08ea4e717beb7faff79203b40c0f117c5133168e
+lib/boundary/view/test.rb bba27a31b97afe14f61cb792d7c779ef07ec1546
+lib/boundary/model/maker.rb 7d546201c75a196212351dea38b1e6f501136c5f
+lib/boundary/view/viewer.rb 5ba946e12dfea408c99f14d19ee14fe20408448c
+lib/boundary/model/maker90.rb d54638f565652fab4234beeb519ef845ad7061e8
+lib/boundary/command/options.rb da39a3ee5e6b4b0d3255bfef95601890afd80709
+lib/boundary/view/viewer_test.rb 5946cd2494707f6cb7987107f18de321b8f30b9e
+lib/boundary/adjuster/adjuster.rb 598f1394b136519795d466a0fd578ffc0f4bab61
+lib/boundary/adjuster/mover/boundary_model_move.rb fb908d055f05fa1b283938392ba05e65cc16713d
