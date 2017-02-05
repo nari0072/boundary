@@ -1,14 +1,16 @@
 /Users/bob/Sites/nishitani0/Internal/data
--rw-rw-rw-@ 1 bob  staff    409  2  5 12:54 boundary_narita
--rw-rw-rw-  1 bob  staff   2995  2  5 12:54 boundary_narita_Introduction
--rw-rw-rw-  1 bob  staff   1202  2  5 12:54 boundary_narita_Modeler
--rw-rw-rw-  1 bob  staff    293  2  5 12:54 boundary_narita_conclusion
--rw-r--r--  1 bob  staff   2633  2  5 12:54 boundary_narita_discussion
--rw-rw-rw-  1 bob  staff   3937  2  5 12:54 boundary_narita_method
--rw-rw-rw-  1 bob  staff   1054  2  5 12:54 boundary_narita_reference
--rw-r--r--  1 bob  staff   9227  2  5 12:54 boundary_narita_results
--rw-rw-rw-  1 bob  staff    618  2  5 12:54 boundary_narita_summary
--rw-r--r--  1 bob  staff    875  2  5 12:54 boundary_narita_toc
+-rw-rw-rw-@ 1 bob  staff    390  2  5 15:27 boundary_narita
+-rw-rw-rw-  1 bob  staff   3309  2  5 15:27 boundary_narita_Introduction
+-rw-rw-rw-  1 bob  staff   1202  2  5 15:27 boundary_narita_Modeler
+-rw-r--r--  1 bob  staff   9360  2  5 15:27 boundary_narita_codes
+-rw-rw-rw-  1 bob  staff    293  2  5 15:27 boundary_narita_conclusion
+-rw-r--r--  1 bob  staff   2633  2  5 15:27 boundary_narita_discussion
+-rw-rw-rw-  1 bob  staff   4033  2  5 15:27 boundary_narita_method
+-rw-rw-rw-  1 bob  staff   1054  2  5 15:27 boundary_narita_reference
+-rw-r--r--  1 bob  staff   9227  2  5 15:27 boundary_narita_results
+-rw-r--r--  1 bob  staff   3895  2  5 15:27 boundary_narita_results_and_discussions
+-rw-rw-rw-  1 bob  staff    618  2  5 15:27 boundary_narita_summary
+-rw-r--r--  1 bob  staff    875  2  5 15:27 boundary_narita_toc
 -rw-rw-rw-  1 bob  staff   2028  2  3 15:00 boundary_narita_results_discussion
 -rw-rw-rw-  1 bob  staff  10019  2  3 15:00 boundary_narita_viewer_function
 -rw-rw-rw-  1 bob  staff   6177  2  3 14:08 boundary_narita_2223_calc_memo
