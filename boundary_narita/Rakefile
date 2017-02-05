@@ -24,6 +24,14 @@ task :github do
   system "open https://github.com/#{github_dir}"
 end
 
+desc "hikiシステムにあるゴミファイルを掃除する"
+task :reset_hiki do
+  status, stdout, stderr = systemu "hiki -l #{$basename}"
+  stdout.split("\n").each{|line|
+    p line
+  }
+end
+
 desc "latex_dirのゴミを掃除"
 task :reset_latex_dir do
   system "mv latex_dir/head.tex ."
