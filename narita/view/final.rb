@@ -72,12 +72,24 @@ def pos_y(pos, c_y, index, select)
 end
 
 def open_circle
+  layer_max = find_max(pos)[2]
+  layer_min = 0.0
+  bound=(layer_max - layer_min )/(divider-1)
+
+  $pos_after.each_with_index do |pos,i|
+    if pos < bound+d and pos > bound-d
+      z_layer << i
+    end
+  end
+  p z_layer
+  =begin
   z_layer,j=[],-1.0
   for i in 0..4 do
     z_layer[i] = j
     j += 2
   end
   return z_layer
+  =end
 end
 
 def draw_each_plane(ind_1,ind_2,c_x,c_y)
@@ -120,9 +132,13 @@ def find_max(pos)
   return max
 end
 
-def main_draw(file1,file2,   model_scale = 10)
+def main_draw(file1,file2, number, model_scale = 10)
   lines1 = File.readlines(file1)
   lines2 = File.readlines(file2)
+  number = ARGV[2]
+  tmp=number.split('/')
+  numerator,denominator = tmp[0].to_f,tmp[1].to_f
+
   $pos_before = read_pos(lines1,8)
   $pos_after = read_pos(lines2,8)
   $deleted_atoms = mk_deleted_atom
@@ -146,5 +162,5 @@ end
 
 model_scale = 1.0/0.12
 $line_width = 1
-main_draw(ARGV[0],ARGV[1], model_scale)
+main_draw(ARGV[0],ARGV[1], ARGV[2],model_scale)
 

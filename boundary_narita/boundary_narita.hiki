@@ -1,14 +1,10 @@
+!title:三面図を利用した粒界原子配列の視覚化
 {{toc}}
-// % rake sync, hiki -u ,rake latex_all
-
-!title:三面図を利用した粒界原子配列の視覚化a
-![[概要|boundary_narita_summary]]
+[[概要|boundary_narita_summary]]
 ![[序論|boundary_narita_introduction]]
-![[方法|boundary_narita_method]]
-!結果
-!![[粒界原子配列の描画|boundary_narita_viewer_function]]
-!![[POSCAR_2223の説明|boundary_narita_2223_memo]]
-!![[本研究の結果と考察|boundary_narita_result_discussion]]
+![[ソフト開発の手法|boundary_narita_method]]
+![[ソフトの構成と描画|boundary_narita_results]]
+![[原子配列の表示結果と考察|boundary_narita_discussion]]
 ![[総括|boundary_narita_conclusion]]
 ![[参考文献|boundary_narita_reference]]
 
