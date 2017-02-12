@@ -1,14 +1,16 @@
 !参考文献
-[1] 小傾角粒界粒子シミュレーションの原子ポテンシャル依存性, 八幡裕也 (関西学院大学 理工学部研究科情報科学専 攻 修士論文 2015)
+[1] VASPによる粒界エネルギーの第一原理計算, 村上成那 (関西学院大学 理工学部研究科情報科学専 攻 修士論文 2014)
 
-[2] 原子削除操作を加えた対称傾角粒界のエネルギー計算, 岩佐恭佑 (関西学院大学 理工学部研究科情報科 学士論文 2016)
+[2] 小傾角粒界粒子シミュレーションの原子ポテンシャル依存性, 八幡裕也 (関西学院大学 理工学部研究科情報科学専 攻 修士論文 2015)
 
-[3] MVC(Model-View-Controller)を理解する, CakePHP,https://book.cakephp.org/2.0/ja/cakephp-overview/understanding-model-view-controller.html 
+[3] 原子削除操作を加えた対称傾角粒界のエネルギー計算, 岩佐恭佑 (関西学院大学 理工学部研究科情報科 学士論文 2016)
 
-[4] SVG入門, 新山祐介, コンピュータサイエンス入門 by 新山祐介, https://euske.github.io/euskecs/lec_svg/index.html 
+[4] VESTA, Koichi Momma(2004-2017), JP-Minerals, http://jp-minerals.org/vesta/jp/ 
 
-[5] cairo:2次元画像描画ライブラリ, 須藤功平, Rubyist Magazine-るびま Vol.54 (2016-08), http://magazine.rubyist.net/?0019-cairo 
+[5] MVC(Model-View-Controller)を理解する, CakePHP,https://book.cakephp.org/2.0/ja/cakephp-overview/understanding-model-view-controller.html 
 
-[6] VESTA, Koichi Momma(2004-2017), JP-Minerals, http://jp-minerals.org/vesta/jp/ 
+[6] SVG入門, 新山祐介, コンピュータサイエンス入門 by 新山祐介, https://euske.github.io/euskecs/lec_svg/index.html 
 
-[7] 三面図(機械設計のための基礎製図), 独立行政法人 海上技術安全研究所, NMRI, https://www.nmri.go.jp/eng/khirata/mechdesign/ch04/ch04.html
+[7] cairo:2次元画像描画ライブラリ, 須藤功平, Rubyist Magazine-るびま Vol.54 (2016-08), http://magazine.rubyist.net/?0019-cairo 
+
+[8] 三面図(機械設計のための基礎製図), 独立行政法人 海上技術安全研究所, NMRI, https://www.nmri.go.jp/eng/khirata/mechdesign/ch04/ch04.html

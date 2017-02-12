@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 require 'cairo'
 require 'scanf'
 
@@ -9,7 +8,7 @@ def read_pos(lines, init_line=8)
   lines[init_line..lines.length+1].each{|line| atom << line.scanf("%f %f %f\n") }
 
   atom.each{|i_atom|
-    pos=[0.0,0.0,0.0,0.0]
+    pos=[0.0,0.0,0.0]
     i_atom.each_with_index{|atom_j,j|
       lx,ly,lz=lattice[j]
       pos[0] += atom_j*lx
@@ -61,9 +60,9 @@ def draw_axes
 end
 
 def draw_atoms
-  draw_each_plane(0,1,0,0)     #xy_plane pos[0],pos[1], 0, 0
-  draw_each_plane(0,2,0,$cy)   #xz_plane pos[0],pos[2], 0, $cy
-  draw_each_plane(1,2,$cx,$cy) #yz_plane pos[1],pos[2], $cx, $cy
+  draw_each_plane(0,1,0,0)
+  draw_each_plane(0,2,0,$cy)
+  draw_each_plane(1,2,$cx,$cy)
 end
 
 def pos_y(pos, c_y, index, select)
@@ -72,43 +71,38 @@ def pos_y(pos, c_y, index, select)
 end
 
 def open_circle
-  layer_max = find_max(pos)[2]
-  layer_min = 0.0
-  bound=(layer_max - layer_min )/(divider-1)
-
-  $pos_after.each_with_index do |pos,i|
-    if pos < bound+d and pos > bound-d
-      z_layer << i
-    end
-  end
-  p z_layer
-  =begin
-  z_layer,j=[],-1.0
-  for i in 0..4 do
-    z_layer[i] = j
-    j += 2
+  z_layer=[]
+  layer_max, layer_min = $pos_max[2], 0.0
+  bound=(layer_max - layer_min )/($denominator-1)
+  num,j = layer_min, 0
+  $diff = 0.15
+  while num <= layer_max do
+    z_layer[j] = num
+    num += bound
+    j += 1
   end
   return z_layer
-  =end
 end
 
 def draw_each_plane(ind_1,ind_2,c_x,c_y)
   rr = 2
-  layer_num = 3
   sel = (ind_1==0 and ind_2==1)? 1 : 0
-    [[$deleted_atoms,[1,0,0],rr*1.3],[$pos_after,[0,0,1],rr]].each{|atoms_color|
+  [[$deleted_atoms,[1,0,0],rr*1.3],[$pos_after,[0,0,1],rr]].each{|atoms_color|
     $context.set_source_rgb(atoms_color[1])
     radius = atoms_color[2]
     atoms_color[0].each{|pos|
-      #$context.circle($mv+c_x+$adjust*pos[ind_1],pos_y(pos,c_y,ind_2,sel), radius)
-  
-      if open_circle[layer_num-1] < pos[2] && pos[2] < open_circle[layer_num] then
-        $context.circle($mv+c_x+$adjust*pos[ind_1],pos_y(pos,c_y,ind_2,sel), radius*1.7)
-        $context.stroke
-        $context.set_line_width(0.5)
-      else
+      if $numerator == 0 then
         $context.circle($mv+c_x+$adjust*pos[ind_1],pos_y(pos,c_y,ind_2,sel), radius)
         $context.fill
+      else
+        if pos[2] < open_circle[$numerator-1]+$diff and open_circle[$numerator-1] - $diff < pos[2] then
+          $context.circle($mv+c_x+$adjust*pos[ind_1],pos_y(pos,c_y,ind_2,sel), radius*1.7)
+          $context.stroke
+          $context.set_line_width(0.5)
+        else
+          $context.circle($mv+c_x+$adjust*pos[ind_1],pos_y(pos,c_y,ind_2,sel), radius)
+          $context.fill
+        end
       end
     }
   }
@@ -128,23 +122,24 @@ def find_max(pos)
   [0,1,2].each{|ind|
     pos.length.times {|i| max[ind] = pos[i][ind] if max[ind] < pos[i][ind] }
   }
-  p max
   return max
 end
 
-def main_draw(file1,file2, number, model_scale = 10)
+def main_draw(file1,file2, layer, model_scale = 10)
   lines1 = File.readlines(file1)
   lines2 = File.readlines(file2)
-  number = ARGV[2]
-  tmp=number.split('/')
-  numerator,denominator = tmp[0].to_f,tmp[1].to_f
-
-  $pos_before = read_pos(lines1,8)
-  $pos_after = read_pos(lines2,8)
+  if layer != nil then
+    tmp=layer.split('/')
+    $numerator, $denominator = tmp[0].to_f,tmp[1].to_f
+  else
+    $numerator = 0
+  end
+  
+  $pos_before, $pos_after = read_pos(lines1,8), read_pos(lines2,8)
   $deleted_atoms = mk_deleted_atom
-
-   $pos_max=find_max($pos_before)
-   $pos_max[0].ceil*10
+  
+  $pos_max=find_max($pos_before)
+  $pos_max[0].ceil*10
   $width,$height = 300,200
   $cx,$cy = $width/2.0,$height/2.0
   $mv = 10
@@ -153,7 +148,6 @@ def main_draw(file1,file2, number, model_scale = 10)
   surface = Cairo::SVGSurface.new('view.svg', $width, $height)
   $context = Cairo::Context.new(surface)
   $context.set_line_width($line_width)
-
   draw_backcolor
   draw_axes
   draw_atoms

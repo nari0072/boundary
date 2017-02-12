@@ -13,10 +13,9 @@ def read_pos(lines, init_line)
     atom << line.scanf("%f %f %f\n")
   }
   
-  #x=[1,2,3,4]
   poscar=[]
   atom.each{|i|
-    pos=[0.0,0.0,0.0,1]
+    pos=[0.0,0.0,0.0]
     i.each_with_index{|a,j|
       lx,ly,lz=lattice[j]
       pos[0] += a*lx
@@ -29,7 +28,7 @@ def read_pos(lines, init_line)
 end
 
 def main_draw(lines)
-  width,height = 600,400
+  width,height = 450,300
   cx,cy = width/2.0,height/2.0
   scale = 1000
   adjust = scale/100
@@ -38,6 +37,14 @@ def main_draw(lines)
   surface = Cairo::SVGSurface.new('view.svg', width, height)
   context = Cairo::Context.new(surface)
 
+  y_max=[]
+  num = atoms.length-1
+  num.times{|i|
+    if atoms[i][1] < atoms[i+1][1] then
+      y_max = atoms[i+1][1]
+    end
+  }
+  
   context.set_source_rgb(0.8, 0.8, 0.8)
   context.rectangle(0, 0, width, height)
   context.fill
@@ -51,8 +58,8 @@ def main_draw(lines)
   }
   
   atoms.each{|pos|
-    context.set_source_rgb(1, 0, 0)
-    context.circle(cx+adjust*pos[0],cy+adjust*pos[1], r)
+    context.set_source_rgb(0, 0, 1)
+    context.circle(cx+adjust*pos[0],cy+adjust*(y_max-pos[1]), r)
     context.fill
   }
 
