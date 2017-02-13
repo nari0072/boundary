@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.5-130605-2.6 (utf8.euc) (TeX Live 2014) (preloaded format=platex 2014.11.26)  13 FEB 2017 01:13
+This is e-pTeX, Version 3.14159265-p3.5-130605-2.6 (utf8.euc) (TeX Live 2014) (preloaded format=platex 2014.11.26)  13 FEB 2017 18:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -239,13 +239,13 @@ LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 8.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 8.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 16.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 17.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 17.
 File: ../figs/./boundary_narita.006.jpeg Graphic file (type eps)
 
 <../figs/./boundary_narita.006.jpeg>
@@ -323,43 +323,23 @@ File: ../figs/./boundary_narita.018.jpeg Graphic file (type eps)
 ]
 \openout2 = `reference.aux'.
 
- (./reference.tex
-Overfull \hbox (39.42657pt too wide) in paragraph at lines 8--9
-[]\OT1/cmr/m/n/10 [4] VESTA, Koichi Momma(2004-2017), JP-Minerals, \OT1/cmtt/m/
-n/10 http://jp-minerals.org/vesta/jp/ 
- []
+ (./reference.tex) [26
 
 
-Overfull \hbox (348.54968pt too wide) in paragraph at lines 10--11
-[]\OT1/cmr/m/n/10 [5] MVC(Model-View-Controller) \JY1/mc/m/n/10 を理解する\OT1/
-cmr/m/n/10 , CakePHP,\OT1/cmtt/m/n/10 https://book.cakephp.org/2.0/ja/cakephp-o
-verview/understanding-model-view-controller.html 
- []
-
-
-Overfull \hbox (178.76158pt too wide) in paragraph at lines 12--13
-[]\OT1/cmr/m/n/10 [6] SVG \JY1/mc/m/n/10 入門\OT1/cmr/m/n/10 , \JY1/mc/m/n/10 
-新山祐介\OT1/cmr/m/n/10 , \JY1/mc/m/n/10 コンピ ュ ータサイエンス入門 \OT1/cmr/
-m/n/10 by \JY1/mc/m/n/10 新山祐介\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 https://eus
-ke.github.io/euskecs/lec_svg/index.html 
- []
-
-) [26
-
-
-] (./boundary_narita.aux (./introduction.aux) (./method.aux) (./codes.aux) (./r
-esults_and_discussions.aux) (./conclusion.aux) (./reference.aux))
+]
+(./boundary_narita.aux (./introduction.aux) (./method.aux) (./codes.aux)
+(./results_and_discussions.aux) (./conclusion.aux) (./reference.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2592 strings out of 493807
- 35971 string characters out of 6151950
- 188573 words of memory out of 5000000
- 6011 multiletter control sequences out of 15000+600000
+ 2600 strings out of 493807
+ 36027 string characters out of 6151950
+ 188598 words of memory out of 5000000
+ 6019 multiletter control sequences out of 15000+600000
  15681 words of font info for 72 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 35i,6n,51p,863b,1676s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 35i,6n,51p,894b,1676s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on boundary_narita.dvi (26 pages, 79840 bytes).
+Output written on boundary_narita.dvi (26 pages, 79696 bytes).

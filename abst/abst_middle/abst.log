@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.5-130605-2.6 (utf8.euc) (TeX Live 2014) (preloaded format=platex 2014.11.26)  9 FEB 2017 13:58
+This is e-pTeX, Version 3.14159265-p3.5-130605-2.6 (utf8.euc) (TeX Live 2014) (preloaded format=platex 2014.11.26)  13 FEB 2017 13:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -108,24 +108,21 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \c@subtable=\count94
 \c@lotdepth=\count95
 
-**************  1{￥mbox{￥boldmath $#1$}}
-? 
-./abst.tex:11: Emergency stop.
-l.11 ￥def￥Vec#
-                1{￥mbox{￥boldmath $#1$}}
-End of file on the terminal!
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2014/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip47
+\subfig@bottom=\skip48
+)
+(./abst.aux)
+\openout1 = `abst.aux'.
 
- 
-Here is how much of TeX's memory you used:
- 706 strings out of 493807
- 8144 string characters out of 6151950
- 64465 words of memory out of 5000000
- 4237 multiletter control sequences out of 15000+600000
- 8380 words of font info for 36 fonts, out of 8000000 for 9000
- 934 hyphenation exceptions out of 8191
- 25i,0n,21p,196b,85s stack positions out of 5000i,500n,10000p,200000b,80000s
-No pages of output.
-line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
@@ -160,44 +157,29 @@ LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 25.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 25.
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 27.
-LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 27.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 27.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 27.
-
-
-LaTeX Warning: Reference `fig:one' on page 1 undefined on input line 27.
-
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 6.72699pt on input line 42.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 4.805pt on input line 42.
 File: ./Hasson.png Graphic file (type bmp)
-<./Hasson.png>
+ <./Hasson.png>
 File: ./Otsuki.png Graphic file (type bmp)
- <./Otsuki.png>
+
+<./Otsuki.png>
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
 (Font)              scaled to size 8.64899pt on input line 47.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 8.64899pt on input line 47.
-
-
-LaTeX Warning: Citation `yahata' on page 1 undefined on input line 61.
-
-
-LaTeX Warning: Citation `iwasa' on page 1 undefined on input line 67.
-
-
-LaTeX Warning: Reference `fig:two' on page 1 undefined on input line 71.
-
 File: ./Iwasa.png Graphic file (type bmp)
-<./Iwasa.png>
-
-LaTeX Warning: Citation `sudoh' on page 1 undefined on input line 104.
+ <./Iwasa.png>
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 106.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 106.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 106.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 106.
 
 
 LaTeX Warning: Reference `fig:three' on page 1 undefined on input line 106.
@@ -209,9 +191,6 @@ LaTeX Warning: Reference `fig:three' on page 1 undefined on input line 106.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
  1352 strings out of 493807
@@ -222,4 +201,4 @@ Here is how much of TeX's memory you used:
  934 hyphenation exceptions out of 8191
  25i,8n,26p,245b,394s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on abst.dvi (1 page, 6628 bytes).
+Output written on abst.dvi (1 page, 6616 bytes).

@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.5-130605-2.6 (utf8.euc) (TeX Live 2014) (preloaded format=platex 2014.11.26)  13 FEB 2017 05:58
+This is e-pTeX, Version 3.14159265-p3.5-130605-2.6 (utf8.euc) (TeX Live 2014) (preloaded format=platex 2014.11.26)  13 FEB 2017 17:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -115,11 +115,7 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfig@top=\skip47
 \subfig@bottom=\skip48
 )
-(./abst.aux
-
-LaTeX Warning: Label `fig:two' multiply defined.
-
-)
+(./abst.aux)
 \openout1 = `abst.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
@@ -165,28 +161,36 @@ File: vesta_two_dimension.jpeg Graphic file (type bmp)
 
 <vesta_two_dimension.jpeg>
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 39.
+(Font)              scaled to size 8.64899pt on input line 46.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 39.
+(Font)              scaled to size 8.64899pt on input line 46.
+
+Underfull \vbox (badness 3281) has occurred while \output is active []
+
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 56.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.805pt on input line 56.
+File: deleted_found.jpeg Graphic file (type bmp)
+
+<deleted_found.jpeg>
 File: change_position.jpeg Graphic file (type bmp)
  <change_position.jpeg>
-File: open_circle.jpeg Graphic file (type bmp)
- <open_circle.jpeg> [1
+Overfull \hbox (43.20534pt too wide) in paragraph at lines 56--61
+ [] 
+ []
+
+[1
 
 
-]
-(./abst.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+] (./abst.aux) ) 
 Here is how much of TeX's memory you used:
- 1337 strings out of 493807
- 16001 string characters out of 6151950
- 73486 words of memory out of 5000000
- 4812 multiletter control sequences out of 15000+600000
- 14847 words of font info for 65 fonts, out of 8000000 for 9000
+ 1347 strings out of 493807
+ 16112 string characters out of 6151950
+ 74486 words of memory out of 5000000
+ 4820 multiletter control sequences out of 15000+600000
+ 16730 words of font info for 75 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 25i,7n,26p,244b,326s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 25i,8n,26p,623b,394s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on abst.dvi (1 page, 4572 bytes).
+Output written on abst.dvi (1 page, 6888 bytes).
