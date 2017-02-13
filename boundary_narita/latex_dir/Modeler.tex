@@ -23,7 +23,7 @@ viewerで表示される原子配置に気をつけながら，試行錯誤的�
 \item 出力
 \end{enumerate}
 である．これらの操作を実行するコードは以下のとおり．
-\begin{lstlisting}[style=customRuby]
+\begin{lstlisting}[style=customRuby,basicstyle={\scriptsize\ttfamily}]
 file = ARGV[0] || 'POSCAR'
 model = BoundaryModel.new(file)
 
