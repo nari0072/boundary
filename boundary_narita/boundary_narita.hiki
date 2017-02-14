@@ -1,6 +1,6 @@
 !title:三面図を利用した粒界原子配列の視覚化
 %{{toc}}
-%[[概要|boundary_narita_summary]]
+![[概要|boundary_narita_summary]]
 ![[序論|boundary_narita_introduction]]
 ![[ソフト開発の手法|boundary_narita_method]]
 ![[ソフトの構成|boundary_narita_codes]]

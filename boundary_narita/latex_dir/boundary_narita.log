@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.euc) (TeX Live 2016) (preloaded format=platex 2017.1.26)  14 FEB 2017 20:39
+This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.euc) (TeX Live 2016) (preloaded format=platex 2017.1.26)  14 FEB 2017 21:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -120,7 +120,7 @@ Package: listings 2015/06/04 1.6 (Carsten Heinz)
 Package: jlisting 2006/02/20 0.2 (Thor)
 \lst@nextchar=\count99
 \lst@inputfile=\read1
-) (./boundary_narita.aux (./introduction.aux
+) (./boundary_narita.aux (./summary.aux) (./introduction.aux
 
 LaTeX Warning: Label `default' multiply defined.
 
@@ -212,34 +212,41 @@ LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 
 ]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 3.
+(Font)              <7> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 3.
+(Font)              <5> on input line 4.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 3.
+(Font)              scaled to size 6.72699pt on input line 4.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 4.805pt on input line 3.
-)
+(Font)              scaled to size 4.805pt on input line 4.
+ [2])
 \tf@toc=\write3
 \openout3 = `boundary_narita.toc'.
 
- [2]
+
 [3]
+\openout2 = `summary.aux'.
+
+ (./summary.tex) [4
+
+]
 \openout2 = `introduction.aux'.
 
  (./introduction.tex
 File: ../figs/./boundary_narita.002.jpeg Graphic file (type eps)
- <../figs/./boundary_narita.002.jpeg>
+
+<../figs/./boundary_narita.002.jpeg>
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
 (Font)              scaled to size 8.64899pt on input line 8.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 8.64899pt on input line 8.
- [4
+ [5
+
 
 ]
 File: ../figs/./boundary_narita.004.jpeg Graphic file (type eps)
-
-<../figs/./boundary_narita.004.jpeg>) [5] [6]
+ <../figs/./boundary_narita.004.jpeg>)
+[6] [7]
 \openout2 = `method.aux'.
 
  (./method.tex
@@ -261,10 +268,10 @@ File: ../figs/./boundary_narita.007.jpeg Graphic file (type eps)
  <../figs/./boundary_narita.007.jpeg>
 File: ../figs/./boundary_narita.005.jpeg Graphic file (type eps)
 
-<../figs/./boundary_narita.005.jpeg> [7
+<../figs/./boundary_narita.005.jpeg> [8
 
 
-] [8]) [9] [10]
+] [9]) [10] [11]
 \openout2 = `codes.aux'.
 
  (./codes.tex
@@ -290,13 +297,13 @@ LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 6.72699pt on input line 8.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <7> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 8.
- [11
+ [12
 
 
 ]
-[12] [13] [14] [15] [16] [17]
+[13] [14] [15] [16] [17] [18]
 File: ../figs/./boundary_narita.009.jpeg Graphic file (type eps)
- <../figs/./boundary_narita.009.jpeg>) [18]
+ <../figs/./boundary_narita.009.jpeg>) [19]
 \openout2 = `results_and_discussions.aux'.
 
 
@@ -309,25 +316,25 @@ File: ../figs/./boundary_narita.010.jpeg Graphic file (type eps)
 <../figs/./boundary_narita.010.jpeg>
 File: ../figs/./boundary_narita.011.jpeg Graphic file (type eps)
  <../figs/./boundary_narita.011.jpeg>
-[19
+[20
 
 
-] [20]
+] [21]
 File: ../figs/./boundary_narita.012.jpeg Graphic file (type eps)
  <../figs/./boundary_narita.012.jpeg>
 File: ../figs/./boundary_narita.013.jpeg Graphic file (type eps)
 
-<../figs/./boundary_narita.013.jpeg> [21]
+<../figs/./boundary_narita.013.jpeg> [22]
 File: ../figs/./boundary_narita.014.jpeg Graphic file (type eps)
  <../figs/./boundary_narita.014.jpeg>
 File: ../figs/./boundary_narita.015.jpeg Graphic file (type eps)
 
-<../figs/./boundary_narita.015.jpeg> [22]
+<../figs/./boundary_narita.015.jpeg> [23]
 File: ../figs/./boundary_narita.016.jpeg Graphic file (type eps)
- <../figs/./boundary_narita.016.jpeg>) [23] [24] [25] [26]
+ <../figs/./boundary_narita.016.jpeg>) [24] [25] [26] [27]
 \openout2 = `conclusion.aux'.
 
- (./conclusion.tex) [27
+ (./conclusion.tex) [28
 
 
 ]
@@ -349,22 +356,23 @@ Underfull \hbox (badness 1033) in paragraph at lines 12--13
 図\OT1/cmr/m/n/10 ), \JY1/mc/m/n/10 独立行政法人 海上技術安全研究
  []
 
-) [28
+) [29
 
 
-] (./boundary_narita.aux (./introduction.aux) (./method.aux) (./codes.aux) (./r
-esults_and_discussions.aux) (./conclusion.aux) (./reference.aux))
+] (./boundary_narita.aux (./summary.aux) (./introduction.aux)
+(./method.aux) (./codes.aux) (./results_and_discussions.aux) (./conclusion.aux)
+(./reference.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2759 strings out of 493683
- 38117 string characters out of 6149653
- 200819 words of memory out of 5000000
- 6273 multiletter control sequences out of 15000+600000
+ 2767 strings out of 493683
+ 38206 string characters out of 6149653
+ 201088 words of memory out of 5000000
+ 6274 multiletter control sequences out of 15000+600000
  15673 words of font info for 72 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  35i,6n,51p,910b,1680s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on boundary_narita.dvi (28 pages, 85572 bytes).
+Output written on boundary_narita.dvi (29 pages, 87964 bytes).
