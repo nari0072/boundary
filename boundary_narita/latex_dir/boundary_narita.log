@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.5-130605-2.6 (utf8.euc) (TeX Live 2014) (preloaded format=platex 2014.11.26)  13 FEB 2017 18:43
+This is e-pTeX, Version 3.14159265-p3.5-130605-2.6 (utf8.euc) (TeX Live 2014) (preloaded format=platex 2014.11.26)  14 FEB 2017 12:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -239,13 +239,13 @@ LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 8.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 8.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 17.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 16.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 17.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
 File: ../figs/./boundary_narita.006.jpeg Graphic file (type eps)
 
 <../figs/./boundary_narita.006.jpeg>
@@ -267,28 +267,28 @@ File: lstlang1.sty 2014/03/04 1.5c listings language file
 File: lstlang2.sty 2014/03/04 1.5c listings language file
 )
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 4.
+(Font)              scaled to size 6.72699pt on input line 7.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 4.
+(Font)              scaled to size 6.72699pt on input line 7.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 4.
+(Font)              scaled to size 6.72699pt on input line 7.
 LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <7> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 5.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 8.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 5.
+(Font)              scaled to size 6.72699pt on input line 8.
 LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <7> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 5.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 8.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 5.
+(Font)              scaled to size 6.72699pt on input line 8.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <7> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 5.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 8.
  [11
 
 
 ]
-[12] [13] [14] [15] [16]
+[12] [13] [14] [15] [16] [17]
 File: ../figs/./boundary_narita.014.jpeg Graphic file (type eps)
- <../figs/./boundary_narita.014.jpeg>) [17] [18]
+ <../figs/./boundary_narita.014.jpeg>) [18]
 \openout2 = `results_and_discussions.aux'.
 
 
@@ -334,12 +334,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2600 strings out of 493807
- 36027 string characters out of 6151950
- 188598 words of memory out of 5000000
- 6019 multiletter control sequences out of 15000+600000
+ 2591 strings out of 493807
+ 35928 string characters out of 6151950
+ 196602 words of memory out of 5000000
+ 6010 multiletter control sequences out of 15000+600000
  15681 words of font info for 72 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 35i,6n,51p,894b,1676s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 35i,6n,51p,894b,1678s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on boundary_narita.dvi (26 pages, 79696 bytes).
+Output written on boundary_narita.dvi (26 pages, 83392 bytes).
