@@ -1,0 +1,44 @@
+<<<<<<< HEAD
+/Users/nari/Sites/hiki-1.0/data
+-rw-r--r--  1 nari  staff    392  2 14 12:24 boundary_narita
+-rw-r--r--  1 nari  staff   1202  2 14 12:24 boundary_narita_Modeler
+-rw-r--r--  1 nari  staff  14800  2 14 12:24 boundary_narita_codes
+-rw-r--r--  1 nari  staff   1733  2 14 12:24 boundary_narita_conclusion
+-rw-r--r--  1 nari  staff   2633  2 14 12:24 boundary_narita_discussion
+-rw-r--r--  1 nari  staff   3308  2 14 12:24 boundary_narita_introduction
+-rw-r--r--  1 nari  staff   4234  2 14 12:24 boundary_narita_method
+-rw-r--r--  1 nari  staff   1362  2 14 12:24 boundary_narita_reference
+-rw-r--r--  1 nari  staff   9227  2 14 12:24 boundary_narita_results
+-rw-r--r--  1 nari  staff   6920  2 14 12:24 boundary_narita_results_and_discussions
+-rw-r--r--  1 nari  staff   1752  2 14 12:24 boundary_narita_summary
+-rw-r--r--  1 nari  staff    872  2 14 12:24 boundary_narita_toc
+-rw-r--r--  1 nari  staff   2136  2  4 12:34 boundary_narita_results_discussion
+-rw-r--r--  1 nari  staff   9629  2  4 12:34 boundary_narita_viewer_function
+-rw-r--r--  1 nari  staff   3897  2  3 11:06 boundary_narita_2223_calc_memo
+-rw-r--r--  1 nari  staff   6509  2  3 11:06 boundary_narita_2223_memo
+-rw-r--r--  1 nari  staff   5762  2  3 11:06 boundary_narita_3325_calc_memo
+-rw-r--r--  1 nari  staff    187  2  3 11:06 boundary_narita_Otuki_experiment
+-rw-r--r--  1 nari  staff    852  2  3 11:06 boundary_narita_Read-Shockley
+-rw-r--r--  1 nari  staff   4308  2  3 11:06 boundary_narita_boundary_energy
+-rw-r--r--  1 nari  staff   3298  2  3 11:06 boundary_narita_calculation_Iwasa
+-rw-r--r--  1 nari  staff    896  2  3 11:06 boundary_narita_calculation_Murakami
+-rw-r--r--  1 nari  staff    492  2  3 11:06 boundary_narita_calculation_Yahata
+-rw-r--r--  1 nari  staff   2405  2  3 11:06 boundary_narita_drawing_atoms
+-rw-r--r--  1 nari  staff   1840  2  3 11:06 boundary_narita_result_discussion
+-rw-r--r--  1 nari  staff    804  2  2 01:16 boundary_narita_result-discussion
+-rw-r--r--  1 nari  staff    232  1 31 18:34 boundary_narita_each_function
+=======
+/Users/bob/Sites/nishitani0/Internal/data
+-rw-rw-rw-@ 1 bob  staff    390  2 14 11:59 boundary_narita
+-rw-rw-rw-  1 bob  staff   3684  2 14 11:59 boundary_narita_Introduction
+-rw-rw-rw-  1 bob  staff   1202  2 14 11:59 boundary_narita_Modeler
+-rw-r--r--  1 bob  staff  13274  2 14 11:59 boundary_narita_codes
+-rw-rw-rw-  1 bob  staff   1721  2 14 11:59 boundary_narita_conclusion
+-rw-r--r--  1 bob  staff   2633  2 14 11:59 boundary_narita_discussion
+-rw-rw-rw-  1 bob  staff   4173  2 14 11:59 boundary_narita_method
+-rw-rw-rw-  1 bob  staff   1625  2 14 11:59 boundary_narita_reference
+-rw-r--r--  1 bob  staff   9227  2 14 11:59 boundary_narita_results
+-rw-r--r--  1 bob  staff   6911  2 14 11:59 boundary_narita_results_and_discussions
+-rw-rw-rw-  1 bob  staff   1752  2 14 11:59 boundary_narita_summary
+-rw-r--r--  1 bob  staff    872  2 14 11:59 boundary_narita_toc
+>>>>>>> 9be40129d615722b4eb6b8525c49f6787bf1b58a
