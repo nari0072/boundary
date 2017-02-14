@@ -32,7 +32,6 @@ end
 各括弧内の数値は，左から順にx座標，y座標，z座標を表している．
 \begin{lstlisting}[style=,basicstyle={\scriptsize\ttfamily}]
 % ruby viewer.rb POSCAR_2223 POSCAR_2223_4
-
 [5.75101295815, 0.0, 0.0]
 [7.668017277916733, 0.6390014395849836, 2.020699977875]
 [3.834008638383265, 0.6390014395849836, 2.020699977875]
@@ -277,12 +276,13 @@ model\_scale，line\_widthは，出力する画面に対して軸や原子の大
 
 \subsection{三面図による描画}
 三面図は，立体を正面図，平面図，側面図の三方向からみて投影した図を展開したもので，立体の形状を２次元上で的確に表示することが出来る．
-開発当初は，上面，正面，側面の配置をまったく気にせずに図(a)のように配置していた．
+開発当初は，上面，正面，側面の配置をまったく気にせずに図\ref{fig:009}(a)のように配置していた．
 しかし，三方向から描く各図の位置はJIS規格で厳密に定めされており，正面図を物体の最も代表的な面と決められている\cite{ThreeViewDrawing}．
 その正面図の真上に平面図，正面図の真横に側面図を描くことで三面図が作成される．
-そこで，図(b)のとおり最終版では修正して配置している．
+そこで，図\ref{fig:009}(b)のとおり最終版では修正して配置している．
 
 \begin{figure}[htbp]\begin{center}
-\includegraphics[width=12cm,bb= 0 0 937 753]{../figs/./boundary_narita.014.jpeg}
+\includegraphics[width=12cm,bb= 0 0 937 753]{../figs/./boundary_narita.009.jpeg}
 \caption{POSCAR\_2223を表示した三面図の(a)開発当初版と(b)最終版.}
+\label{fig:009}
 \label{default}\end{center}\end{figure}

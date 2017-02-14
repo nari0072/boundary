@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.5-130605-2.6 (utf8.euc) (TeX Live 2014) (preloaded format=platex 2014.11.26)  14 FEB 2017 13:07
+This is e-pTeX, Version 3.14159265-p3.5-130605-2.6 (utf8.euc) (TeX Live 2014) (preloaded format=platex 2014.11.26)  14 FEB 2017 15:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -78,10 +78,6 @@ Package color Info: Driver file: dvipdfmx.def on input line 137.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2014/04/23 v3.0j Driver-dependant file (DPC,SPQR)
 ))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip10
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
 (/usr/local/texlive/2014/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count90
 \lst@gtempboxa=\box42
@@ -111,123 +107,113 @@ Package: listings 2014/03/04 1.5c (Carsten Heinz)
 Package: jlisting 2006/02/20 0.2 (Thor)
 \lst@nextchar=\count98
 \lst@inputfile=\read1
-) (./boundary_narita.aux (./introduction.aux
-
-LaTeX Warning: Label `default' multiply defined.
-
-) (./method.aux
-
-LaTeX Warning: Label `default' multiply defined.
-
-
-LaTeX Warning: Label `default' multiply defined.
-
-
-LaTeX Warning: Label `default' multiply defined.
-
-) (./codes.aux
-
-LaTeX Warning: Label `default' multiply defined.
-
-) (./results_and_discussions.aux
-
-LaTeX Warning: Label `default' multiply defined.
-
-
-LaTeX Warning: Label `default' multiply defined.
-
-
-LaTeX Warning: Label `default' multiply defined.
-
-
-LaTeX Warning: Label `default' multiply defined.
-
-
-LaTeX Warning: Label `default' multiply defined.
-
-
-LaTeX Warning: Label `default' multiply defined.
-
-) (./conclusion.aux) (./reference.aux))
+) (./boundary_narita.aux)
 \openout1 = `boundary_narita.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
 \c@lstlisting=\count99
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 16.60605pt on input line 45.
+(Font)              scaled to size 16.60605pt on input line 44.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 16.60605pt on input line 45.
+(Font)              scaled to size 16.60605pt on input line 44.
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 45.
+(Font)              scaled to size 11.53198pt on input line 44.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 45.
+(Font)              scaled to size 11.53198pt on input line 44.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 45.
+(Font)              <12> on input line 44.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 45.
+(Font)              <8> on input line 44.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 45.
+(Font)              <6> on input line 44.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 5.76599pt on input line 45.
+(Font)              scaled to size 5.76599pt on input line 44.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 47.
+(Font)              scaled to size 9.60999pt on input line 46.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 47.
+(Font)              scaled to size 9.60999pt on input line 46.
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 47.
+(Font)              scaled to size 13.83836pt on input line 46.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 47.
+(Font)              scaled to size 13.83836pt on input line 46.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 47.
+(Font)              scaled to size 13.83836pt on input line 46.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 47.
- (./boundary_narita.toc [1
-
-]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 3.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 3.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 3.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 4.805pt on input line 3.
-)
+(Font)              scaled to size 13.83836pt on input line 46.
+ (./boundary_narita.toc)
 \tf@toc=\write3
 \openout3 = `boundary_narita.toc'.
 
- [2]
-[3]
+ [1
+
+] [2]
 \openout2 = `introduction.aux'.
 
- (./introduction.tex
-File: ../figs/./boundary_energy_calc_exp.jpeg Graphic file (type bmp)
- <../figs/./boundary_energy_calc_exp.jpeg>
+
+(./introduction.tex
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 3.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 3.
+
+
+LaTeX Warning: Reference `fig:002' on page 3 undefined on input line 3.
+
+
+LaTeX Warning: Citation `TschoppMcdowell' on page 3 undefined on input line 3.
+
+
+LaTeX Warning: Reference `fig:002' on page 3 undefined on input line 4.
+
+
+LaTeX Warning: Citation `Otsuki' on page 3 undefined on input line 4.
+
+File: ../figs/./boundary_narita.002.jpeg Graphic file (type eps)
+<../figs/./boundary_narita.002.jpeg>
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
 (Font)              scaled to size 8.64899pt on input line 8.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 8.64899pt on input line 8.
- [4
+
+
+LaTeX Warning: Citation `ReadShockley' on page 3 undefined on input line 12.
+
+[3
 
 ]
-File: ../figs/./boundary_narita.004.jpeg Graphic file (type eps)
 
-<../figs/./boundary_narita.004.jpeg>) [5] [6]
+LaTeX Warning: Citation `Murakami' on page 4 undefined on input line 18.
+
+
+LaTeX Warning: Citation `Yahata' on page 4 undefined on input line 18.
+
+
+LaTeX Warning: Citation `Iwasa' on page 4 undefined on input line 18.
+
+
+LaTeX Warning: Reference `fig:004' on page 4 undefined on input line 18.
+
+File: ../figs/./boundary_narita.004.jpeg Graphic file (type eps)
+<../figs/./boundary_narita.004.jpeg>) [4] [5]
 \openout2 = `method.aux'.
 
  (./method.tex
@@ -235,8 +221,11 @@ LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 8.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 8.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 16.
 
+
+LaTeX Warning: Citation `Vesta' on page 6 undefined on input line 10.
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 16.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
@@ -245,14 +234,29 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 File: ../figs/./boundary_narita.006.jpeg Graphic file (type eps)
 
 <../figs/./boundary_narita.006.jpeg>
+
+LaTeX Warning: Reference `fig:007' on page 6 undefined on input line 25.
+
 File: ../figs/./boundary_narita.007.jpeg Graphic file (type eps)
- <../figs/./boundary_narita.007.jpeg>
+<../figs/./boundary_narita.007.jpeg>
+
+LaTeX Warning: Reference `fig:005' on page 6 undefined on input line 35.
+
+
+LaTeX Warning: Citation `MVC' on page 6 undefined on input line 36.
+
 File: ../figs/./boundary_narita.005.jpeg Graphic file (type eps)
+<../figs/./boundary_narita.005.jpeg> [6
 
-<../figs/./boundary_narita.005.jpeg> [7
+
+]
+
+LaTeX Warning: Citation `SVG' on page 7 undefined on input line 45.
 
 
-] [8]) [9] [10]
+LaTeX Warning: Citation `rcairo' on page 7 undefined on input line 56.
+
+[7]) [8] [9]
 \openout2 = `codes.aux'.
 
  (./codes.tex
@@ -263,6 +267,8 @@ File: lstlang1.sty 2014/03/04 1.5c listings language file
 File: lstlang2.sty 2014/03/04 1.5c listings language file
 )
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 7.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 (Font)              scaled to size 6.72699pt on input line 7.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 (Font)              scaled to size 6.72699pt on input line 7.
@@ -278,39 +284,70 @@ LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 6.72699pt on input line 8.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <7> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 8.
- [11
+ [10
 
 
 ]
-[12] [13] [14] [15] [16] [17]
-File: ../figs/./boundary_narita.014.jpeg Graphic file (type eps)
- <../figs/./boundary_narita.014.jpeg>) [18]
+[11] [12] [13] [14] [15]
+
+LaTeX Warning: Reference `fig:009' on page 16 undefined on input line 279.
+
+
+LaTeX Warning: Citation `ThreeViewDrawing' on page 16 undefined on input line 2
+80.
+
+
+LaTeX Warning: Reference `fig:009' on page 16 undefined on input line 282.
+
+[16]
+File: ../figs/./boundary_narita.009.jpeg Graphic file (type eps)
+ <../figs/./boundary_narita.009.jpeg>) [17]
 \openout2 = `results_and_discussions.aux'.
 
-
-(./results_and_discussions.tex
+ (./results_and_discussions.tex
 (/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
 )
+
+LaTeX Warning: Reference `fig:010' on page 18 undefined on input line 12.
+
 File: ../figs/./boundary_narita.010.jpeg Graphic file (type eps)
-
 <../figs/./boundary_narita.010.jpeg>
+
+LaTeX Warning: Reference `fig:011' on page 18 undefined on input line 33.
+
 File: ../figs/./boundary_narita.011.jpeg Graphic file (type eps)
- <../figs/./boundary_narita.011.jpeg>
-[19
+<../figs/./boundary_narita.011.jpeg> [18
 
 
-] [20]
-File: ../figs/./boundary_narita.015.jpeg Graphic file (type eps)
- <../figs/./boundary_narita.015.jpeg>
-File: ../figs/./boundary_narita.016.jpeg Graphic file (type eps)
+] [19]
 
-<../figs/./boundary_narita.016.jpeg>
+LaTeX Warning: Reference `fig:012' on page 20 undefined on input line 57.
+
+File: ../figs/./boundary_narita.012.jpeg Graphic file (type eps)
+<../figs/./boundary_narita.012.jpeg>
+
+LaTeX Warning: Reference `fig:013' on page 20 undefined on input line 64.
+
 File: ../figs/./boundary_narita.013.jpeg Graphic file (type eps)
- <../figs/./boundary_narita.013.jpeg>
+<../figs/./boundary_narita.013.jpeg>
+
+LaTeX Warning: Reference `fig:014' on page 20 undefined on input line 73.
+
+[20]
+File: ../figs/./boundary_narita.014.jpeg Graphic file (type eps)
+ <../figs/./boundary_narita.014.jpeg>
+
+LaTeX Warning: Reference `fig:015' on page 21 undefined on input line 81.
+
+File: ../figs/./boundary_narita.015.jpeg Graphic file (type eps)
+<../figs/./boundary_narita.015.jpeg>
+
+LaTeX Warning: Reference `fig:016' on page 21 undefined on input line 97.
+
 [21]
-File: ../figs/./boundary_narita.018.jpeg Graphic file (type eps)
- <../figs/./boundary_narita.018.jpeg> [22]) [23] [24] [25]
+File: ../figs/./boundary_narita.016.jpeg Graphic file (type eps)
+ <../figs/./boundary_narita.016.jpeg>) [22] [23] [24] [25]
 \openout2 = `conclusion.aux'.
 
 
@@ -321,16 +358,36 @@ File: ../figs/./boundary_narita.018.jpeg Graphic file (type eps)
 \openout2 = `reference.aux'.
 
  (./reference.tex
-Underfull \hbox (badness 10000) in paragraph at lines 10--11
-\OT1/cmtt/m/n/10 org / 2 . 0 / ja / cakephp-[]overview / understanding-[]model-
-[]view-[]controller .
+Missing character: There is no ^^e2 in font cmr10!
+Missing character: There is no ^^80 in font cmr10!
+Missing character: There is no ^^93 in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+[]\OT1/cmr/m/n/10 VESTA, Koichi Momma(2004-2017), JP-Minerals,
  []
 
 
-Underfull \hbox (badness 2894) in paragraph at lines 11--12
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+[]\OT1/cmr/m/n/10 MVC \JY1/mc/m/n/10 のベストプラクテ ィス\OT1/cmr/m/n/10 , Yii
+ Sup-port-ers, yi-iframe-work,
+ []
+
+
+Overfull \hbox (2.05109pt too wide) in paragraph at lines 9--10
+\OT1/cmtt/m/n/10 http://www.yiiframework.com/doc/guide/1.1/ja/basics.best-pract
+ices,
+ []
+
+
+Underfull \hbox (badness 2894) in paragraph at lines 10--11
 []\OT1/cmr/m/n/10 SVG \JY1/mc/m/n/10 入門\OT1/cmr/m/n/10 , \JY1/mc/m/n/10 新山
 祐介\OT1/cmr/m/n/10 , \JY1/mc/m/n/10 コンピ ュ ータサイエンス入門 \OT1/cmr/m/n/
 10 by \JY1/mc/m/n/10 新山祐介\OT1/cmr/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+\OT1/cmtt/m/n/10 https://www.nmri.go.jp/eng/khirata/mechdesign/ch04/ch04.html,
  []
 
 ) [27
@@ -339,16 +396,19 @@ Underfull \hbox (badness 2894) in paragraph at lines 11--12
 ] (./boundary_narita.aux (./introduction.aux) (./method.aux) (./codes.aux) (./r
 esults_and_discussions.aux) (./conclusion.aux) (./reference.aux))
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 2665 strings out of 493807
- 36811 string characters out of 6151950
- 197680 words of memory out of 5000000
- 6081 multiletter control sequences out of 15000+600000
- 15681 words of font info for 72 fonts, out of 8000000 for 9000
+ 2591 strings out of 493807
+ 35844 string characters out of 6151950
+ 194924 words of memory out of 5000000
+ 6021 multiletter control sequences out of 15000+600000
+ 15897 words of font info for 72 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 35i,6n,51p,906b,1678s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 35i,6n,51p,911b,1678s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on boundary_narita.dvi (27 pages, 84596 bytes).
+Output written on boundary_narita.dvi (27 pages, 76188 bytes).
