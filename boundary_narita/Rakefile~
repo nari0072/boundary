@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
+
+# -*- coding: utf-8 -*-
 require 'systemu'
 require 'tempfile'
 require 'colorize'
+require 'coderay'
+
 # -*- coding: utf-8 -*-
 begin
   $hiki_dir = File.readlines('./.hikirc')[0].chomp
@@ -66,9 +70,11 @@ end
 desc "latex_dirのゴミを掃除"
 task :reset_latex_dir do
   system "mv latex_dir/head.tex ."
+  system "mv latex_dir/jlisting.sty ."
   system "rm -rf latex_dir"
   system "mkdir latex_dir"
   system "mv head.tex latex_dir/"
+  system "mv jlisting.sty latex_dir/"
   system "rake latex_all"
 end
 
@@ -80,14 +86,10 @@ task :mk_toc do
     if m=line.match(/\\contentsline \{(.+)\}\{\\numberline \{([\d|\.]+)\}(.+)\}\{\d+\}/)
       layer,sec_no,title=m[1],m[2],m[3]
       d = case m[1]
-          when 'section'
-            1
-          when 'subsection'
-            2
-          when 'subsubsection'
-            3
-          else
-            4
+          when 'section'; 1
+          when 'subsection'; 2
+          when 'subsubsection'; 3
+          else; 4
           end
       layer = "!"*d
       title.gsub!('\_','_')
@@ -101,7 +103,8 @@ end
 desc "FILE.hikiあるいはhikiファイルすべてを最新状態に更新"
 task :touch do
   if file=ARGV[1] 
-    p target = $basename+"_"+file.split('.')[0]
+    file_split=file.split(".")
+    p target = $basename==file_split[0] ? $basename : $basename+"_"+file_split[0]
     system "hiki -u #{target}"
   else
     p target = File.join($hiki_dir,'cache','attach',$basename)
@@ -109,7 +112,6 @@ task :touch do
     Dir.entries('.').each{|file|
       file_split=file.split(".")
       if file_split[1]=='hiki'
-        next if file_split[0]==$basename
         p target = $basename==file_split[0] ? $basename : $basename+"_"+file_split[0]
         system "hiki -u #{target}"
       end
@@ -120,7 +122,8 @@ end
 
 desc "FILE.hikiあるいはhikiファイルをedtiorで開く"
 task :open do
-  if file=ARGV[1] 
+  if file=ARGV[1]
+    file += '.hiki' if file.split(".")[1]==nil
     system "open -a mi #{file}"
   else
     Dir.entries('.').each{|file|
@@ -144,6 +147,7 @@ task :latex_wrap => [:latex_base, :change_wrap] do
 end
 
 def latex_loop(entries,opts={})
+  check_bounding_box
   main_file=""
   entries.each{|file|
     options={:latex_all=>true}
@@ -184,7 +188,10 @@ end
 
 def check_bounding_box
 #  $bounding_box="0 0 442 432"
-  $bounding_box=" 0 0 737 553"
+#  $bounding_box=" 0 0 737 553"
+#  $fig_width="10"
+  $bounding_box=" 0 0 937 753"
+  $fig_width="12"
 end
 
 desc "すべてのhikiファイルをlatex変換"
@@ -196,8 +203,15 @@ task :latex_all do
   p reg_exp = Regexp.new("#{$basename}_(.+)")
   toc = false
   File.readlines(File.join($latex_dir,"#{main_file}.tex")).each{|line|
-    line, toc = "", true if line.match(/\\tableofcontents/) and toc == true #only one
-    line ="\\usepackage{listings,jlisting}" if line.match(/\\usepackage{listings}/)
+#    line, toc = "", true if line.match(/\\tableofcontents/) and toc == true #only one
+    if line.match(/\\tableofcontents/)
+      if toc == false #only one
+        toc = true 
+      else
+        line = ''
+      end
+    end
+    line ="\\usepackage{url}\n\\usepackage{listings,jlisting}\n" if line.match(/\\usepackage{listings}/)
     if line.match(/section{(.+)}/)
       if m=line.match(/\\verb\|(.+)\((.+)\)\|/)
         p m
@@ -264,10 +278,12 @@ def convert_to_latex(file_name, options={})
       line = "\\end{thebibliography}\n"
     end
     if m=line.match(/\\item\[(.+)\](.+)/) and in_bib==true
-      line ="\\bibitem{#{m[1]}} #{m[2]}"
+      tmp=m[2].gsub!(/\\verb\|(.*?)\|/){ "\\url{#{$1}}" }
+      line ="\\bibitem{#{m[1]}} #{tmp}"
+      puts line.blue
     end
     if m=line.match(/\\includegraphics\[width=6cm\]\{(.+)\}/)
-      p line="\\includegraphics\[width=10cm,bb=#{$bounding_box}\]\{../figs/#{m[1]}\}\n"
+      p line="\\includegraphics\[width=#{$fig_width}cm,bb=#{$bounding_box}\]\{../figs/#{m[1]}\}\n"
       cont << line
     else
       cont << line
@@ -284,7 +300,7 @@ def latex_cite_ref(line)
   while m=line.match(r_pair[1])
     line.sub!(r_pair[1],"\\ref\{#{m[1]}\}")
   end
-  puts line.chomp.blue
+#  puts line.chomp.blue
   return line
 end
 
@@ -439,7 +455,14 @@ task :self_copy do
   cp_files.each{|files|
     p source = files[0]
     p target = File.join('/Users/bob/Github/hikiutils/lib/templates/',files[1])
-    FileUtils.cp(source,target,:verbose=>true)
+    command = "diff #{source} #{target}"
+    status, stdout, stderr=systemu command
+    if stdout!=''
+      puts command.red
+      puts CodeRay.scan(stdout, :Diff).term  
+      print " Are you sure to save #{source}? [Yn]  ".red
+      FileUtils.cp(source,target,:verbose=>true) if STDIN.gets.chomp=='Y'
+    end
   }
 end
 

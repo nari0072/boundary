@@ -1,114 +1,370 @@
-This is pTeXk, Version 3.141592-p3.1.9 (sjis) (Web2C 7.5.4) (format=platex-sjis 2005.11.2)  14 FEB 2017 19:45
+This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.euc) (TeX Live 2016) (preloaded format=platex 2017.1.26)  14 FEB 2017 19:58
+entering extended mode
+ restricted \write18 enabled.
  file:line:error style messages enabled.
-**boundary_narita
+ %&-line parsing enabled.
+**boundary_narita.tex
 (./boundary_narita.tex
-pLaTeX2e <2005/01/04>+0 (based on LaTeX2e <2003/12/01> patch level 0)
-(/usr/local/share/texmf/ptex/platex/misc/jsclasses/jsarticle.cls
-Document Class: jsarticle 2006/07/25 okumura
-LaTeX Info: Redefining \rmfamily on input line 319.
-LaTeX Info: Redefining \sffamily on input line 322.
-LaTeX Info: Redefining \ttfamily on input line 325.
+pLaTeX2e <2016/11/29> (based on LaTeX2e <2017/01/01>)
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(/usr/local/texlive/2016/texmf-dist/tex/platex/jsclasses/jsarticle.cls
+Document Class: jsarticle 2017/01/13 okumura, texjporg
+\jsc@mpt=\dimen118
+\jsc@mmm=\dimen119
+\jsc@smallskipamount=\skip41
+LaTeX Info: Redefining \rmfamily on input line 468.
+LaTeX Info: Redefining \sffamily on input line 471.
+LaTeX Info: Redefining \ttfamily on input line 474.
+LaTeX Info: Redefining \textmc on input line 477.
+LaTeX Info: Redefining \textgt on input line 479.
 \symmincho=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
-(Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 334.
+(Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 540.
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 398.
+(Font)              scaled to size 9.60999pt on input line 731.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 398.
-\fullwidth=\dimen118
+(Font)              scaled to size 9.60999pt on input line 731.
+\fullwidth=\dimen120
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 7.68799pt on input line 545.
+(Font)              scaled to size 7.68799pt on input line 883.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 7.68799pt on input line 545.
-\c@part=\count81
-\c@section=\count82
-\c@subsection=\count83
-\c@subsubsection=\count84
-\c@paragraph=\count85
-\c@subparagraph=\count86
+(Font)              scaled to size 7.68799pt on input line 883.
+\c@part=\count82
+\c@section=\count83
+\c@subsection=\count84
+\c@subsubsection=\count85
+\c@paragraph=\count86
+\c@subparagraph=\count87
 \@abstractbox=\box41
-\c@figure=\count87
-\c@table=\count88
-\abovecaptionskip=\skip41
-\belowcaptionskip=\skip42
-\@lnumwidth=\dimen119
-\bibindent=\dimen120
-LaTeX Info: Redefining \TeX on input line 1486.
-LaTeX Info: Redefining \LaTeX on input line 1508.
-LaTeX Info: Redefining \LaTeXe on input line 1529.
-\heisei=\count89
-) (/usr/local/share/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+\c@figure=\count88
+\c@table=\count89
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\jsc@tocl@width=\dimen121
+\@lnumwidth=\dimen122
+\bibindent=\dimen123
+(/usr/local/texlive/2016/texmf-dist/tex/platex/jsclasses/jslogo.sty
+Package: jslogo 2016/07/14 okumura, texjporg
+LaTeX Info: Redefining \TeX on input line 94.
+LaTeX Info: Redefining \LaTeX on input line 147.
+LaTeX Info: Redefining \LaTeXe on input line 200.
+)
+\heisei=\count90
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/share/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-(/usr/local/share/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/10/09 v1.0u Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/share/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/local/share/texmf-dist/tex/latex/graphics/graphics.cfg
-File: graphics.cfg 2005/02/03 v1.3 graphics configuration of teTeX/TeXLive
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: dvipdfmx.def on input line 90.
+Package graphics Info: Driver file: dvipdfmx.def on input line 99.
 
-(/usr/local/share/texmf/tex/latex/dvipdfmx/dvipdfmx.def
-File: dvipdfmx.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-def/dvipdfmx.def
+File: dvipdfmx.def 2016/07/11 v4.12 LaTeX color/graphics driver for dvipdfmx (L
+3/ChoF)
 ))
-\Gin@req@height=\dimen121
-\Gin@req@width=\dimen122
+\Gin@req@height=\dimen124
+\Gin@req@width=\dimen125
 )
-(/usr/local/share/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
 
-(/usr/local/share/texmf-dist/tex/latex/graphics/color.cfg
-File: color.cfg 2005/02/03 v1.3 color configuration of teTeX/TeXLive
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package color Info: Driver file: dvipdfmx.def on input line 130.
+Package color Info: Driver file: dvipdfmx.def on input line 147.
 
-(/usr/local/share/texmf-dist/tex/latex/graphics/dvipsnam.def
-File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ))
-(/usr/local/share/texmf-dist/tex/latex/url/url.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
-Package: url 2004/03/15  ver 3.1  Verb mode for urls, etc.
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(/usr/local/share/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count90
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count91
 \lst@gtempboxa=\box42
 \lst@token=\toks16
-\lst@length=\count91
-\lst@currlwidth=\dimen123
-\lst@column=\count92
-\lst@pos=\count93
-\lst@lostspace=\dimen124
-\lst@width=\dimen125
-\lst@newlines=\count94
-\lst@lineno=\count95
-\c@lstlisting=\count96
-\lst@maxwidth=\dimen126
+\lst@length=\count92
+\lst@currlwidth=\dimen126
+\lst@column=\count93
+\lst@pos=\count94
+\lst@lostspace=\dimen127
+\lst@width=\dimen128
+\lst@newlines=\count95
+\lst@lineno=\count96
+\lst@maxwidth=\dimen129
 
-(/usr/local/share/texmf-dist/tex/latex/listings/lstpatch.sty
-File: lstpatch.sty 2004/10/17 1.3b (Carsten Heinz)
-)
-(/usr/local/share/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2004/09/07 1.3 (Carsten Heinz)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 \c@lstnumber=\count97
 \lst@skipnumbers=\count98
 \lst@framebox=\box43
 )
-(/usr/local/share/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2004/09/05 1.3 listings configuration
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
-Package: listings 2004/10/17 1.3b (Carsten Heinz)
- (./jlisting.sty
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(./jlisting.sty
 Package: jlisting 2006/02/20 0.2 (Thor)
 \lst@nextchar=\count99
 \lst@inputfile=\read1
-) (./boundary_narita.aux)
+) (./boundary_narita.aux (./introduction.aux
+
+LaTeX Warning: Label `default' multiply defined.
+
+) (./method.aux
+
+LaTeX Warning: Label `default' multiply defined.
+
+
+LaTeX Warning: Label `default' multiply defined.
+
+
+LaTeX Warning: Label `default' multiply defined.
+
+) (./codes.aux
+
+LaTeX Warning: Label `default' multiply defined.
+
+) (./results_and_discussions.aux
+
+LaTeX Warning: Label `default' multiply defined.
+
+
+LaTeX Warning: Label `default' multiply defined.
+
+
+LaTeX Warning: Label `default' multiply defined.
+
+
+LaTeX Warning: Label `default' multiply defined.
+
+
+LaTeX Warning: Label `default' multiply defined.
+
+
+LaTeX Warning: Label `default' multiply defined.
+
+
+LaTeX Warning: Label `default' multiply defined.
+
+) (./conclusion.aux) (./reference.aux))
 \openout1 = `boundary_narita.aux'.
 
-LaTeX Font Info:   
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+\c@lstlisting=\count100
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 16.60605pt on input line 46.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 16.60605pt on input line 46.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 46.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 46.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 46.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 46.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 46.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.76599pt on input line 46.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 48.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 48.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 48.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 48.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 48.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 48.
+ (./boundary_narita.toc [1
+
+]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 3.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 3.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.805pt on input line 3.
+)
+\tf@toc=\write3
+\openout3 = `boundary_narita.toc'.
+
+ [2]
+[3]
+\openout2 = `introduction.aux'.
+
+ (./introduction.tex
+File: ../figs/./boundary_narita.002.jpeg Graphic file (type eps)
+ <../figs/./boundary_narita.002.jpeg>
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 8.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 8.
+ [4
+
+]
+File: ../figs/./boundary_narita.004.jpeg Graphic file (type eps)
+
+<../figs/./boundary_narita.004.jpeg>) [5] [6]
+\openout2 = `method.aux'.
+
+ (./method.tex
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 8.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 8.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 16.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
+File: ../figs/./boundary_narita.006.jpeg Graphic file (type eps)
+
+<../figs/./boundary_narita.006.jpeg>
+File: ../figs/./boundary_narita.007.jpeg Graphic file (type eps)
+ <../figs/./boundary_narita.007.jpeg>
+File: ../figs/./boundary_narita.005.jpeg Graphic file (type eps)
+
+<../figs/./boundary_narita.005.jpeg> [7
+
+
+] [8]) [9] [10]
+\openout2 = `codes.aux'.
+
+ (./codes.tex
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2015/06/04 1.6 listings language file
+)
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 7.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 7.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 7.
+LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <7> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 8.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 8.
+LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <7> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 8.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 8.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <7> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 8.
+ [11
+
+
+]
+[12] [13] [14] [15] [16] [17]
+File: ../figs/./boundary_narita.009.jpeg Graphic file (type eps)
+ <../figs/./boundary_narita.009.jpeg>) [18]
+\openout2 = `results_and_discussions.aux'.
+
+
+(./results_and_discussions.tex
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+File: ../figs/./boundary_narita.010.jpeg Graphic file (type eps)
+
+<../figs/./boundary_narita.010.jpeg>
+File: ../figs/./boundary_narita.011.jpeg Graphic file (type eps)
+ <../figs/./boundary_narita.011.jpeg>
+[19
+
+
+] [20]
+File: ../figs/./boundary_narita.012.jpeg Graphic file (type eps)
+ <../figs/./boundary_narita.012.jpeg>
+File: ../figs/./boundary_narita.013.jpeg Graphic file (type eps)
+
+<../figs/./boundary_narita.013.jpeg> [21]
+File: ../figs/./boundary_narita.014.jpeg Graphic file (type eps)
+ <../figs/./boundary_narita.014.jpeg>
+File: ../figs/./boundary_narita.015.jpeg Graphic file (type eps)
+
+<../figs/./boundary_narita.015.jpeg> [22]
+File: ../figs/./boundary_narita.016.jpeg Graphic file (type eps)
+ <../figs/./boundary_narita.016.jpeg>) [23] [24] [25] [26]
+\openout2 = `conclusion.aux'.
+
+ (./conclusion.tex) [27
+
+
+]
+\openout2 = `reference.aux'.
+
+ (./reference.tex
+Missing character: There is no ^^e2 in font cmr10!
+Missing character: There is no ^^80 in font cmr10!
+Missing character: There is no ^^93 in font cmr10!
+
+Underfull \hbox (badness 5563) in paragraph at lines 9--10
+\OT1/cmtt/m/n/10 yiiframework . com / doc / guide / 1 . 1 / ja / basics . best-
+[]practices,[]$ \OT1/cmr/m/n/10 2017/2/11
+ []
+
+
+Underfull \hbox (badness 1033) in paragraph at lines 12--13
+[]\JY1/mc/m/n/10 三面図 \OT1/cmr/m/n/10 (\JY1/mc/m/n/10 機械設計のための基礎製
+図\OT1/cmr/m/n/10 ), \JY1/mc/m/n/10 独立行政法人 海上技術安全研究
+ []
+
+) [28
+
+
+] (./boundary_narita.aux (./introduction.aux) (./method.aux) (./codes.aux) (./r
+esults_and_discussions.aux) (./conclusion.aux) (./reference.aux))
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2759 strings out of 493683
+ 38117 string characters out of 6149653
+ 200819 words of memory out of 5000000
+ 6273 multiletter control sequences out of 15000+600000
+ 15673 words of font info for 72 fonts, out of 8000000 for 9000
+ 934 hyphenation exceptions out of 8191
+ 35i,6n,51p,910b,1680s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on boundary_narita.dvi (28 pages, 85572 bytes).
