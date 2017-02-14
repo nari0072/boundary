@@ -22,6 +22,7 @@ def read_pos(lines, init_line)
       pos[1] += a*ly
       pos[2] += a*lz
     }
+    p pos
     poscar << pos
   }
   return poscar
