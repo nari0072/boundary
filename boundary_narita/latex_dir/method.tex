@@ -7,17 +7,16 @@ viewerは，VASPの入出力で採用されているPOSCAR形式のファイル�
 
 \subsection{一般的な原子モデルソフトとの比較}
 結晶描画が可能なソフトとして，"Medea"および"VESTA"がある．
-これらは結晶構造や電子・核密度等のデータを読み込んで結晶の形を三次元で可視化できるプログラムである\cite{Vesta}．
-これらは原子の配置を確認するために，手作業で結晶構造の視点を自由に変えながら．構造全体を視覚的に理解することができる．図にはVESTAの画面から切り出した原子配置モデルの一例を示している．
-3次元に投影することによって得られた図形である．
+これらは結晶構造や電子・核密度等のデータを読み込んで結晶の形を3次元で可視化できるプログラムである\cite{Vesta}．
+これらは原子の配置を確認するために，手作業で結晶構造の視点を自由に変えながら．構造全体を視覚的に理解することができる．図\ref{fig:006}は,VESTAの画面から切り出した原子配置モデルの一例である，3次元に投影することによって得られた図形である．
 VESTAの使用には以下の難点があった．
 
 \begin{itemize}
-\item 三次元で原子配列を表示するため，各層の原子位置が把握しづらい
+\item 3次元で原子配列を表示するため，各層の原子位置が把握しづらい
 \item 色分けするための層を手動でおこなうため，指定した範囲の正確さに欠け，作業に手間がかかる
 \end{itemize}
 \begin{figure}[htbp]\begin{center}
-\includegraphics[width=12cm,bb= 0 0 937 753]{../figs/./boundary_narita.006.jpeg}
+\includegraphics[width=6cm,bb= 0 0 937 753]{../figs/./boundary_narita.006.jpeg}
 \caption{VESTAで描画したPOSCAR\_2223の原子配置.}
 \label{fig:006}
 \label{default}\end{center}\end{figure}
@@ -25,19 +24,19 @@ VESTAの使用には以下の難点があった．
 三面図を使用して表示することにより，図\ref{fig:007}のように，各面から原子の配置を直感的かつ簡易に確認できるようになる．
 
 \begin{figure}[htbp]\begin{center}
-\includegraphics[width=12cm,bb= 0 0 937 753]{../figs/./boundary_narita.007.jpeg}
+\includegraphics[width=10cm,bb= 0 0 937 753]{../figs/./boundary_narita.007.jpeg}
 \caption{vestaの投影図を2次元化した図.}
 \label{fig:007}
 \label{default}\end{center}\end{figure}
 \subsection{MVCモデルの概要と利点}
 本研究で開発するソフトは，作業の分業化が容易であるMVCモデルで作成していく．
-MVCモデルは，ソフトウェアの設計モデルの一つであり，アプリケーションの開発において取られている手法である．
+MVCモデルは，ソフトウェアの設計モデルの一つであり，アプリケーションの開発において取られている手法である．
 MVCモデルは図\ref{fig:005}のように三要素で構成されており，データの処理を担う"Model"，処理結果を画面に表示する"View"，入力情報の受け取って処理機能を制御する"Controller"で設計されている．
 各々の機能が直交化されているため，開発作業を分業化しやすく，相互の仕様変更による影響を受けずに開発を進めることが出来る\cite{MVC}．
 したがって，原子配列の結果を画面表示する機能構築に特化した開発作業が取り組める．
 
 \begin{figure}[htbp]\begin{center}
-\includegraphics[width=12cm,bb= 0 0 937 753]{../figs/./boundary_narita.005.jpeg}
+\includegraphics[width=10cm,bb= 0 0 937 753]{../figs/./boundary_narita.005.jpeg}
 \caption{MVSモデルの構成と各機能.}
 \label{fig:005}
 \label{default}\end{center}\end{figure}

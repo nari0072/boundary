@@ -1,9 +1,7 @@
 \documentclass[12pt,a4paper]{jsarticle}
 \usepackage[dvipdfmx]{graphicx}
 \usepackage[dvipdfmx]{color}
-\usepackage{url}
-\usepackage{listings,jlisting}
-% to use japanese correctly, install jlistings.
+\usepackage{listings,jlisting}% to use japanese correctly, install jlistings.
 \lstset{
   basicstyle={\ttfamily},
   identifierstyle={},
@@ -44,16 +42,37 @@
 \date{\vspace{3cm} 2017年  3月\\
 \vspace{3cm} 指導教員　　西谷　滋人　教授}
 \maketitle
+\thispagestyle{empty}
+\newpage
+\thispagestyle{empty}
+\begin{center}
+\large　概要
+\end{center}
+
+本研究は，小傾角粒界エネルギーにおいて原子間ポテンシャルを用いたシミュレーションの結果と大槻による実験結果の矛盾を原子レベルシミュレーションで解明することを目的としている．
+両者の具体的な相違点は，0度，及び90度付近における対称傾角粒界エネルギーにおける立ち上がりの傾き方である．
+この矛盾を解明するためには，削除操作をおこないながら構造緩和をして最安定の構造を求める必要があるが，この作業が適切におこなわれることを視覚的に確かめなければならない．したがって，小傾角粒界の原子配列を容易に視覚化できるソフトを本研究で開発する．
+
+描画ソフトは，処理結果を画面表示するための機能に特化し，出力をSVG形式で表示するように開発した．このため，原子配列を正面，上面，側面の三方向から描画した図で表示して，原子の配置を的確に確認できるようにした．その結果，削除された原子の個数と各位置，ならびに構造緩和による原子の移動経路を視覚的に把握できるようにした．
+
+従来より，原子配列を描画する際に使用していた結晶構造描画ソフトVESTAでは，この界面表示は原子が多いため，原子の個数と位置を3次元表示から確認することが困難であった．ところが，原子配列を三面図で描画したことにより，構造緩和前後を表したPOSCARファイルに原子が一つ不足していることに気づいた．この構造はVESTAでものちに確認した．これは，三面図を用いた界面表示の優位性を示す結果である．
+
+\addtocounter{page}{-2}
+\newpage
 \setcounter{tocdepth}{4}
 \tableofcontents
 
 %\verb|{{toc}}|
+%\verb|概要(boundary_narita_summary)|
 
-\include{summary}
 \include{introduction}
 \include{method}
 \include{codes}
 \include{results_and_discussions}
 \include{conclusion}
+
+\section*{謝辞}
+本研究を進めるにあたり，懇切丁寧なご指導をしていただきました西谷滋人教授先生に深く感謝いたします． また，本研究の進行に伴い，大変多くの知識を提供していただきました西谷研究室の同輩，先輩方に心から感謝の意を示します． 誠にありがとうございました．
+
 \include{reference}
 \end{document}
